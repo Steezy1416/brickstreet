@@ -1,3 +1,6 @@
+/* font-family: 'Comfortaa', cursive;
+font-family: 'Montserrat', sans-serif; */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +10,107 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-custom-css {
+  background: white;
+  border-radius: 20;
+  border-top-left-radius: 20;
+  border-top-right-radius: 20;
+  border-bottom-right-radius: 20;
+  border-bottom-left-radius: 20;
+  border-style: none;
+  padding-top: 0;
+  padding-bottom: 10px;
+  font-family: 'Comfortaa', cursive;
+}
+
+.navigation-clean-button {
+  /* background: #222222; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* color: white; */
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  margin-bottom: 0;
+}
+
+/* TODO: change the hover color to something better; green is temporary color */
+.navigation-clean-button .navbar-brand:hover {
+  color: #ffcf67;
+}
+
+.navigation-clean-button .navbar-brand {
+  font-weight: bold;
+  color: inherit;
+}
+
+.nav-container-custom-css {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline !important;
+}
+
+/* TODO: use clamp to make brand text responsive */
+.navbar-brand {
+  font-size: 25px;
+}
+
+#container-for-nav-links {
+  color: rgb(230, 230, 230);
+  align-items: baseline;
+}
+
+.nav-link-custom-css {
+  color: rgba(224, 217, 217, 0.9);
+}
+
+.login-signup-nav-links {
+  text-align: right;
+
+}
+
+.actions .navigation-clean-button {
+  margin-top: 7px;
+  margin-bottom: 0;
+}
+
+.navigation-clean-button .actions .login {
+  margin-right: 7px;
+  text-decoration: none;
+}
+
+.nav-login-custom-css {
+  color: rgba(224, 217, 217, 0.9);
+}
+
+.nav-signup-custom-css {
+  color: rgba(0, 0, 0, 0.9);
+  background: var(--bs-gray-200);
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.9);
+  font-size: 16px;
+  padding: 5px 8px;
+}
+
+.navigation-clean-button .action-button:hover {
+  background: hsla(42, 93%, 57%, 1);
+
+  background: linear-gradient(90deg, hsla(42, 93%, 57%, 1) 0%, hsla(358, 78%, 62%, 1) 100%);
+
+  background: -moz-linear-gradient(90deg, hsla(42, 93%, 57%, 1) 0%, hsla(358, 78%, 62%, 1) 100%);
+
+  background: -webkit-linear-gradient(90deg, hsla(42, 93%, 57%, 1) 0%, hsla(358, 78%, 62%, 1) 100%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F7BA2C", endColorstr="#EA5459", GradientType=1);
+
+  color: #fff;
+  font-weight: 400;
+  border: 1px solid white;
 }
