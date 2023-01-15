@@ -28,32 +28,38 @@ module.exports = resolvers = {
         },
     },
     User: {
-        async posts(parent, args, context, info) {
-            console.log(parent, args, context, info)
+        async posts(parent) {
+            return await Post.find({ userId: parent.id })
         },
-        async chats(parent, args, context, info) {
-            console.log(parent, args, context, info)
+        async chats(parent) {
+            return await Chat.find({ creatorId: parent.id })
+        },
+        async messages(parent) {
+            return await Message.find({ userId: parent.id })
         }
     },
     Post: {
-        async user(parent, args, context, info) {
-            console.log(parent, args, context, info)
+        async user(parent) {
+            return await User.findById(parent.userId)
         },
     },
     Chat: {
-        async users(parent, args, context, info) {
-            console.log(parent, args, context, info)
+        async users(parent) {
+            console.log(parent)
         },
-        async messages(parent, args, context, info) {
-            console.log(parent, args, context, info)
+        async creator(parent) {
+            return await User.findById(parent.creatorId)
+        },
+        async messages(parent) {
+            return await Message.find({ chatId: parent.id })
         },
     },
     Message: {
-        async user(parent, args, context, info) {
-            console.log(parent, args, context, info)
+        async user(parent) {
+            return await User.findById(parent.userId)
         },
-        async chat(parent, args, context, info) {
-            console.log(parent, args, context, info)
+        async chat(parent) {
+            return await Chat.findById(parent.chatId)
         },
     },
     Mutation: {
@@ -78,7 +84,9 @@ module.exports = resolvers = {
         },
         createChat: async (parent, args) => {
             const chat = new Chat({
-                userId: args.userId,
+                creatorId: args.creatorId,
+                userIds: args.userId,
+                chatName: args.chatName
             })
 
             return await chat.save()
