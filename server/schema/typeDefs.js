@@ -10,19 +10,18 @@ module.exports = typeDefs = `#graphql
     }
 
     type Post {
-        id: ID
-        user: User
+        id: ID!
+        user: User!
         bidders: [User]
         postImage: String
-        title: String
-        description: String
-        bidPrice: String
-        createdAt: String
+        title: String!
+        description: String!
+        bidPrice: String!
     }
 
     type Chat {
         id: ID!
-        creator: User
+        creator: User!
         chatName: String!
         users: [User]
         messages: [Message]
@@ -33,7 +32,6 @@ module.exports = typeDefs = `#graphql
         user: User!
         chat: Chat!
         textMessage: String!
-        createdAT: String!
     }
 
     type Query {
@@ -49,8 +47,8 @@ module.exports = typeDefs = `#graphql
 
     type Mutation {
         createUser(name: String!, password: String!): User
-        createPost(userId: String, postImage: String, title: String, description: String, bidPrice: String): Post
-        createChat(creatorId: String, userId: String!, chatName: String): Chat
+        createPost(userId: String!, postImage: String!, title: String!, description: String!, bidPrice: String!): Post
+        createChat(creatorId: String!, userId: String!, chatName: String!): Chat
         createMessage(userId: String!, chatId: String!, textMessage: String!): Message
     }
 `

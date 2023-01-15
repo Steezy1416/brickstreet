@@ -63,7 +63,7 @@ module.exports = resolvers = {
         },
     },
     Mutation: {
-        createUser: async (parent, args) => {
+        createUser: async (_, args) => {
             const user = User({
                 name: args.name,
                 password: args.password,
@@ -71,7 +71,7 @@ module.exports = resolvers = {
 
             return await user.save()
         },
-        createPost: async (parent, args) => {
+        createPost: async (_, args) => {
             const post = new Post({
                 userId: args.userId,
                 postImage: args.postImage,
@@ -82,7 +82,7 @@ module.exports = resolvers = {
 
             return await post.save()
         },
-        createChat: async (parent, args) => {
+        createChat: async (_, args) => {
             const chat = new Chat({
                 creatorId: args.creatorId,
                 userIds: args.userId,
@@ -91,7 +91,7 @@ module.exports = resolvers = {
 
             return await chat.save()
         },
-        createMessage: async (parent, args) => {
+        createMessage: async (_, args) => {
             const message = new Message({
                 userId: args.userId,
                 chatId: args.chatId,
