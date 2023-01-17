@@ -136,11 +136,18 @@ body {
 .hero-container-custom-css {
   background-image: url('./assets/daniel-k-cheung-B7N0IjiIJYo-unsplash.jpg');
   background-size: cover;
-  background-position: auto;
+  background-position: bottom;
   /* height: max-content; */
-  height: auto;
+  min-height: 50vh;
   flex-basis: content;
-  opacity: 0.9;
+}
+
+.hero-text-styles {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hero-items-styles {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 /* ========== END HERO STYLES ========== */
@@ -173,3 +180,12 @@ body {
 }
 
 /* ========== END LOGIN PAGE STYLES ========== */
+
+/* ========== START FOOTER STYLES ========== */
+
+.footer-text-styles {
+  font-family: 'Comfortaa', cursive;
+}
+
+
+/* ========== END FOOTER STYLES ========== */
