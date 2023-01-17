@@ -60,11 +60,11 @@ function Nav() {
                         <div className='col'>
                             <p className='ms-auto navbar-text actions login-signup-nav-links'>
                                 <a className='login nav-login-custom-css' href='#login-placeholder-link'>
-                                    Login
+                                    Log In
                                 </a>
-                                <a className='btn btn-light action-button nav-signup-custom-css' role='button' href='#signup-placeholder-link'>
-                                    Sign Up
-                                </a>
+                                <button className="btn btn-moving-gradient btn-moving-gradient--orange">
+                                     Sign Up 
+                                </button>
                             </p>
                         </div>
                     </div>
