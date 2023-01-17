@@ -6,7 +6,8 @@ const PostSchema = new Schema({
     description: String,
     bidPrice: String,
     userId: String,
-    bidderIds: [String]
+    bidderIds: [String],
+    createdAt: String
 })
 
 const Post = mongoose.model("Post", PostSchema)

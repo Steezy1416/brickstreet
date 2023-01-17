@@ -1,4 +1,5 @@
 const { User, Post, Chat, Message } = require("../models")
+const { format_date } = require("../utils/formater")
 
 module.exports = resolvers = {
     Query: {
@@ -44,11 +45,11 @@ module.exports = resolvers = {
         },
     },
     Chat: {
-        async users(parent) {
-            console.log(parent)
+        async seller(parent) {
+            return await User.findById(parent.sellerId)
         },
-        async creator(parent) {
-            return await User.findById(parent.creatorId)
+        async buyer(parent) {
+            return await User.findById(parent.buyerId)
         },
         async messages(parent) {
             return await Message.find({ chatId: parent.id })
@@ -72,33 +73,45 @@ module.exports = resolvers = {
             return await user.save()
         },
         createPost: async (_, args) => {
+            const date = new Date()
+
+            const createdAt = format_date(date)
+
             const post = new Post({
                 userId: args.userId,
                 postImage: args.postImage,
                 title: args.title,
                 description: args.description,
                 bidPrice: args.bidPrice,
+                createdAt: createdAt
             })
 
             return await post.save()
         },
-        createChat: async (_, args) => {
+        createChatWithUser: async (_, args) => {
             const chat = new Chat({
-                creatorId: args.creatorId,
-                userIds: args.userId,
+                sellerId: args.sellerId,
+                buyerId: args.buyerId,
                 chatName: args.chatName
             })
 
             return await chat.save()
         },
         createMessage: async (_, args) => {
+            const date = new Date()
+
+            const createdAt = format_date(date)
+            console.log(createdAt)
+
             const message = new Message({
                 userId: args.userId,
                 chatId: args.chatId,
-                textMessage: args.textMessage
+                textMessage: args.textMessage,
+                createdAt: createdAt
             })
 
             return await message.save()
         },
+
     }
 }

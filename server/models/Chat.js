@@ -2,8 +2,8 @@ const { Schema, default: mongoose } = require("mongoose")
 
 const ChatSchema = new Schema({
     chatName: String,
-    creatorId: String,
-    userIds: [String],
+    sellerId: String,
+    buyerId: String,
     messageIds: [String]
 })
 
