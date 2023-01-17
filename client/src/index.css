@@ -1,3 +1,4 @@
+/* THESE ARE THE MAIN FONTS FOR THE PROJECT */
 /* font-family: 'Comfortaa', cursive;
 font-family: 'Montserrat', sans-serif; */
 
@@ -9,6 +10,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* ========== START NAV STYLES ========== */
 
 .navbar {
   margin-bottom: 0;
@@ -38,9 +41,8 @@ body {
   margin-bottom: 0;
 }
 
-/* TODO: change the hover color to something better; green is temporary color */
 .navigation-clean-button .navbar-brand:hover {
-  color: #ffcf67;
+  color: rgb(255, 179, 0);
 }
 
 .navigation-clean-button .navbar-brand {
@@ -89,28 +91,85 @@ body {
   color: rgba(224, 217, 217, 0.9);
 }
 
-.nav-signup-custom-css {
-  color: rgba(0, 0, 0, 0.9);
-  background: var(--bs-gray-200);
-  border-radius: 10px;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.9);
+/* ========== END NAV STYLES ========== */
+
+/* ========== START BUTTON STYLES ========== */
+
+.btn {
+  font-family: 'Comfortaa', cursive;
+}
+
+.btn:hover .btn-slide-show-text1 {
+  margin-left: 65px;
+}
+
+.btn-moving-gradient {
+  height: auto;
+  width: auto;
   font-size: 16px;
-  padding: 5px 8px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
 }
 
-.navigation-clean-button .action-button:hover {
-  background: hsla(42, 93%, 57%, 1);
-
-  background: linear-gradient(90deg, hsla(42, 93%, 57%, 1) 0%, hsla(358, 78%, 62%, 1) 100%);
-
-  background: -moz-linear-gradient(90deg, hsla(42, 93%, 57%, 1) 0%, hsla(358, 78%, 62%, 1) 100%);
-
-  background: -webkit-linear-gradient(90deg, hsla(42, 93%, 57%, 1) 0%, hsla(358, 78%, 62%, 1) 100%);
-
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F7BA2C", endColorstr="#EA5459", GradientType=1);
-
-  color: #fff;
-  font-weight: 400;
-  border: 1px solid white;
+.btn-moving-gradient:hover {
+  transition: all 0.5s ease-in-out 0s;
+  background-position: 100% 0px;
 }
+
+.btn-moving-gradient--orange {
+  background-image: linear-gradient(90deg, rgb(255, 179, 0), rgb(255, 191, 0), rgb(255, 170, 0), rgb(251, 176, 59));
+}
+
+.btn-moving-gradient--black {
+  background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(19, 19, 19), rgb(235, 235, 235), rgb(255, 255, 255));
+}
+
+/* ========== END BUTTON STYLES ========== */
+
+/* ========== START HERO STYLES ========== */
+
+/* TODO: add responsiveness to hero image */
+.hero-container-custom-css {
+  background-image: url('./assets/daniel-k-cheung-B7N0IjiIJYo-unsplash.jpg');
+  background-size: cover;
+  background-position: auto;
+  /* height: max-content; */
+  height: auto;
+  flex-basis: content;
+  opacity: 0.9;
+}
+
+/* ========== END HERO STYLES ========== */
+
+/* ========== START LOGIN PAGE STYLES ========== */
+
+.bs-icon.bs-icon-circle {
+  border-radius: 50%;
+}
+
+.bs-icon.bs-icon-primary {
+  color: var(--bs-white);
+  background: var(--bs-dark);
+}
+
+.bs-icon-xl {
+  --bs-icon-size: 2.5rem;
+}
+
+.bs-icon {
+  --bs-icon-size: .75rem;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--bs-icon-size);
+  width: calc(var(--bs-icon-size) * 2);
+  height: calc(var(--bs-icon-size) * 2);
+  color: var(--bs-dark);
+}
+
+/* ========== END LOGIN PAGE STYLES ========== */
