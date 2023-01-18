@@ -7,7 +7,7 @@ const PostSchema = new Schema({
     bidPrice: String,
     userId: String,
     bidderIds: [String],
-    categoryId: [String],
+    categoryIds: [String],
     availability: String,
     createdAt: String
 })

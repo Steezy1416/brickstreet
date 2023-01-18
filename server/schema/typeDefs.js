@@ -23,21 +23,22 @@ module.exports = typeDefs = `#graphql
     }
 
     enum PostAvailable {
-        AVAILABLE
-        UNAVAILABLE
+        available
+        unavailable
     }
 
     type Category {
         id: ID!
-        categoryName: String
+        categoryName: String!
     }
 
     type Chat {
         id: ID!
-        seller: User!
+        seller: User
         chatName: String!
-        buyer: User!
+        buyer: User
         messages: [Message]
+        users: [User]
     }
 
     type Message {
@@ -52,7 +53,10 @@ module.exports = typeDefs = `#graphql
         getUser(id: ID!): User
         getUsers: [User]
         getPost(postId: ID!, userId: ID!): Post
+        getPostByAvailability(availability: PostAvailable): Post
         getPosts: [Post]
+        getCategory(categoryId: ID!): Category
+        getCategories: [Category]
         getChat(id: ID!): Chat 
         getChats: [Chat]
         getMessage(chatId: ID!, userId: ID!): Message
@@ -60,21 +64,27 @@ module.exports = typeDefs = `#graphql
     }
 
     type Mutation {
+        ## User Mutations
         createUser(name: String!, password: String!): User
-        updateUser(userId: String, profilePicture: String): User
+        updateUser(userId: ID, profilePicture: String): User
 
-        createPost(userId: String!, postImage: String!, title: String!, description: String!, bidPrice: String!): Post
-        deletePost(postId: String!): Post
-        updatePost(postId: String!): Post
+        ## Post Mutations
+        createPost(userId: ID!, postImage: String!, title: String!, description: String!, bidPrice: String!, categoryIds: [ID], availability: PostAvailable): Post
+        deletePost(postId: ID!): Post
+        updatePost(postId: ID!, title: String, description: String, availability: PostAvailable): Post
+        updateBidPrice(postId: ID, bidPrice: String, bidderId: ID): Post
 
-        createCategory(postId: String, categoryName: String): Category
+        ## Category Mutations
+        createCategory(categoryName: String): Category
+        deleteCategory(categoryId: ID): Category
 
-        createChatWithUser(sellerId: String!, buyerId: String!, chatName: String! ): Chat
-        updateChat(chatId: String!): Chat
+        ## Chat Mutations
+        createChatWithUser(sellerId: ID!, buyerId: ID!, chatName: String! ): Chat
+        leaveChat(chatId: String!, userId: ID!): Chat
 
-        createMessage(userId: String!, chatId: String!, textMessage: String!): Message
-        deleteMessage(messageId: String): Message
+        ## Message Mutations
+        createMessage(userId: ID!, chatId: ID!, textMessage: String!): Message
+        deleteMessage(messageId: ID!): Message
 
     }
 `
-    

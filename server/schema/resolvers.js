@@ -1,4 +1,4 @@
-const { User, Post, Chat, Message } = require("../models")
+const { User, Post, Category, Chat, Message } = require("../models")
 const { format_date } = require("../utils/formater")
 
 module.exports = resolvers = {
@@ -12,8 +12,20 @@ module.exports = resolvers = {
         getPost: async (_, args) => {
             return await Post.findById(args.id)
         },
+        getPostByAvailability: async (_, args) => {
+            const posts = await Post.find(args)
+            for(let i = 0; i < posts.length; i ++){
+                return posts[i]
+            }
+        },
         getPosts: async () => {
             return await Post.find({})
+        },
+        getCategory: async (_, args) => {
+            return await Category.findById(args.id)
+        },
+        getCategories: async () => {
+            return await Category.find({})
         },
         getChat: async (_, args) => {
             return await Chat.findById(args.id)
@@ -43,6 +55,14 @@ module.exports = resolvers = {
         async user(parent) {
             return await User.findById(parent.userId)
         },
+        async categories({ categoryIds }) {
+            const categories = []
+            for (let i = 0; i < categoryIds.length; i++) {
+                const category = await Category.findById(categoryIds[i])
+                categories.push(category)
+            }
+            return categories
+        }
     },
     Chat: {
         async seller(parent) {
@@ -63,6 +83,10 @@ module.exports = resolvers = {
             return await Chat.findById(parent.chatId)
         },
     },
+
+
+
+
     Mutation: {
         createUser: async (_, args) => {
             const user = User({
@@ -77,16 +101,27 @@ module.exports = resolvers = {
 
             const createdAt = format_date(date)
 
+            console.log(args)
+
             const post = new Post({
                 userId: args.userId,
                 postImage: args.postImage,
                 title: args.title,
                 description: args.description,
                 bidPrice: args.bidPrice,
+                categoryIds: args.categoryIds,
+                availability: args.availability,
                 createdAt: createdAt
             })
 
             return await post.save()
+        },
+        createCategory: async (_, args) => {
+            const category = new Category({
+                categoryName: args.categoryName
+            })
+
+            return await category.save()
         },
         createChatWithUser: async (_, args) => {
             const chat = new Chat({
