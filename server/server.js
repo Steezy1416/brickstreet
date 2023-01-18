@@ -1,29 +1,30 @@
 const { ApolloServer } = require("@apollo/server")
-const { startStandaloneServer } = require("@apollo/server/standalone")
+const { expressMiddleware } = require("@apollo/server/express4")
+const express = require("express")
+const cors = require("cors")
+const { json } = require("express")
+const db = require("./config/connection")
 const { typeDefs, resolvers } = require("./schema")
-const mongoose = require("mongoose")
 
+const app = express()
+
+const PORT = process.env.PORT || 4000
 const server = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
 })
-
-mongoose.connect("mongodb://127.0.0.1:27017/brickstreet", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-mongoose.connection.once("open", () => {
-    console.log("connected to database")
-})
-
 
 const startServer = async () => {
-    const { url } = await startStandaloneServer(server, {
-        listen: { port: 4000 },
-    });
 
-    console.log(`Server is ready at ${url}`)
+    await server.start()
+
+    app.use("/graphql", cors(), json(), expressMiddleware(server))
+
+    db.once("open", () => {
+        app.listen(PORT, () => {
+            console.log(`🚀 Server ready at http://localhost:4000/graphql`);
+        })
+    })
 }
 
 startServer()
-

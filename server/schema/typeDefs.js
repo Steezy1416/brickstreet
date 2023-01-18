@@ -17,7 +17,19 @@ module.exports = typeDefs = `#graphql
         title: String!
         description: String!
         bidPrice: String!
+        categories: [Category]
+        availability: PostAvailable
         createdAt: String!
+    }
+
+    enum PostAvailable {
+        AVAILABLE
+        UNAVAILABLE
+    }
+
+    type Category {
+        id: ID!
+        categoryName: String
     }
 
     type Chat {
@@ -49,16 +61,20 @@ module.exports = typeDefs = `#graphql
 
     type Mutation {
         createUser(name: String!, password: String!): User
+        updateUser(userId: String, profilePicture: String): User
+
         createPost(userId: String!, postImage: String!, title: String!, description: String!, bidPrice: String!): Post
+        deletePost(postId: String!): Post
+        updatePost(postId: String!): Post
+
+        createCategory(postId: String, categoryName: String): Category
+
         createChatWithUser(sellerId: String!, buyerId: String!, chatName: String! ): Chat
+        updateChat(chatId: String!): Chat
+
         createMessage(userId: String!, chatId: String!, textMessage: String!): Message
+        deleteMessage(messageId: String): Message
 
     }
 `
-        //delete post
-        //delete message
-        //--------------
-        //update user
-        //update post
-        //update chat
     
