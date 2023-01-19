@@ -84,6 +84,18 @@ loginUser = async (req, res) =>{
    
 }
 
+// 'Logout' routing functionality code sample
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    }
+    else {
+      res.status(404).end();
+    }
+  });
+
 const handleRefreshToken = async (req, res)=>{
 
     // Get the generate token from the user
