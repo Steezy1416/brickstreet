@@ -7,7 +7,7 @@ function Nav() {
             <nav className='navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button navbar-custom-css'>
                 <div className='container nav-container-custom-css'>
                     <div>
-                        <a className='navbar-brand' href='#home-placeholder-link'>
+                        <a className='navbar-brand' href='/'>
                             Brick Street
                         </a>
                     </div>
@@ -40,21 +40,6 @@ function Nav() {
                                         Category 5
                                     </a>
                                 </div>
-                            </li>
-                            <li className='nav-item nav-link-custom-css'>
-                                <a className='nav-link' href='#about-placeholder-link'>
-                                    About
-                                </a>
-                            </li>
-                            <li className='nav-item nav-link-custom-css'>
-                                <a className='nav-link' href='#faq-placeholder-link'>
-                                    FAQ
-                                </a>
-                            </li>
-                            <li className='nav-item nav-link-custom-css'>
-                                <a className='nav-link' href='#contact-placeholder-link'>
-                                    Contact
-                                </a>
                             </li>
                         </ul>
                         <div className='col'>
