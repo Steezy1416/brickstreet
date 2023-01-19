@@ -80,7 +80,6 @@ loginUser = async (req, res) =>{
     } catch (error) {
         res.status(400).json({error:error});
     }
-    
    
 }
 
@@ -113,9 +112,30 @@ const handleRefreshToken = async (req, res)=>{
             return res.status(200).json({id:user_d.id, username:user_d.username, token:aToken});
        })
    
-   
-       
-
+        
 }
 
-module.exports = {registerUser, loginUser, handleRefreshToken}
+// Logout functionality demo code
+
+/* logoutUser = async (req, res) =>{
+
+    try {
+        const {username, password} = req.body;
+
+        // validate user input
+        if(!username || !password){
+            res.status(400).json({error:"Username and password are required"});
+        } */
+
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    }
+    else {
+      res.status(404).end();
+    }
+  });
+
+module.exports = {registerUser, loginUser, logoutUser, handleRefreshToken}
