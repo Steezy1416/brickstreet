@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import for pages
 import About from './pages/About.js';
 import NoMatch from './pages/NoMatch';
+import AddPost from './pages/AddPost.js';
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
               />
               <Route 
                 path="*" 
-                element={<Hero/>} 
+                element={<AddPost/>} 
               />
             </Routes>
           </div>
