@@ -18,6 +18,7 @@ import About from './pages/About'
 import Products from './pages/Products'
 import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
+import UserDashboard from './pages/UserDashboard'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -73,7 +74,11 @@ function App() {
               <Route 
                 path="/Contact" 
                 element={<Contact />} 
-              />                            
+              />
+              <Route 
+                path="/UserDashboard" 
+                element={<UserDashboard />} 
+              />                                           
               <Route 
                 path="*" 
                 element={<NoMatch />} 

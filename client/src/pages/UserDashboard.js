@@ -71,7 +71,7 @@ const UserDashboard = (props) => {
           <MessageList
             username={user.username}
             messageCount={user.messageCount}
-            friends={user.messages}
+            messages={user.messages}
           />
         </div>
       </div>
