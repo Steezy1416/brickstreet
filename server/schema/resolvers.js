@@ -1,4 +1,5 @@
 const { User, Post, Category, Chat, Message } = require("../models")
+const { findByIdAndDelete } = require("../models/Chat")
 const { format_date } = require("../utils/formater")
 
 module.exports = resolvers = {
@@ -14,7 +15,7 @@ module.exports = resolvers = {
         },
         getPostByAvailability: async (_, args) => {
             const posts = await Post.find(args)
-            for(let i = 0; i < posts.length; i ++){
+            for (let i = 0; i < posts.length; i++) {
                 return posts[i]
             }
         },
@@ -72,6 +73,7 @@ module.exports = resolvers = {
             return await User.findById(parent.buyerId)
         },
         async messages(parent) {
+            console.log(parent)
             return await Message.find({ chatId: parent.id })
         },
     },
@@ -96,6 +98,18 @@ module.exports = resolvers = {
 
             return await user.save()
         },
+        updateProfilePicture: async (_, args) => {
+            const user = await User.findByIdAndUpdate(
+                args.userId,
+                { profilePicture: args.profilePicture },
+                { returnDocument: "after" }
+            )
+
+            return await user.save()
+
+        },
+
+
         createPost: async (_, args) => {
             const date = new Date()
 
@@ -116,6 +130,17 @@ module.exports = resolvers = {
 
             return await post.save()
         },
+        deletePost: async (_, args) => {
+
+        },
+        updatePost: async (_, args) => {
+
+        },
+        updateBidPrice: async (_, args) => {
+
+        },
+
+
         createCategory: async (_, args) => {
             const category = new Category({
                 categoryName: args.categoryName
@@ -123,6 +148,23 @@ module.exports = resolvers = {
 
             return await category.save()
         },
+        deleteCategory: async (_, args) => {
+            const posts = await Post.find({ categoryIds: { $all: [args.categoryId] } })
+            for (let i = 0; i < posts.length; i++) {
+                return await Post.findByIdAndUpdate(
+                    posts[i].id,
+                    { $pull: { categoryIds: { $all: [args.categoryId] } } },
+                    { new: true }
+                )
+                    .catch(err => console.log(err))
+            }
+            return category = await Category.findByIdAndDelete(
+                args.categoryId,
+                { new: true }
+            )
+        },
+
+
         createChatWithUser: async (_, args) => {
             const chat = new Chat({
                 sellerId: args.sellerId,
@@ -132,6 +174,11 @@ module.exports = resolvers = {
 
             return await chat.save()
         },
+        leaveChat: async (_, args) => {
+
+        },
+
+
         createMessage: async (_, args) => {
             const date = new Date()
 
@@ -147,6 +194,12 @@ module.exports = resolvers = {
 
             return await message.save()
         },
+        deleteMessage: async (_, args) => {
+            return await Message.findByIdAndDelete(
+                args.messageId,
+                { new: true }
+            )
+        }
 
     }
 }

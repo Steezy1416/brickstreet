@@ -38,7 +38,6 @@ module.exports = typeDefs = `#graphql
         chatName: String!
         buyer: User
         messages: [Message]
-        users: [User]
     }
 
     type Message {
@@ -66,7 +65,7 @@ module.exports = typeDefs = `#graphql
     type Mutation {
         ## User Mutations
         createUser(name: String!, password: String!): User
-        updateUser(userId: ID, profilePicture: String): User
+        updateProfilePicture(userId: ID!, profilePicture: String!): User
 
         ## Post Mutations
         createPost(userId: ID!, postImage: String!, title: String!, description: String!, bidPrice: String!, categoryIds: [ID], availability: PostAvailable): Post
