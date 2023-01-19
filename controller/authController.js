@@ -80,21 +80,36 @@ loginUser = async (req, res) =>{
     } catch (error) {
         res.status(400).json({error:error});
     }
-    
    
 }
 
-// 'Logout' routing functionality code sample
-router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-      req.session.destroy(() => {
-        res.status(204).end();
-      });
-    }
-    else {
-      res.status(404).end();
-    }
-  });
+// Logout functionality demo code
+
+/* logoutUser = async (req, res) =>{
+
+    try {
+        const {username, password} = req.body;
+
+        // validate user input
+        if(!username || !password){
+            res.status(400).json({error:"Username and password are required"});
+
+        // find the provided username to the Db
+        const user = await User.findOne({username:username}).exec()
+
+        if(!user) res.status(400).json({error:"User not Found."})
+        } */
+
+        router.post('/logout', (req, res) => {
+            if (req.session.loggedIn) {
+              req.session.destroy(() => {
+                res.status(204).end();
+              });
+            }
+            else {
+              res.status(404).end();
+            }
+          });
 
 const handleRefreshToken = async (req, res)=>{
 
@@ -125,9 +140,8 @@ const handleRefreshToken = async (req, res)=>{
             return res.status(200).json({id:user_d.id, username:user_d.username, token:aToken});
        })
    
-   
-       
-
+        
 }
 
-module.exports = {registerUser, loginUser, handleRefreshToken}
+
+module.exports = {registerUser, loginUser, logoutUser, handleRefreshToken}
