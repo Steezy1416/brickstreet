@@ -24,10 +24,11 @@ function App() {
       <Router>
         <div>
           <Nav></Nav>
+
           <main>
             <Hero></Hero>
             <Routes>
-              <Route path='/' element={<Home />} />
+              <Route path='/home' element={<Home />} />
             </Routes>
           </main>
           <Footer></Footer>
