@@ -14,7 +14,7 @@ function Nav() {
                     <div id='container-for-nav-links' className='row'>
                         <ul className='col navbar-nav nav-right'>
                             <li className='nav-item'>
-                                <a className='nav-link nav-link-custom-css' href='#home-placeholder-link'>
+                                <a className='nav-link nav-link-custom-css' href='/'>
                                     Home
                                 </a>
                             </li>
