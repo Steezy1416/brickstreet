@@ -7,7 +7,10 @@ const AllPosts = ({posts}) => {
             THESE ARE ALL THE POSTS
             {posts && posts.map(post => (
                 <div key={post._id}>
-                    <div>POST TITLE</div>
+                    <p>{post.image}</p>
+                    <p>{post.title}</p>
+                    <p>{post.user}</p>
+                    <p>{post.bidPrice}</p>
                 </div>
             ))}
         </div>
