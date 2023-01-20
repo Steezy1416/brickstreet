@@ -11,11 +11,6 @@ function MessagePage() {
 
                     <div className="row">
                         <h2 className='col msg-pg-title'>Messages:</h2>
-                        {/* TODO: uncomment if we want a 'search messages' feature */}
-                        {/* <div className='col-6'><input className="form-control me-auto" type="text" placeholder="Search" aria-label="Add your item here..."></input></div><button type="button" className="btn btn-secondary col-2">Submit</button> */}
-                        <button className="btn me-2 py-2 px-4 btn-moving-gradient btn-moving-gradient--orange new-msg-btn col-3 h2">
-                            New Message
-                        </button>
                     </div>
                 </div>
                 <div class="container">
