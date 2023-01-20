@@ -63,6 +63,9 @@ module.exports = resolvers = {
                 categories.push(category)
             }
             return categories
+        },
+        async topBidder(parent) {
+            return await User.findById(parent.topBidderId)
         }
     },
     Chat: {
@@ -73,9 +76,16 @@ module.exports = resolvers = {
             return await User.findById(parent.buyerId)
         },
         async messages(parent) {
-            console.log(parent)
             return await Message.find({ chatId: parent.id })
         },
+        async users({ userIds }) {
+            const users = []
+            for (let i = 0; i < userIds.length; i++) {
+                const user = await User.findById(userIds[i])
+                users.push(user)
+            }
+            return users
+        }
     },
     Message: {
         async user(parent) {
@@ -99,13 +109,11 @@ module.exports = resolvers = {
             return await user.save()
         },
         updateProfilePicture: async (_, args) => {
-            const user = await User.findByIdAndUpdate(
+            return await User.findByIdAndUpdate(
                 args.userId,
                 { profilePicture: args.profilePicture },
-                { returnDocument: "after" }
+                { new: true }
             )
-
-            return await user.save()
 
         },
 
@@ -131,13 +139,31 @@ module.exports = resolvers = {
             return await post.save()
         },
         deletePost: async (_, args) => {
-
+            return await Post.findByIdAndDelete(
+                args.postId,
+                { new: true }
+            )
         },
         updatePost: async (_, args) => {
-
+            return await Post.findByIdAndUpdate(
+                args.postId,
+                {
+                    title: args.title,
+                    description: args.description,
+                    availability: args.availability
+                },
+                { new: true }
+            )
         },
         updateBidPrice: async (_, args) => {
-
+            return await Post.findByIdAndUpdate(
+                args.postId,
+                {
+                    bidPrice: args.bidPrice,
+                    topBidderId: args.topBidderId
+                },
+                { new: true }
+            )
         },
 
 
@@ -169,13 +195,18 @@ module.exports = resolvers = {
             const chat = new Chat({
                 sellerId: args.sellerId,
                 buyerId: args.buyerId,
-                chatName: args.chatName
+                chatName: args.chatName,
+                userIds: [args.sellerId, args.buyerId]
             })
 
             return await chat.save()
         },
         leaveChat: async (_, args) => {
-
+            return await Chat.findByIdAndUpdate(
+                args.chatId,
+                { $pull: { userIds: { $all: [args.userId] } } },
+                { new: true }
+            )
         },
 
 

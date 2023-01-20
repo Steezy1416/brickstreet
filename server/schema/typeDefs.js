@@ -12,11 +12,11 @@ module.exports = typeDefs = `#graphql
     type Post {
         id: ID!
         user: User!
-        bidders: [User]
+        topBidder: User
         postImage: String
         title: String!
         description: String!
-        bidPrice: String!
+        bidPrice: Int!
         categories: [Category]
         availability: PostAvailable
         createdAt: String!
@@ -38,6 +38,7 @@ module.exports = typeDefs = `#graphql
         chatName: String!
         buyer: User
         messages: [Message]
+        users: [User]
     }
 
     type Message {
@@ -68,10 +69,10 @@ module.exports = typeDefs = `#graphql
         updateProfilePicture(userId: ID!, profilePicture: String!): User
 
         ## Post Mutations
-        createPost(userId: ID!, postImage: String!, title: String!, description: String!, bidPrice: String!, categoryIds: [ID], availability: PostAvailable): Post
+        createPost(userId: ID!, postImage: String!, title: String!, description: String!, bidPrice: Int!, categoryIds: [ID], availability: PostAvailable!): Post
         deletePost(postId: ID!): Post
         updatePost(postId: ID!, title: String, description: String, availability: PostAvailable): Post
-        updateBidPrice(postId: ID, bidPrice: String, bidderId: ID): Post
+        updateBidPrice(postId: ID!, bidPrice: Int!, topBidderId: ID): Post
 
         ## Category Mutations
         createCategory(categoryName: String): Category

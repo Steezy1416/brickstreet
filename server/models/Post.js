@@ -4,9 +4,9 @@ const PostSchema = new Schema({
     postImage: String,
     title: String,
     description: String,
-    bidPrice: String,
+    bidPrice: Number,
     userId: String,
-    bidderIds: [String],
+    topBidderId: String,
     categoryIds: [String],
     availability: String,
     createdAt: String
