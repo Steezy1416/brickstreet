@@ -1,39 +1,98 @@
-import React, {useState} from 'react';
-import Hero from './components/Hero';
+import React from 'react';
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+    ApolloClient,
+    InMemoryCache,
+    ApolloProvider,
+    createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+
+
+import Login from './pages/Login';
+import Signup from './pages/Register';
+import Home from './pages/Home'
+import About from './pages/About'
+import Products from './pages/Products'
+import FAQ from './pages/FAQ'
+import Contact from './pages/Contact'
+import UserDashboard from './pages/UserDashboard'
 import Nav from './components/Nav';
-import Login from './components/Login';
 import Footer from './components/Footer';
-import MessagePage from './components/MessagePage';
+
+
+const httpLink = createHttpLink({
+    uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+    const token = localStorage.getItem('id_token');
+    return {
+        headers: {
+            ...headers,
+            authorization: token ? `Bearer ${token}` : '',
+        },
+    };
+});
+
+const client = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache(),
+});
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('MessagePage');
-
-  function renderPage() {
-    // this is for the landing page
-    if (currentPage === 'Hero') {
-      return <Hero></Hero>
-    }
-
-    if (currentPage === 'Login') {
-      return <Login></Login>
-    }
-
-    if (currentPage === 'MessagePage') {
-      return <MessagePage></MessagePage>
-    }
-
-  }
-
-  return (
-    <div>
-      <Nav setCurrentPage={setCurrentPage}></Nav>
-      <main>
-      { renderPage }
-      {/* <MessagePage></MessagePage> */}
-      </main>
-      <Footer></Footer>
-    </div>
-  )
+    return (
+        <ApolloProvider client={client}>
+            <Router>
+                <div className="flex-column justify-flex-start min-100-vh">
+                    <Nav />
+                    <div className="container">
+                        <Routes>
+                            <Route
+                                path="/"
+                                element={<Home />}
+                            />
+                            <Route
+                                path="/login"
+                                element={<Login />}
+                            />
+                            <Route
+                                path="/register"
+                                element={<Signup />}
+                            />
+                            <Route
+                                path="/About"
+                                element={<About />}
+                            />
+                            <Route
+                                path="/Products"
+                                element={<Products />}
+                            />
+                            <Route
+                                path="/FAQ"
+                                element={<FAQ />}
+                            />
+                            <Route
+                                path="/Contact"
+                                element={<Contact />}
+                            />
+                            <Route
+                                path="/UserDashboard"
+                                element={<UserDashboard />}
+                            />
+                            {/* <Route
+                                path="*"
+                                element={<NoMatch />}
+                            /> */}
+                        </Routes>
+                    </div>
+                    <Footer />
+                </div>
+            </Router>
+        </ApolloProvider>
+    );
 }
 
 export default App;
