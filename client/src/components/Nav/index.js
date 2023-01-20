@@ -7,7 +7,7 @@ function Nav() {
             <nav className='navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button navbar-custom-css'>
                 <div className='container nav-container-custom-css'>
                     <div>
-                        <a className='navbar-brand' href='#home-placeholder-link'>
+                        <a className='navbar-brand' href='/'>
                             Brick Street
                         </a>
                     </div>
