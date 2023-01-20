@@ -233,10 +233,10 @@ body {
   justify-content: flex-end;
   background: #007aff;
   color: rgb(255, 247, 247);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
   padding: .5em;
   margin-left: 3em;
   margin-bottom: 1em;
@@ -246,10 +246,10 @@ body {
   justify-content: flex-start;
   background: #ededed;
   color: #000000;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
   padding: .5em;
   margin-right: 3em;
   margin-bottom: 1em;
@@ -266,6 +266,11 @@ body {
 .compose-input {
   flex: 1 1;
   height: 3em;
+}
+
+.active {
+  background-color: #007aff !important;
+  border-color: #007aff !important;
 }
 
 /* ========== END MESSAGES PAGE STYLES ========== */
