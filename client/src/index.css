@@ -2,6 +2,10 @@
 /* font-family: 'Comfortaa', cursive;
 font-family: 'Montserrat', sans-serif; */
 
+/* * {
+  border: blue dotted;
+} */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -60,7 +64,7 @@ body {
 
 /* TODO: use clamp to make brand text responsive */
 .navbar-brand {
-  font-size: 25px;
+  font-size: inherit;
 }
 
 #container-for-nav-links {
@@ -128,6 +132,11 @@ body {
   background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(19, 19, 19), rgb(235, 235, 235), rgb(255, 255, 255));
 }
 
+.new-msg-btn {
+  display: flex;
+  font-size: inherit;
+}
+
 /* ========== END BUTTON STYLES ========== */
 
 /* ========== START HERO STYLES ========== */
@@ -181,11 +190,86 @@ body {
 
 /* ========== END LOGIN PAGE STYLES ========== */
 
+/* ========== START MESSAGES PAGE STYLES ========== */
+.msgs-div {
+  height: auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.msg-pg-title {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.containerForTitle {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: sticky; */
+  top: 0;
+}
+
+.messageListContainer {
+  padding: 10px 10px;
+}
+
+.timestamp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.messageBubbleContainer {
+  display: flex;
+}
+
+.mine {
+  justify-content: flex-end;
+  background: #007aff;
+  color: rgb(255, 247, 247);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: .5em;
+  margin-left: 3em;
+  margin-bottom: 1em;
+}
+
+.theirs {
+  justify-content: flex-start;
+  background: #ededed;
+  color: #000000;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: .5em;
+  margin-right: 3em;
+  margin-bottom: 1em;
+}
+
+.writeMessage {
+  display: flex;
+  align-items: center;
+  /* position: fixed; */
+  width: 100%;
+  /* height: 5em; */
+}
+
+.compose-input {
+  flex: 1 1;
+  height: 3em;
+}
+
+/* ========== END MESSAGES PAGE STYLES ========== */
+
 /* ========== START FOOTER STYLES ========== */
 
 .footer-text-styles {
   font-family: 'Comfortaa', cursive;
 }
-
 
 /* ========== END FOOTER STYLES ========== */
