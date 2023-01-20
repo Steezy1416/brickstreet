@@ -1,13 +1,12 @@
+// JT
+
 import React from 'react';
-import './App.css';
+import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
-    ApolloClient,
-    InMemoryCache,
-    ApolloProvider,
-    createHttpLink,
+    ApolloProvider
 } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+// import { setContext } from '@apollo/client/link/context';
 
 
 
@@ -23,19 +22,19 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 
 
-const httpLink = createHttpLink({
-    uri: '/graphql',
-});
+// const httpLink = createHttpLink({
+//     uri: '/graphql',
+// });
 
-const authLink = setContext((_, { headers }) => {
-    const token = localStorage.getItem('id_token');
-    return {
-        headers: {
-            ...headers,
-            authorization: token ? `Bearer ${token}` : '',
-        },
-    };
-});
+// const authLink = setContext((_, { headers }) => {
+//     const token = localStorage.getItem('id_token');
+//     return {
+//         headers: {
+//             ...headers,
+//             authorization: token ? `Bearer ${token}` : '',
+//         },
+//     };
+// });
 
 const client = new ApolloClient({
     link: authLink.concat(httpLink),
@@ -44,9 +43,10 @@ const client = new ApolloClient({
 
 function App() {
     return (
+        
         <ApolloProvider client={client}>
             <Router>
-                <div className="flex-column justify-flex-start min-100-vh">
+                <div>
                     <Nav />
                     <div className="container">
                         <Routes>
