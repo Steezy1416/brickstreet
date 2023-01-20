@@ -1,31 +1,30 @@
-const dotenv = require('dotenv')
-const db = require('./db')
+const { ApolloServer } = require("@apollo/server")
+const { expressMiddleware } = require("@apollo/server/express4")
 const express = require("express")
 const cors = require("cors")
-const cookieParser = require("cookie-parser")
+const { json } = require("express")
+const db = require("./config/connection")
+const { typeDefs, resolvers } = require("./schema")
 
-//Require routes
-const authLogin = require('./router/authRouter')
-
-// CREATE OUR SERVER
-dotenv.config()
-const PORT = process.env.PORT || 4100;
 const app = express()
 
-// SETUP THE MIDDLEWARE
-app.use(express.urlencoded({ extended: true }))
-app.use(cors({
-    origin: ["http://localhost:3000"],
-    credentials: true
-}))
-app.use(express.json())
-app.use(cookieParser())
+const PORT = process.env.PORT || 4000
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+})
 
-// SETUP OUR OWN ROUTERS AS MIDDLEWARE
-app.use("/api", authLogin)
+const startServer = async () => {
 
-// INITIALIZE OUR DATABASE OBJECT
-db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+    await server.start()
 
-// PUT THE SERVER IN LISTENING MODE
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+    app.use("/graphql", cors(), json(), expressMiddleware(server))
+
+    db.once("open", () => {
+        app.listen(PORT, () => {
+            console.log(`🚀 Server ready at http://localhost:4000/graphql`);
+        })
+    })
+}
+
+startServer()
