@@ -1,60 +1,97 @@
-import React from 'react';
-// TODO: update placeholder links in nav bar
+import React, { useState } from 'react';
 
-function Nav() {
+
+
+// TODO: update placeholder links in nav bar
+// TODO: Home, About, component not created yet...
+
+function Nav(props) {
+
+    const [currentComponent, setCurrentComponent] = useState('MessagePage')
+
     return (
         <header>
             <nav className='navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button navbar-custom-css'>
                 <div className='container nav-container-custom-css'>
                     <div>
-                        <a className='navbar-brand' href='#home-placeholder-link'>
-                            Brick Street
-                        </a>
+                        <h1>
+                            <a className='navbar-brand' href='#home-placeholder-link'>
+                                Brick Street
+                            </a>
+                        </h1>
                     </div>
-                    <div id='container-for-nav-links' className='row'>
-                        <ul className='col navbar-nav nav-right'>
-                            <li className='nav-item'>
-                                <a className='nav-link nav-link-custom-css' href='#home-placeholder-link'>
+                    
+                    <div id='container-for-nav-links' className='row' >
+                        <ul className='col navbar-nav'>
+                            <li className='nav-item nav-link-custom-css'>
+                            {currentComponent === 'Home' ? (
+                                <a className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} href='#home-placeholder-link'>
                                     Home
                                 </a>
-                            </li>
-                            {/* TODO: add dropdown functionality to dropdown menu */}
-                            <li className='nav-item dropdown'>
-                                <a className='dropdown-toggle nav-link nav-link-custom-css' aria-expanded="false" data-bs-toggle="dropdown" href='#products-placeholder-link'>
-                                    Products
+                            ) : (
+                                <a className='nav-link' style={{ background: 'transparent' }}href='#home-placeholder-link' onClick={() => {
+                                    setCurrentComponent('Home')
+                                    props.setCurrentPage('Home')
+                                }}>
+                                    Home
                                 </a>
-                                <div className='dropdown-menu'>
-                                    <a className='dropdown-item' href='#legosets-placeholder-link'>
-                                        Lego Sets
-                                    </a>
-                                    <a className='dropdown-item' href='#placeholder-link'>
-                                        Minifigures
-                                    </a>
-                                    <a className='dropdown-item' href='#cat3-placeholder-link'>
-                                        Category 3
-                                    </a>
-                                    <a className='dropdown-item' href='#cat4-placeholder-link'>
-                                        Category 4
-                                    </a>
-                                    <a className='dropdown-item' href='#cat5-placeholder-link'>
-                                        Category 5
-                                    </a>
-                                </div>
+                            )}
                             </li>
                             <li className='nav-item nav-link-custom-css'>
-                                <a className='nav-link' href='#about-placeholder-link'>
+                            {currentComponent === 'About' ? (
+                                <a className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} href='#about-placeholder-link'>
                                     About
                                 </a>
+                            ) : (
+                                <a className='nav-link' style={{ background: 'transparent' }}href='#about-placeholder-link' onClick={() => {
+                                    setCurrentComponent('About')
+                                    props.setCurrentPage('About')
+                                }}>
+                                    About
+                                </a>
+                            )}
                             </li>
                             <li className='nav-item nav-link-custom-css'>
-                                <a className='nav-link' href='#faq-placeholder-link'>
-                                    FAQ
+                            {currentComponent === 'MessagePage' ? (
+                                <a className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} href='#messagepage-placeholder-link'>
+                                    Messages
                                 </a>
+                            ) : (
+                                <a className='nav-link' style={{ background: 'transparent' }}href='#messagepage-placeholder-link' onClick={() => {
+                                    setCurrentComponent('MessagePage')
+                                    props.setCurrentPage('MessagePage')
+                                }}>
+                                    Messages
+                                </a>
+                            )}
                             </li>
                             <li className='nav-item nav-link-custom-css'>
-                                <a className='nav-link' href='#contact-placeholder-link'>
-                                    Contact
+                            {currentComponent === 'Post' ? (
+                                <a className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} href='#post-placeholder-link'>
+                                    Post
                                 </a>
+                            ) : (
+                                <a className='nav-link' style={{ background: 'transparent' }}href='#post-placeholder-link' onClick={() => {
+                                    setCurrentComponent('Post')
+                                    props.setCurrentPage('Post')
+                                }}>
+                                    Post
+                                </a>
+                            )}
+                            </li>
+                            <li className='nav-item nav-link-custom-css'>
+                            {currentComponent === 'Account' ? (
+                                <a className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} href='#account-placeholder-link'>
+                                    Account
+                                </a>
+                            ) : (
+                                <a className='nav-link' style={{ background: 'transparent' }}href='#account-placeholder-link' onClick={() => {
+                                    setCurrentComponent('Account')
+                                    props.setCurrentPage('Account')
+                                }}>
+                                    Account
+                                </a>
+                            )}
                             </li>
                         </ul>
                         <div className='col'>
@@ -63,7 +100,7 @@ function Nav() {
                                     Log In
                                 </a>
                                 <button className="btn btn-moving-gradient btn-moving-gradient--orange">
-                                     Sign Up 
+                                    Sign Up
                                 </button>
                             </p>
                         </div>
