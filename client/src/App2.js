@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import MessagePage from './components/MessagePage';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('MessagePage');
+  const [currentPage, setCurrentPage] = useState('');
 
   function renderPage() {
     // this is for the landing page

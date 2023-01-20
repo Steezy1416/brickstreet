@@ -91,6 +91,10 @@ body {
   text-decoration: none;
 }
 
+.register {
+  text-decoration: none;
+}
+
 .nav-login-custom-css {
   color: rgba(224, 217, 217, 0.9);
 }

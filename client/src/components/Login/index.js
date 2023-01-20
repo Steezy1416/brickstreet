@@ -21,7 +21,8 @@ function Login() {
                                 <form className="text-center" method="post">
                                     <div className="mb-3"><input className="form-control" type="email" name="email" placeholder="Email" /></div>
                                     <div className="mb-3"><input className="form-control" type="password" name="password" placeholder="Password" /></div>
-                                    <div className="mb-3"><button className="btn btn-dark d-block w-100" type="submit">Login</button></div>
+                                    <div className="mb-3"><button className="btn btn-dark d-block w-100" type="submit">Log In</button></div>
+                                    {/* TODO: work with back end to update password */}
                                     <p className="text-muted">Forgot your password?</p>
                                 </form>
                             </div>
