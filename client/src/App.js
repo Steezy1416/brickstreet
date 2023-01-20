@@ -29,7 +29,7 @@ function App() {
       <Nav setCurrentPage={setCurrentPage}></Nav>
       <main>
       { renderPage }
-      {/* <MessagePage></MessagePage> */}
+      <MessagePage></MessagePage>
       </main>
       <Footer></Footer>
     </div>

@@ -1,17 +1,25 @@
 const { ApolloServer } = require("@apollo/server")
 const { expressMiddleware } = require("@apollo/server/express4")
+const { createServer } = require("http")
+const { Server } = require("socket.io")
 const express = require("express")
 const cors = require("cors")
 const { json } = require("express")
 const db = require("./config/connection")
 const { typeDefs, resolvers } = require("./schema")
 
-const app = express()
-
 const PORT = process.env.PORT || 4000
 const server = new ApolloServer({
     typeDefs,
-    resolvers,
+    resolvers
+})
+
+const app = express()
+const httpServer = createServer(app)
+const io = new Server(httpServer)
+
+io.on("connection", (socket) => {
+    console.log(socket.id)
 })
 
 const startServer = async () => {
@@ -21,7 +29,7 @@ const startServer = async () => {
     app.use("/graphql", cors(), json(), expressMiddleware(server))
 
     db.once("open", () => {
-        app.listen(PORT, () => {
+        httpServer.listen(PORT, () => {
             console.log(`🚀 Server ready at http://localhost:4000/graphql`);
         })
     })
