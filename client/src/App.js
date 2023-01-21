@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Landing from './pages/Landing';
 import AllPosts from './components/AllPosts';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path='/home' element={<Home />}>
               <Route path=':categoryName' element={<Home />} />
             </Route>
+            <Route path='/profile/:id' element={<Profile />} />
           </Routes>
         </main>
         <Footer></Footer>

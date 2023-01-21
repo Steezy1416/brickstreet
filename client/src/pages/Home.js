@@ -1,30 +1,36 @@
 import React from 'react';
+
 import { useQuery } from '@apollo/client';
+import { QUERY_POSTS } from "../utils/queries";
+
 import AllPosts from '../components/AllPosts';
-import { QUERY_CATEGORIES } from '../utils/queries';
+import Categories from '../components/Categories';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+    const { loading, error, data } = useQuery(QUERY_POSTS);
+    const posts = data?.getPosts || [];
+    
+    if (loading) {
+        return (
+            <div>Loading ...</div>
+        )
+    }
 
-    const { loading, data } = useQuery(QUERY_CATEGORIES);
-    const categories = data?.getCategories || [];
-
+    if (error) {
+        return (
+            <p>{error.message}</p>
+        )
+    }
     return (
         <main>
             <h1>Welcome!</h1>
             <h3>On this page, you can find all available sets</h3>
             <div>
-                <h4>Categories</h4>
-                <Link to={`/home`}>All</Link>
-
-                {categories.map(category => (
-                    <div key={category.id}>
-                        <Link to={`/home/${category.categoryName}`}>{category.categoryName}</Link>
-                    </div>
-                ))}
+                <Categories />
             </div>
             <div>
-                <AllPosts />
+                <AllPosts posts={posts}/>
             </div>
 
         </main >

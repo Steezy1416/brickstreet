@@ -38,25 +38,26 @@ export const QUERY_POST = gql`
 `;
 
 export const QUERY_USER = gql`
-    query getUser($id:ID!) {
-        getUser(id:$id){
-            id
-            name
-            posts {
-                id
-                user
-                topBidder
-                postImage
-                title
-                description
-                bidPrice
-                categories
-                availability
-                createdAt
-            }
-            profilePicture
+query GetUser($getUserId: ID!) {
+    getUser(id: $getUserId) {
+      id
+      name
+      posts {
+        id
+        postImage
+        title
+        bidPrice
+        availability
+        description
+        createdAt
+        user {
+          id
+          name
         }
+      }
+      profilePicture
     }
+  }
 `
 
 export const QUERY_CATEGORIES = gql`

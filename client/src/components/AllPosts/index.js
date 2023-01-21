@@ -16,7 +16,7 @@ const AllPosts = ({ posts }) => {
                         <p>Bid: {post.bidPrice}</p>
                         <p>Seller:
                             {' '}
-                            <Link to={`/profile/${post.user.name}`}>{post.user.name}</Link>
+                            <Link to={`/profile/${post.user.id}`}>{post.user.name}</Link>
                         </p>
                     </div>
 
