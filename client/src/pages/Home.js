@@ -5,12 +5,34 @@ import { QUERY_POSTS } from "../utils/queries";
 
 import AllPosts from '../components/AllPosts';
 import Categories from '../components/Categories';
-import { Link } from 'react-router-dom';
+
+import { Link, useParams } from 'react-router-dom';
 
 const Home = () => {
     const { loading, error, data } = useQuery(QUERY_POSTS);
     const posts = data?.getPosts || [];
-    
+
+    let { categoryName } = useParams();
+
+    const filterPosts = (posts) => {
+        if (categoryName === 'all') {
+            return posts;
+        }
+        const res = []
+        posts.forEach(post => post.categories.filter(cat => {
+
+            if (cat.categoryName === categoryName) {
+                res.push(post)
+            };
+
+        }
+        )
+        );
+        console.log(res)
+
+        return res;
+    }
+
     if (loading) {
         return (
             <div>Loading ...</div>
@@ -30,7 +52,7 @@ const Home = () => {
                 <Categories />
             </div>
             <div>
-                <AllPosts posts={posts}/>
+                <AllPosts posts={filterPosts(posts)} />
             </div>
 
         </main >
