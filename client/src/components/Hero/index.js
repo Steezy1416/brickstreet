@@ -11,14 +11,14 @@ function Hero() {
                             <div>
                                 <h1 className="hero-text-styles text-uppercase fw-bold mb-3">Rediscover the fun of building with Brick Street</h1>
                                 <p className="hero-text-styles mb-4">Buy and Sell Legos<br />Connect with Lego Enthusiasts</p>
-                                
+
                                 <button className="btn fs-5 me-2 py-2 px-4 btn-moving-gradient btn-moving-gradient--black">
-                                     Log In
+                                <a className='login' href='/login'>Log In</a>
                                 </button>
                                 <button className="btn fs-5 me-2 py-2 px-4 btn-moving-gradient btn-moving-gradient--orange">
-                                     Sign Up 
+                                    <a className='register' href='/register'>Sign Up</a>
                                 </button>
-                                
+
                             </div>
                         </div>
                     </div>

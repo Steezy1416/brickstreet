@@ -91,8 +91,17 @@ body {
   text-decoration: none;
 }
 
-.register {
+.register, .login {
   text-decoration: none;
+  color: white;
+}
+
+.register:hover {
+  color: white;
+}
+
+.login:hover {
+  color: black;
 }
 
 .nav-login-custom-css {
@@ -231,7 +240,7 @@ body {
 
 .mine {
   justify-content: flex-end;
-  background: #007aff;
+  background: #0e7c7b;
   color: rgb(255, 247, 247);
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -269,8 +278,8 @@ body {
 }
 
 .active {
-  background-color: #007aff !important;
-  border-color: #007aff !important;
+  background-color: #0e7c7b !important;
+  border-color: #0e7c7b !important;
 }
 
 /* ========== END MESSAGES PAGE STYLES ========== */
