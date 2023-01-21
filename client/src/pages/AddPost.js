@@ -7,9 +7,7 @@ const AddPost = () => {
     name: "",
     //userId: _id,
     description: "",
-    condition: "",
     price: "",
-    sellerShippingCost: "10",
     category: "",
     formData: new FormData(),
   });
@@ -18,9 +16,7 @@ const AddPost = () => {
     const {
         name,
         description,
-        condition,
         price,
-        sellerShippingCost,
         category,
         formData,
         type
@@ -52,17 +48,16 @@ const AddPost = () => {
                 Category
               </label>
             <div className="">
-                <select
-                  id="category"
-                  name="category"
-                  className=""
-                >
-                  <option> Please Select </option>
-                  <option value="harryPotter">HarryPotter </option>
-                  <option value="cars">Car</option>
-                  <option value="architecture">Architecture</option>
-                  <option value="other"> Other</option>
-                </select>
+                <select class="select" multiple>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+  <option value="4">Four</option>
+  <option value="5">Five</option>
+  <option value="6">Six</option>
+  <option value="7">Seven</option>
+  <option value="8">Eight</option>
+</select>
               </div>
             </div>
 
@@ -84,29 +79,6 @@ const AddPost = () => {
               </div>
             </div>
 
-        {/*CONDITION BOX*/}
-        <div className="">
-              <label className="">
-                Condition
-              </label>
-
-              <div className="">
-                <select
-                  id="condition"
-                  onChange={handleChange("condition")}
-                  value={condition}
-                  name="condition" 
-                  className=""
-                >
-
-                  <option> Please Select </option>
-                  <option value="New with box">New with box</option>
-                  <option value="New without box">New without box</option>
-                  <option value="New with defects">New with defects</option>
-                  <option value="Pre-owned">Pre-owned</option>
-                </select>
-              </div>
-            </div>
 
         {/* DISCRIPTION BOX*/}
         <div className="">
@@ -129,70 +101,10 @@ const AddPost = () => {
               </p>
         </div>
 
-        {/* SHIPPING */}
-        <div>
-            <div className="">
-              <h3 className=""> Shipping </h3>
-            </div>
-
-                    <div className="flex items-center">
-                      <input
-                        id=""
-                        name=""
-                        onChange={handleChange("who_pays")}
-                        value={""}
-                        type="radio"
-                        className=""
-                      />
-                      <label
-                        className=""
-                      >
-                        Set Shipping Price
-                      </label>
-                    </div>
-
-                    <div className="">
-                      <input
-                        id=""
-                        name=""
-                        onChange={handleChange("who_pays")}
-                        value={""}
-                        type="radio"
-                        className=""
-                      />
-                      <label className="">
-                        Provide Free Shipping
-                      </label>
-                    </div>
-
-        <div className='w-1/2'>
-            <p className="mt-4">
-                Shipping Cost
-            </p>
-            <div className="">
-                    <span className="">$</span>
-                </div>
-                <input
-                    type="number"
-                    min='0.00'
-                    max='100000.00'
-                    step='1.00'
-                    name="price"
-                    id="price"
-                    className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
-                    placeholder="10.00"
-                    aria-describedby="price-currency"
-                    value={sellerShippingCost}
-                    onChange={handleChange('sellerShippingCost')}
-                />
-
-                <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                    <span className="text-gray-500 sm:text-sm" id="price-currency">
-                        USD
-                    </span>
-                </div>
-
-            </div>
+        {/* PICTURE UPLOAD*/}
+        <div class="input-group mb-3">
+          <input type="file" class="form-control" id="inputGroupFile02"></input>
+          <label class="input-group-text" for="inputGroupFile02">Upload</label>
         </div>
 
 
