@@ -285,7 +285,11 @@ body {
 /* ========== END MESSAGES PAGE STYLES ========== */
 
 /* ========== START FOOTER STYLES ========== */
-
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 .footer-text-styles {
   font-family: 'Comfortaa', cursive;
 }

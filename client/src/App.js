@@ -9,6 +9,7 @@ import Signup from './pages/Register';
 import Home from './pages/Home';
 import About from './pages/About';
 import Post from './pages/Post'
+import AddPost from './pages/AddPost.js';
 // import FAQ from './pages/FAQ';
 // import Contact from './pages/Contact';
 import UserDashboard from './pages/UserDashboard';
@@ -65,7 +66,7 @@ function App() {
                             />
                             <Route
                                 path="/post"
-                                element={<Post />}
+                                element={<AddPost />}
                             />
                             <Route
                                 path="/dashboard"
