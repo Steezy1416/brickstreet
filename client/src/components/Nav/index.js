@@ -8,18 +8,28 @@ import { Link } from 'react-router-dom';
 
 function Nav(props) {
 
-    const [currentComponent, setCurrentComponent] = useState('')
+    const [currentComponent, setCurrentComponent] = useState('Hero')
 
     return (
         <header>
             <nav className='navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button navbar-custom-css'>
                 <div className='container nav-container-custom-css'>
                     <div>
-                        <h1>
+                    <h1>
                             {/* THIS TAKES THE USER TO THE LANDING PAGE AND DISPLAYS THE HERO */}
-                            <Link className='navbar-brand' to='/'>
-                                Brick Street
-                            </Link>
+                            {currentComponent === 'Hero' ? (
+                                <Link className='navbar-brand' style={{ color: 'rgb(255, 179, 0)' }} to='/'>
+                                    Brick Street
+                                </Link>
+                            ) : (
+                                <Link className='navbar-brand' style={{ background: 'transparent' }} to='/' onClick={() => {
+                                    // console.log('onClick')
+                                    setCurrentComponent('Hero')
+                                    // props.setCurrentPage('Hero')
+                                }}>
+                                    Brick Street
+                                </Link>
+                            )}
                         </h1>
                     </div>
                     <div className='row collapse navbar-collapse container-for-nav-links navMenu' id="navbarNav">
