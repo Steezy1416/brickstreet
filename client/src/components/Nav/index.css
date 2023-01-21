@@ -1,0 +1,23 @@
+.nav-container {
+    background:#a54c02;
+}
+nav {
+    display:flex;
+    align-items: center;
+    padding: 15px 10px;
+}
+.brand-name{
+    font-size:25px;
+    font-weight: 700;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    
+}
+.nav-menu ul li{
+    margin-left:25px;
+    font-size:18px;
+    color:white
+}
