@@ -1,18 +1,36 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useQuery } from "@apollo/client";
+import { QUERY_POSTS } from "../../utils/queries";
 
-const AllPosts = ({posts}) => {
+const AllPosts = () => {
+
+    const { loading, error, data } = useQuery(QUERY_POSTS);
+
+    const posts = data?.getPosts || [];
+
+    if (loading) {
+        return (
+            <p>LOADING</p>
+        )
+    }
+
+    if (error) {
+
+        return (
+            <p>{error.message}</p>
+        )
+    }
+
     return (
         <div>
-          <p>THESE ARE ALL THE POSTS</p>  
-          <p>PENDING POST SEED DATA</p>
             
             {posts && posts.map(post => (
-                <div key={post._id}>
-                    <p>{post.image}</p>
+                <div className="card" key={post.id}>
+                    <img height={150} width={150} src={`${post.postImage}`} alt={`${post.title}`}/>
                     <p>{post.title}</p>
-                    <p>{post.user}</p>
-                    <p>{post.bidPrice}</p>
+                    <p>Bid: {post.bidPrice}</p>
+                    <p>{post.user.name}</p>
                 </div>
             ))}
         </div>

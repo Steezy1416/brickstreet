@@ -1,19 +1,25 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_POSTS = gql`
-    query getPosts {
-        id
-        user
-        topBidder
-        postImage
-        title
-        description
-        bidPrice
-        categories
+    query Query {
+        getPosts {
         availability
-        createdAt
+        id
+        title
+        bidPrice
+        categories {
+            categoryName
+            id
+        }
+        user {
+            id
+            name
+        }
+        postImage
     }
+  }
 `
+
 export const QUERY_POST = gql`
     query getPost($id:ID!) {
         getPost(id:$id) {

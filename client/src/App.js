@@ -9,19 +9,12 @@ import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import Landing from './pages/Landing';
+import AllPosts from './components/AllPosts';
 
-const httpLink = createHttpLink({
-  uri: '/graphql'
-});
-
-const client = new ApolloClient({
-  link: httpLink,
-  cache: new InMemoryCache(),
-});
 
 function App() {
   return (
-    <ApolloProvider client={client}>
+
       <Router>
         <div>
           <Nav></Nav>
@@ -30,15 +23,12 @@ function App() {
             <Routes>
             <Route path='/' element={<Landing />} />
 
-              <Route path='/home' element={<Home />} />
+              <Route path='/home' element={<Home/>} />
             </Routes>
           </main>
           <Footer></Footer>
         </div>
       </Router>
-
-    </ApolloProvider>
-
   )
 }
 
