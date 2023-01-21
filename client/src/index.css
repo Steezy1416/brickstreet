@@ -2,9 +2,9 @@
 /* font-family: 'Comfortaa', cursive;
 font-family: 'Montserrat', sans-serif; */
 
-/* * {
+* {
   border: blue dotted;
-} */
+}
 
 body {
   margin: 0;
@@ -187,6 +187,16 @@ body {
 }
 
 /* ========== END HERO STYLES ========== */
+
+/* ========== START LANDING PAGE STYLES ========== */
+.placehoderLandingPagePic {
+  background-image: url('./assets/alphacolor-ipmwlGIXzcw-unsplash.jpg');
+  background-size: cover;
+  background-position: bottom;
+  min-height: 50vh;
+}
+
+/* ========== END LANDING PAGE STYLES ========== */
 
 /* ========== START LOGIN PAGE STYLES ========== */
 
