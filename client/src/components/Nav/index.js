@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -16,102 +17,102 @@ function Nav(props) {
                     <div>
                         <h1>
                             {/* THIS TAKES THE USER TO THE LANDING PAGE AND DISPLAYS THE HERO */}
-                            <a className='navbar-brand' href='/'>
+                            <Link className='navbar-brand' to='/'>
                                 Brick Street
-                            </a>
+                            </Link>
                         </h1>
                     </div>
-                    
-                    <div id='container-for-nav-links' className='row' >
+                    <div className='row collapse navbar-collapse container-for-nav-links navMenu' id="navbarNav">
                         <ul className='col navbar-nav'>
                             <li className='nav-item nav-link-custom-css'>
                                 {/* THIS NAV BAR LINK WILL TAKE THE USER TO THE HOME PAGE AND WILL DISPLAY ALL POSTS (ALECIA IS WORKING ON THIS PAGE/COMPONENT)
                                 TODO: UPDATE THE HREF ONCE SHE FINISHES */}
-                            {currentComponent === 'Home' ? (
-                                <a className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} href='/home'>
-                                    Home
-                                </a>
-                            ) : (
-                                <a className='nav-link' style={{ background: 'transparent' }}href='/home' onClick={() => {
-                                    setCurrentComponent('Home')
-                                    props.setCurrentPage('Home')
-                                }}>
-                                    Home
-                                </a>
-                            )}
+                                {currentComponent === 'Home' ? (
+                                    <Link className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} to='/home'>
+                                        Home
+                                    </Link>
+                                ) : (
+                                    <Link className='nav-link' style={{ background: 'transparent' }} to='/home' onClick={() => {
+                                        // console.log('onClick')
+                                        setCurrentComponent('Home')
+                                        // props.setCurrentPage('Home')
+                                    }}>
+                                        Home
+                                    </Link>
+                                )}
                             </li>
                             <li className='nav-item nav-link-custom-css'>
                                 {/* THIS NAV BAR LINK WILL TAKE THE USER TO THE ABOUT PAGE (PABLO IS WORKING ON THIS PAGE/COMPONENT)
                                 TODO: UPDATE THE HREF ONCE HE FINISHES  */}
-                            {currentComponent === 'About' ? (
-                                <a className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} href='/about'>
-                                    About
-                                </a>
-                            ) : (
-                                <a className='nav-link' style={{ background: 'transparent' }}href='/about' onClick={() => {
-                                    setCurrentComponent('About')
-                                    props.setCurrentPage('About')
-                                }}>
-                                    About
-                                </a>
-                            )}
+                                {currentComponent === 'About' ? (
+                                    <Link className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} to='/about'>
+                                        About
+                                    </Link>
+                                ) : (
+                                    <Link className='nav-link' style={{ background: 'transparent' }} to='/about' onClick={() => {
+                                        setCurrentComponent('About')
+                                        // props.setCurrentPage('About')
+                                    }}>
+                                        About
+                                    </Link>
+                                )}
                             </li>
                             <li className='nav-item nav-link-custom-css'>
                                 {/* THIS NAV BAR LINK WILL TAKE THE USER TO THE MESSAGES PAGE AND WILL DISPLAY ALL MESSAGES BETWEEN THE USER AND OTHER USERS (FIDEL IS GOING TO UPDATE THE PAGE/COMPONENT AND ALEX IS GOING TO INTEGRATE THE BACKEND WITH IT)
                                 TODO: UPDATE THE HREF ONCE THEY FINISH */}
-                            {currentComponent === 'MessagePage' ? (
-                                <a className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} href='/messages'>
-                                    Messages
-                                </a>
-                            ) : (
-                                <a className='nav-link' style={{ background: 'transparent' }}href='/messages' onClick={() => {
-                                    setCurrentComponent('MessagePage')
-                                    props.setCurrentPage('MessagePage')
-                                }}>
-                                    Messages
-                                </a>
-                            )}
+                                {currentComponent === 'MessagePage' ? (
+                                    <Link className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} to='/messages'>
+                                        Messages
+                                    </Link>
+                                ) : (
+                                    <Link className='nav-link' style={{ background: 'transparent' }} to='/messages' onClick={() => {
+                                        setCurrentComponent('MessagePage')
+                                        // props.setCurrentPage('MessagePage')
+                                    }}>
+                                        Messages
+                                    </Link>
+                                )}
                             </li>
                             <li className='nav-item nav-link-custom-css'>
                                 {/* THIS NAV BAR LINK WILL TAKE THE USER TO THE POST PAGE SO THEY CAN CREATE A POST (ALECIA IS WORKING ON THIS PAGE/COMPONENT)
                                 TODO: UPDATE THE HREF ONCE SHE FINISHES */}
-                            {currentComponent === 'Post' ? (
-                                <a className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} href='/post'>
-                                    Post
-                                </a>
-                            ) : (
-                                <a className='nav-link' style={{ background: 'transparent' }}href='/post' onClick={() => {
-                                    setCurrentComponent('Post')
-                                    props.setCurrentPage('Post')
-                                }}>
-                                    Post
-                                </a>
-                            )}
+                                {currentComponent === 'Post' ? (
+                                    <Link className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} to='/post'>
+                                        Post
+                                    </Link>
+                                ) : (
+                                    <Link className='nav-link' style={{ background: 'transparent' }} to='/post' onClick={() => {
+                                        setCurrentComponent('Post')
+                                        // props.setCurrentPage('Post')
+                                    }}>
+                                        Post
+                                    </Link>
+                                )}
                             </li>
                             <li className='nav-item nav-link-custom-css'>
                                 {/* THIS NAV BAR LINK WILL TAKE THE USER TO THEIR DASHBOARD AND WILL DISPLAY ALL POSTS THAT BELONG TO THEM (JOSH IS WORKING ON THIS PAGE/COMPONENT)
                                 TODO: UPDATE THE HREF ONCE HE FINISHES */}
-                            {currentComponent === 'UserDashboard' ? (
-                                <a className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} href='/dashboard'>
-                                    Account
-                                </a>
-                            ) : (
-                                <a className='nav-link' style={{ background: 'transparent' }}href='/dashboard' onClick={() => {
-                                    setCurrentComponent('UserDashboard')
-                                    props.setCurrentPage('UserDashboard')
-                                }}>
-                                    Account
-                                </a>
-                            )}
+                                {currentComponent === 'UserDashboard' ? (
+                                    <Link className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} to='/dashboard'>
+                                        Account
+                                    </Link>
+                                ) : (
+                                    <Link className='nav-link' style={{ background: 'transparent' }} to='/dashboard' onClick={() => {
+                                        setCurrentComponent('UserDashboard')
+                                        // props.setCurrentPage('UserDashboard')
+                                    }}>
+                                        Account
+                                    </Link>
+                                )}
                             </li>
                         </ul>
-                        <div className='col'>
+                        <div className='col login-signup-mediaquery'>
                             <p className='ms-auto navbar-text actions login-signup-nav-links'>
-                                <a className='login nav-login-custom-css' href='/login'>
+                                <Link className='login nav-login-custom-css' to='/login'>
                                     Log In
-                                </a>
+                                </Link>
                                 <button className="btn btn-moving-gradient btn-moving-gradient--orange">
-                                    <a className='register' href='/register'>Sign Up</a>
+                                    <Link className='register' to='/register'>Sign Up</Link>
                                 </button>
                             </p>
                         </div>
@@ -123,3 +124,4 @@ function Nav(props) {
 }
 
 export default Nav;
+

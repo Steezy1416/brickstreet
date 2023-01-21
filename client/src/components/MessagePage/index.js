@@ -13,9 +13,9 @@ function MessagePage() {
                         <h2 className='col msg-pg-title'>Messages:</h2>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row msgs-div">
-                        <div class="col-md-4 all-msgs-div">
+                <div className="container">
+                    <div className="row msgs-div">
+                        <div className="col-md-4 all-msgs-div">
                             <ListGroup>
                                 <ListGroupItem active>
                                     <ListGroupItemHeading>
@@ -51,7 +51,7 @@ function MessagePage() {
                                 </ListGroupItem>
                             </ListGroup>
                         </div>
-                        <div class="col-md-8">
+                        <div className="col-md-8">
                             <ListGroup>
                                 <ListGroupItem>
                                     <div className='containerForTitle'>

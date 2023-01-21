@@ -67,7 +67,7 @@ body {
   font-size: inherit;
 }
 
-#container-for-nav-links {
+.container-for-nav-links {
   color: rgb(230, 230, 230);
   align-items: baseline;
 }
@@ -91,7 +91,8 @@ body {
   text-decoration: none;
 }
 
-.register, .login {
+.register,
+.login {
   text-decoration: none;
   color: white;
 }
@@ -107,6 +108,19 @@ body {
 .nav-login-custom-css {
   color: rgba(224, 217, 217, 0.9);
 }
+
+.navMenu {
+  text-align: right;
+}
+
+.navbar-nav {
+  justify-content: flex-end;
+}
+
+/* #navbarNav {
+  display: flex;
+  justify-content: flex-end;
+} */
 
 /* ========== END NAV STYLES ========== */
 
@@ -291,3 +305,13 @@ body {
 }
 
 /* ========== END FOOTER STYLES ========== */
+
+/* ========== START Media Queries STYLES ========== */
+
+@media (max-width: 992px) {
+  .login-signup-mediaquery {
+    display: none;
+  }
+}
+
+/* ========== END Media Queries STYLES ========== */
