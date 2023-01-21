@@ -15,20 +15,22 @@ import AllPosts from './components/AllPosts';
 function App() {
   return (
 
-      <Router>
-        <div>
-          <Nav></Nav>
+    <Router>
+      <div>
+        <Nav></Nav>
 
-          <main>
-            <Routes>
+        <main>
+          <Routes>
             <Route path='/' element={<Landing />} />
 
-              <Route path='/home' element={<Home/>} />
-            </Routes>
-          </main>
-          <Footer></Footer>
-        </div>
-      </Router>
+            <Route path='/home' element={<Home />}>
+              <Route path=':categoryName' element={<Home />} />
+            </Route>
+          </Routes>
+        </main>
+        <Footer></Footer>
+      </div>
+    </Router>
   )
 }
 
