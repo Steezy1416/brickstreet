@@ -10,39 +10,44 @@ const PrivacyPolicy = () => (
 <br />
     <br />
     <h5>Information We Collect:<br/></h5>
-
-Personal information, such as your name, address, phone number, and email address.
-Financial information, such as your credit card or banking information.
-Demographic information, such as your age, gender, and interests.
-Technical information, such as your IP address, browser type, and device type.
-Information about your usage of our services, such as the pages you visit and the content you view. <br />
+<dl>
+<dd>-Personal information, such as your name, address, phone number, and email address.</dd>
+<dd>-Financial information, such as your credit card or banking information.</dd>
+<dd>-Demographic information, such as your age, gender, and interests.</dd>
+<dd>-Technical information, such as your IP address, browser type, and device type.</dd>
+<dd>-Information about your usage of our services, such as the pages you visit and the content you view.</dd> <br />
+</dl>
 <br />
     <h5>How We Use Your Information: <br/></h5>
-
-To provide you with the products and services you have requested.
-To communicate with you regarding your account or transactions with us.
-To improve our products and services.
-To personalize your experience on our website or app.
-To send you promotional offers and information about our products and services. <br />
+<dl>
+<dd>-To provide you with the products and services you have requested.</dd>
+<dd>-To communicate with you regarding your account or transactions with us.</dd>
+<dd>-To improve our products and services.</dd>
+<dd>-To personalize your experience on our website or app.</dd>
+<dd>-To send you promotional offers and information about our products and services.</dd> <br />
+    </dl>
 <br />
     <h5>Sharing of Information:<br /></h5>
 
-We will not share your personal information with any third party without your consent, except as required by law or to protect our rights.
+-We will not share your personal information with any third party without your consent, except as required by law or to protect our rights.
     <br />
     <br />
     <h5>Security: <br /></h5>
-
-We take reasonable measures to protect your personal information from loss, misuse, and unauthorized access, disclosure, alteration, and destruction.<br />
-We use industry-standard encryption technologies to protect your sensitive information during transmission.<br />
-We regularly review and update our security protocols to ensure the protection of your personal information.<br />
+<dl>
+<dd>-We take reasonable measures to protect your personal information from loss, misuse, and unauthorized access, disclosure, alteration, and destruction.</dd>
+<dd>-We use industry-standard encryption technologies to protect your sensitive information during transmission.</dd>
+<dd>-We regularly review and update our security protocols to ensure the protection of your personal information.</dd>
+    </dl>
 <br />
     <h5>Changes to This Privacy Policy:<br /></h5>
 
-We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any changes by posting the updated policy on our website.<br />
-<br />
+    <dl>
+    <dd>-We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. </dd>
+    <dd>-We will notify you of any changes by posting the updated policy on our website.</dd><br />
+    </dl>
     <h5>Contact Us:<br /> </h5>
 
-If you have any questions or concerns about our Privacy Policy or the way we handle your personal information, please contact us at [contact information].<br />
+If you have any questions or concerns about our Privacy Policy or the way we handle your personal information, please contact us at <a href = "mailto: Support@BrickStreet.com">Support@BrickStreet.com</a><br />
 <br />
     <h5>Effective Date: January 22, 2023 <br /> </h5>
 
