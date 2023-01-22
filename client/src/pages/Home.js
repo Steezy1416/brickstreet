@@ -20,14 +20,10 @@ const Home = () => {
         }
         const res = []
         posts.forEach(post => post.categories.filter(cat => {
-
             if (cat.categoryName === categoryName) {
                 res.push(post)
             };
-
-        }
-        )
-        );
+        }));
         console.log(res)
 
         return res;

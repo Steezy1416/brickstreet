@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { CardGroup, Card, CardBody, CardTitle, CardSubtitle, CardText, CardImg } from 'reactstrap'
 import { useQuery } from "@apollo/client";
 
 import { useParams } from "react-router-dom";
@@ -8,20 +9,25 @@ const AllPosts = ({ posts }) => {
 
     return (
         <div>
-            {posts && posts.map(post => (
-                <div className="card" key={post.id}>
-                    <div className="card-body">
-                        <img height={150} width={150} src={`${post.postImage}`} alt={`${post.title}`} />
-                        <p>{post.title}</p>
-                        <p>Bid: {post.bidPrice}</p>
-                        <p>Seller:
-                            {' '}
-                            <Link to={`/profile/${post.user.id}`}>{post.user.name}</Link>
-                        </p>
+            <CardGroup className='m-5'>
+                {posts && posts.map(post => (
+                    <div key={post.id}>
+                        <Card style={{ width: '15rem' }} className='m-2'>
+                            <CardBody>
+                                <CardTitle tag='h6'>{post.title}</CardTitle>
+                                <CardText>Bid: {post.bidPrice}</CardText>
+                            </CardBody>
+                            <CardImg src={`${post.postImage}`} alt={`${post.title}`} />
+                            <CardBody>
+                                <CardText>Sold by
+                                    {' '}
+                                    <Link to={`/profile/${post.user.id}`}>{post.user.name}</Link>
+                                </CardText>
+                            </CardBody>
+                        </Card>
                     </div>
-
-                </div>
-            ))}
+                ))}
+            </CardGroup>
         </div>
     )
 }

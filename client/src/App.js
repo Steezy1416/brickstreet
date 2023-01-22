@@ -26,7 +26,6 @@ function App() {
 
             <Route path='/home' element={<Home />}>
               <Route path=':categoryName' element={<Home />} />
-              {/* <Route path='' element={<Home />} /> */}
             </Route>
 
             <Route path='/profile/:id' element={<Profile />} />

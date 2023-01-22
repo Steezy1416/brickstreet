@@ -10,11 +10,22 @@ const Categories = () => {
     return (
         <div>
             <h4>Categories</h4>
+            <List type="inline">
+                <ListInlineItem>
+                    Lorem ipsum
+                </ListInlineItem>
+                <ListInlineItem>
+                    Phasellus iaculis
+                </ListInlineItem>
+                <ListInlineItem>
+                    Nulla volutpat
+                </ListInlineItem>
+            </List>
             <Link to={`/home/all`}>All</Link>
 
             {categories.map(category => (
                 <div key={category.id}>
-                    <Link onClick={() => {console.log(category.categoryName)}} to={`/home/${category.categoryName}`}>{category.categoryName}</Link>
+                    <Link onClick={() => { console.log(category.categoryName) }} to={`/home/${category.categoryName}`}>{category.categoryName}</Link>
                 </div>
             ))}
         </div>
