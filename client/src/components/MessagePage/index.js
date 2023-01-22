@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ListGroup, ListGroupItem, ListGroupItemHeading } from 'reactstrap';
 import { useQuery, useMutation } from "@apollo/client"
-import { GetUserChats } from "./queries/queries"
+import { GetUserChats, CreateMessage } from "./queries/queries"
 
 const { io } = require("socket.io-client")
 const socket = io("http://localhost:3000")
@@ -15,6 +15,15 @@ function MessagePage() {
         currentChatId: "",
         messages: []
     })
+
+    const HandleMessage =(currentChatId, message) =>{
+        const [createMessage, { data, loading, error }] = useMutation(CreateMessage)
+
+        createMessage({variables: {userId: "63cb8380e8661ddfebf01133", chatId: currentChatId, textMessage: message}})
+
+        console.log(data)
+
+    }
 
     const { loading, error, data } = useQuery(GetUserChats, {
         variables: {
@@ -34,6 +43,16 @@ function MessagePage() {
             currentChatId: chatId,
             messages: currentChat[0].messages
         })
+    }
+
+    const sendMessage = e => {
+        e.preventDefault()
+        const input = document.querySelector(".form-control")
+        const inputText = input.value
+        HandleMessage(chatState.currentChatId, inputText)
+        console.log(inputText)
+        input.value = ""
+
     }
 
     return (
@@ -79,9 +98,11 @@ function MessagePage() {
                                         }
                                     </div>
                                     <div className='writeMessage'>
-                                        <input className="form-control me-auto" type="text" placeholder="Send a message..." aria-label="Add your item here..."></input><button className="btn ms-2 py-2 px-4 btn-moving-gradient btn-moving-gradient--orange new-msg-btn col-3">
-                                            Send
-                                        </button>
+                                        <form onSubmit={sendMessage}>
+                                            <input className="form-control me-auto" type="text" placeholder="Send a message..." aria-label="Add your item here..."></input><button type='submit' className="btn ms-2 py-2 px-4 btn-moving-gradient btn-moving-gradient--orange new-msg-btn col-3">
+                                                Send
+                                            </button>
+                                        </form>
                                     </div>
                                 </ListGroupItem>
                             </ListGroup>
