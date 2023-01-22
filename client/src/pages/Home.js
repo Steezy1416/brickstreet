@@ -44,7 +44,12 @@ const Home = () => {
     return (
         <main>
             <h1>Welcome!</h1>
-            <h3>On this page, you can find all available sets</h3>
+            {!categoryName || categoryName === 'all' &&
+                <h3>All Posts</h3>
+            }
+            {categoryName != '' && categoryName != 'all' &&
+                <h3>All {categoryName} Posts</h3>
+            }
             <div>
                 <Categories />
             </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { CardGroup, Card, CardBody, CardTitle, CardSubtitle, CardText, CardImg, CardLink, Badge } from 'reactstrap'
-import { useQuery } from "@apollo/client";
 
 import { useParams } from "react-router-dom";
 
