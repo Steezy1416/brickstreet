@@ -44,7 +44,7 @@ const UserDashboard = (props) => {
       console.error(e);
     }
   };
-
+    // DASHBOARD DESIGN CODE 
   return (
     <div>
       <div className="flex-row mb-3">
@@ -53,12 +53,13 @@ const UserDashboard = (props) => {
         </h2>
 
         {userParam && (
+          // TO ADD A NEW MESSAGE FROM USER DASHBOARD
           <button className="btn ml-auto" onClick={handleClick}>
             Add Message
-          </button>
-        )}
+          </button> 
+        )} 
       </div>
-
+          
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">
           <MessagesList
