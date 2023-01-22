@@ -14,6 +14,11 @@ const Home = () => {
 
     let { categoryName } = useParams();
 
+    const availablePosts = (posts) => {
+        return posts.filter(post => post.availability === 'available')
+    }
+    const availPosts = availablePosts(posts);
+    
     const filterPosts = (posts) => {
         if (categoryName === 'all' || !categoryName) {
             return posts;
@@ -54,7 +59,7 @@ const Home = () => {
                 <Categories />
             </div>
             <div>
-                <AllPosts posts={filterPosts(posts)} />
+                <AllPosts posts={filterPosts(availPosts)} />
             </div>
 
         </main >
