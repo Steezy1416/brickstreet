@@ -1,56 +1,31 @@
-async function loginFormHandler(event) {
+import React from 'react'
+//import "./auth.css"
 
-    event.preventDefault();
-  
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (email && password) {
-      const response = await fetch('/api/user/login', {
-        method: 'post',
-        body: JSON.stringify({
-          email,
-          password
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      });
-  
-      if (response.ok) {
-        document.location.replace('/dashboard/');
-      } else {
-        alert(response.statusText);
-      }
-    }
-  }
-  
-  async function signupFormHandler(event) {
-    event.preventDefault();
-  
-    const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-  
-    if (username && email && password) {
-      const response = await fetch('/api/user', {
-        method: 'post',
-        body: JSON.stringify({
-          username,
-          email,
-          password
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      });
-  
-      if (response.ok) {
-        document.location.replace('/dashboard/');
-      } else {
-        alert(response.statusText);
-      }
-    }
-  }
-  
-  document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-  
-  document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
-  
+const Login = () => {
+  return (
+    <div className='auth-container'>
+      
+        <div className='login'>
+           
+            <div className='login-form'>
+            <div className=''>
+                <h1>Login</h1>
+            </div>
+        <form>
+            <div className='form-group'>
+                <label>Email</label>
+                <input type="text" name="email" className='form-control' />
+            </div>
+            <div className='form-group'>
+                <label>Password</label>
+                <input type="password" name="password" className='form-control' />
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        </div>
+        </div>
+    </div>
+  )
+}
 
+export default Login
