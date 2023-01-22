@@ -291,11 +291,25 @@ body {
 /* ========== END MESSAGES PAGE STYLES ========== */
 
 /* ========== START FOOTER STYLES ========== */
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+    bottom: 1;
+    color: #707070;
+    height: 2em;
+    left: 0;
+    position: relative; /*/changed to relative from fixed also works if position is not there*/
+    width:100%;
 }
+
+.containerForPrivacy {
+    color: white;
+    margin-bottom: 2em;
+    min-height: 100%;
+    overflow: auto;
+    padding: 0 2em;
+    text-align: justify;
+}
+
 .footer-text-styles {
   font-family: 'Comfortaa', cursive;
 }

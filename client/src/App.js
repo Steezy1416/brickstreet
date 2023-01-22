@@ -12,6 +12,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./pages/Register";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Contact from './pages/Contact.js';
+import PrivacyPolicy from './pages/PrivacyPolicy.js';
 import Post from "./pages/Post";
 import AddPost from "./pages/AddPost.js";
 // import FAQ from './pages/FAQ';
@@ -53,6 +55,8 @@ function App() {
               <Route path="/" element={<Hero />} />
               <Route path="/home" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact/>}/>
+              <Route path="/privacy" element={<PrivacyPolicy/>}/>
               <Route path="/messages" element={<MessagePage />} />
               <Route path="/post" element={<AddPost />} />
               <Route path="/dashboard" element={<UserDashboard />} />

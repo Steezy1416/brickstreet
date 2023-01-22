@@ -1,26 +1,31 @@
 import React from 'react';
 // TODO: update links for each team member, change the social media icons if team wants
 
+
+
 function Footer() {
     return (
-        <footer className=" footer text-center">
+        <footer className="text-center footer">
             <div className="container text-muted footer-text-styles py-4 py-lg-5">
                 <ul className="list-inline">
-                    <li className="list-inline-item me-4">
-                        <a className="link-secondary" href="#placeholder">Alecia Maragh</a>
+                            
+                    <li className='list-inline-item me-4'>
+                        <a className='text-muted ' href='about'>
+                            About/FAQ
+                        </a>
                     </li>
-                    <li className="list-inline-item me-4">
-                        <a className="link-secondary" href="#placeholder">Fidel Deaquino</a>
+                    <li className='list-inline-item me-4'>
+                        <a className='text-muted ' href='contact'>
+                            Contact
+                        </a>
                     </li>
-                    <li className="list-inline-item me-4">
-                        <a className="link-secondary" href="#placeholder">Josh Thomas</a>
+
+                    <li className='list-inline-item me-4'>
+                        <a className='text-muted ' href='privacy'>
+                            Privacy Policy
+                        </a>
                     </li>
-                    <li className="list-inline-item me-4">
-                        <a className="link-secondary" href="#placeholder">Alex Fortin</a>
-                    </li>
-                    <li className="list-inline-item me-4">
-                        <a className="link-secondary" href="#placeholder">Pablo Ramirez</a>
-                    </li>
+
                 </ul>
                 <ul className="list-inline">
                     <li className="list-inline-item me-4">

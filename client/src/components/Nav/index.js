@@ -41,22 +41,6 @@ function Nav(props) {
                             )}
                             </li>
                             <li className='nav-item nav-link-custom-css'>
-                                {/* THIS NAV BAR LINK WILL TAKE THE USER TO THE ABOUT PAGE (PABLO IS WORKING ON THIS PAGE/COMPONENT)
-                                TODO: UPDATE THE HREF ONCE HE FINISHES  */}
-                            {currentComponent === 'About' ? (
-                                <a className='nav-link' style={{ color: 'rgb(255, 179, 0)' }} href='/about'>
-                                    About
-                                </a>
-                            ) : (
-                                <a className='nav-link' style={{ background: 'transparent' }}href='/about' onClick={() => {
-                                    setCurrentComponent('About')
-                                    props.setCurrentPage('About')
-                                }}>
-                                    About
-                                </a>
-                            )}
-                            </li>
-                            <li className='nav-item nav-link-custom-css'>
                                 {/* THIS NAV BAR LINK WILL TAKE THE USER TO THE MESSAGES PAGE AND WILL DISPLAY ALL MESSAGES BETWEEN THE USER AND OTHER USERS (FIDEL IS GOING TO UPDATE THE PAGE/COMPONENT AND ALEX IS GOING TO INTEGRATE THE BACKEND WITH IT)
                                 TODO: UPDATE THE HREF ONCE THEY FINISH */}
                             {currentComponent === 'MessagePage' ? (
