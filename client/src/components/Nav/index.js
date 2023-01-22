@@ -133,7 +133,7 @@ function Nav(props) {
                     <div class="collapse" id="navbarToggleExternalContent">
                         <div class="bg-dark p-4">
                             <h4 class="text-yellow h4">Collapsed content</h4>
-                            <span class="text-muted">navbar branb-Toggleable.</span>
+                            <span class="text-muted">navbar brand-Toggleable.</span>
                         </div>
                     </div>
                 <nav class="navbar navbar-dark bg-dark">
