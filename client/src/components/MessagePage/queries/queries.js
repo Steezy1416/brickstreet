@@ -16,3 +16,16 @@ export const GetUserChats = gql`
     }
 }
 `
+
+export const CreateMessage = gql`
+    mutation Mutation($userId: ID!, $chatId: ID!, $textMessage: String!) {
+  createMessage(userId: $userId, chatId: $chatId, textMessage: $textMessage) {
+    id
+    textMessage
+    user {
+      id
+      name
+    }
+  }
+}
+`

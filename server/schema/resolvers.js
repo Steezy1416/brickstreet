@@ -11,7 +11,8 @@ module.exports = resolvers = {
             return await User.find({})
         },
         getPost: async (_, args) => {
-            return await Post.findById(args.id)
+            console.log(args)
+            return await Post.findById(args.postId)
         },
         getPostByAvailability: async (_, args) => {
             const posts = await Post.find(args)
