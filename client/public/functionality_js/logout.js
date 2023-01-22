@@ -1,15 +1,25 @@
-async function logout() {
-    const response = await fetch('/api/user/logout', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' }
-    });
-  
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert(response.statusText);
-    }
-  }
-  
-  document.querySelector('#logout').addEventListener('click', logout);
-  
+// NEED CODE TO RENDER TO HOMEPAGE
+
+import React from 'react'
+import "./styles.css"
+
+const Logout = () => {
+  return (
+    <div className='auth-container'>
+      
+        <div className='logout'>
+           
+            <div className='logout-form'>
+            <div className=''>
+                <h1>Login</h1>
+            </div>
+        <form>
+            <button type="submit">Logout</button>
+        </form>
+        </div>
+        </div>
+    </div>
+  )
+}
+
+export default Logout
