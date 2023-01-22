@@ -1,3 +1,5 @@
+//SAMPLE CODE FOR TESTING PURPOSES
+
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { navData } from "../lib/navData";
