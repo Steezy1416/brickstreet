@@ -191,6 +191,11 @@ body {
 /* ========== END LOGIN PAGE STYLES ========== */
 
 /* ========== START MESSAGES PAGE STYLES ========== */
+
+.hide {
+  display: none;
+}
+
 .msgs-div {
   height: auto;
   font-family: 'Montserrat', sans-serif;

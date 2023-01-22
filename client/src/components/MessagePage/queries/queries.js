@@ -8,18 +8,10 @@ export const GetUserChats = gql`
         chats {
             id
             chatName
-        }
-    }
-}
-`
-
-export const GetChatMessages = gql`
-    query Query($getChatId: ID!) {
-    getChat(id: $getChatId) {
-        chatName
-        messages {
-            id
-            textMessage
+            messages {
+                id
+                textMessage
+            }
         }
     }
 }
