@@ -19,7 +19,7 @@ const Categories = () => {
                 </ListInlineItem>
                 {categories.map(category => (
                     <ListInlineItem key={category.id}>
-                        <Link onClick={() => { console.log(category.categoryName) }} to={`/home/${category.categoryName}`}>{category.categoryName}</Link>
+                        <Link to={`/home/${category.categoryName}`}>{category.categoryName}</Link>
                     </ListInlineItem>
                 ))}
             </List>

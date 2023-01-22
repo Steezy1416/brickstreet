@@ -9,8 +9,8 @@ import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import Landing from './pages/Landing';
-import AllPosts from './components/AllPosts';
 import Profile from './pages/Profile';
+import SinglePost from './pages/SinglePost';
 
 
 function App() {
@@ -29,6 +29,9 @@ function App() {
             </Route>
 
             <Route path='/profile/:id' element={<Profile />} />
+            {/* <Route path='/user/:userId/post/:postId' element={<SinglePost />} /> */}
+            <Route path='/post/:id' element={<SinglePost />} />
+
           </Routes>
         </main>
         <Footer></Footer>

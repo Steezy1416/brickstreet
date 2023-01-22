@@ -54,7 +54,7 @@ module.exports = typeDefs = gql`
     type Query {
         getUser(id: ID!): User
         getUsers: [User]
-        getPost(postId: ID!, userId: ID!): Post
+        getPost(postId: ID!): Post
         getPostByAvailability(availability: PostAvailable): Post
         getPosts: [Post]
         getCategory(categoryId: ID!): Category

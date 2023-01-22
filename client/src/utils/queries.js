@@ -21,20 +21,29 @@ export const QUERY_POSTS = gql`
 `
 
 export const QUERY_POST = gql`
-    query getPost($id:ID!) {
-        getPost(id:$id) {
-            id
-            user
-            topBidder
-            postImage
-            title
-            description
-            bidPrice
-            categories
-            availability
-            createdAt
-        }
+query GetPost($postId: ID!) {
+    getPost(postId: $postId) {
+      title
+      user {
+        id
+        name
+      }
+      postImage
+      id
+      description
+      createdAt
+      categories {
+        id
+        categoryName
+      }
+      bidPrice
+      availability
+      topBidder {
+        id
+        name
+      }
     }
+  }
 `;
 
 export const QUERY_USER = gql`

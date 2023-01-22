@@ -1,16 +1,31 @@
 import React from 'react';
+
 import { useParams } from 'react-router-dom';
+
 import { useQuery } from '@apollo/client';
+import { QUERY_POST } from '../utils/queries';
 
+const SinglePost = () => {
+    const { id } = useParams();
 
-const SinglePost = props => {
+    const { loading, data } = useQuery(QUERY_POST, {
+        variables: { postId: id }
+    })
+
+    const post = data?.getPost || [];
+
     return (
         <div>
-            THIS IS A SINGLE POST
+
+            {post.title}
             <div>
+
                 POST TITLE
             </div>
             <div>USERNAME</div>
+
+
         </div>
     )
 }
+export default SinglePost;
