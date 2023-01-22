@@ -15,16 +15,17 @@ const Home = () => {
     let { categoryName } = useParams();
 
     const filterPosts = (posts) => {
-        if (categoryName === 'all') {
+        if (categoryName === 'all' || !categoryName) {
             return posts;
         }
+
         const res = []
+
         posts.forEach(post => post.categories.filter(cat => {
             if (cat.categoryName === categoryName) {
                 res.push(post)
             };
         }));
-        console.log(res)
 
         return res;
     }

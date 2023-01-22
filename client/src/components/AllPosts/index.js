@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { CardGroup, Card, CardBody, CardTitle, CardSubtitle, CardText, CardImg } from 'reactstrap'
+import { CardGroup, Card, CardBody, CardTitle, CardSubtitle, CardText, CardImg,CardLink } from 'reactstrap'
 import { useQuery } from "@apollo/client";
 
 import { useParams } from "react-router-dom";
@@ -21,7 +21,7 @@ const AllPosts = ({ posts }) => {
                             <CardBody>
                                 <CardText>Sold by
                                     {' '}
-                                    <Link to={`/profile/${post.user.id}`}>{post.user.name}</Link>
+                                    <CardLink href={`/profile/${post.user.id}`}>{post.user.name}</CardLink>
                                 </CardText>
                             </CardBody>
                         </Card>
