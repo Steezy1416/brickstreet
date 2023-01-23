@@ -13,10 +13,10 @@ function Nav(props) {
 
     return (
         <header>
-            <nav className='navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button navbar-custom-css'>
+            <nav className='navbar navbar-light navbar-expand-lg navbar-fixed-top navigation-clean-button navbar-custom-css'>
                 <div className='conatiner-fluid container nav-container-custom-css'>
                     <div>
-                    <h1>
+                        <h1>
                             {/* THIS TAKES THE USER TO THE LANDING PAGE AND DISPLAYS THE HERO */}
                             {currentComponent === 'Hero' ? (
                                 <Link className='navbar-brand' style={{ color: 'rgb(255, 179, 0)' }} to='/'>
@@ -36,6 +36,7 @@ function Nav(props) {
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <div className='container fix'>
                     <div className='row collapse navbar-collapse container-for-nav-links navMenu' id="navbarNav">
                         <ul className='col navbar-nav'>
                             <li className='nav-item nav-link-custom-css'>
@@ -119,8 +120,36 @@ function Nav(props) {
                                     </Link>
                                 )}
                             </li>
+                            <li className='nav-item nav-link-custom-css login-signup-inlinenav-mediaquery'>
+                                {currentComponent === 'Login' ? (
+                                    <Link className='nav-link login nav-login-custom-css' style={{ color: 'rgb(255, 179, 0)' }} to='/login'>
+                                        Log<span></span>In
+                                    </Link>
+                                ) : (
+                                    <Link className='nav-link nav-link login nav-login-custom-css' style={{ background: 'transparent' }} to='/login' onClick={() => {
+                                        setCurrentComponent('Login')
+                                        // props.setCurrentPage('UserDashboard')
+                                    }}>
+                                        Log In
+                                    </Link>
+                                )}
+                            </li>
+                            <li className='nav-item nav-link-custom-css login-signup-inlinenav-mediaquery'>
+                                {currentComponent === 'Register' ? (
+                                    <Link className='nav-link login nav-login-custom-css' style={{ color: 'rgb(255, 179, 0)' }} to='/register'>
+                                        Sign Up
+                                    </Link>
+                                ) : (
+                                    <Link className='nav-link nav-link login nav-login-custom-css' style={{ background: 'transparent' }} to='/register' onClick={() => {
+                                        setCurrentComponent('Register')
+                                        // props.setCurrentPage('UserDashboard')
+                                    }}>
+                                        Sign Up
+                                    </Link>
+                                )}
+                            </li>
                         </ul>
-                        <div className='col login-signup-mediaquery'>
+                        <div className='col-4 col-xl-3 login-signup-mediaquery'>
                             <div className='ms-auto navbar-text actions login-signup-nav-links'>
                                 <Link className='login nav-login-custom-css' to='/login'>
                                     Log In
@@ -131,14 +160,15 @@ function Nav(props) {
                             </div>
                         </div>
                     </div>
-                </div>
-                     
-                    <div class="collapse" id="navbarToggleExternalContent">
-                        <div class="bg-dark p-4">
-                            <h4 class="text-yellow h4">Collapsed content</h4>
-                            <span class="text-muted">navbar brand-Toggleable.</span>
-                        </div>
                     </div>
+                </div>
+
+                <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="bg-dark p-4">
+                        <h4 class="text-yellow h4">Collapsed content</h4>
+                        <span class="text-muted">navbar brand-Toggleable.</span>
+                    </div>
+                </div>
             </nav>
         </header>
     )

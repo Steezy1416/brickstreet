@@ -37,7 +37,7 @@ function Hero() {
                                     </svg>
                                 </div>
                                 <h3 className='buySellConnectTitle'>Buy</h3>
-                                <p className="lead mb-0 buySellConnectParagraph">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
+                                <p className="lead mb-0 buySellConnectParagraph">Add to your collection by purchasing from Lego fans</p>
                             </div>
                         </div>
                         <div className="col-lg-4">
@@ -49,7 +49,7 @@ function Hero() {
                                     </svg>
                                 </div>
                                 <h3 className='buySellConnectTitle'>Sell</h3>
-                                <p className="lead mb-0 buySellConnectParagraph">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
+                                <p className="lead mb-0 buySellConnectParagraph">Part with old Lego sets while making space for new sets</p>
                             </div>
                         </div>
                         <div className="col-lg-4">
@@ -60,7 +60,7 @@ function Hero() {
                                     </svg>
                                 </div>
                                 <h3 className='buySellConnectTitle'>Connect</h3>
-                                <p className="lead mb-0 buySellConnectParagraph">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
+                                <p className="lead mb-0 buySellConnectParagraph">Join a community of other Lego enthusiasts</p>
                             </div>
                         </div>
                     </div>
@@ -72,22 +72,22 @@ function Hero() {
                     <div className="row g-0">
                         <div className="col-lg-6 text-white order-lg-2 showcase-img legoCommunityMeetUpPhoto"><span></span></div>
                         <div className="col-lg-6 my-auto order-lg-1 showcase-text py-4">
-                            <h2 className='eventTitles'>Lego Community Meet Up</h2>
-                            <p className="lead mb-0 m-sm-2 m-md-2 m-lg-3 eventsParagraph">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
+                            <h2 className='eventTitles'>Join The Fun At Our Next Community Meet Up</h2>
+                            <p className="lead mb-0 m-sm-2 m-md-2 m-lg-3 eventsParagraph"><u>February 1st</u><br/>Lego Coffee Shop<br/>1000 Main St<br/>7:00 PM</p>
                         </div>
                     </div>
                     <div className="row g-0">
-                    <a href="https://brickcon.org/" className='col-lg-6'><div className="text-white order-lg-2 showcase-img brickConPhoto"><span></span></div></a>
+                    <a href="https://www.brickfestlive.com/bfl-2022-2023" className='col-lg-6'><div className="text-white order-lg-2 showcase-img brickConPhoto"><span></span></div></a>
                         <div className="col-lg-6 my-auto order-lg-1 showcase-text py-4">
-                            <h2><a className='eventTitles' href='https://brickcon.org/'>BrickCon 2023</a></h2>
-                            <p className="lead mb-0 m-sm-2 m-md-2 m-lg-3 eventsParagraph">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
+                            <h2><a className='eventTitles' href='https://www.brickfestlive.com/bfl-2022-2023'>Brick Fest Tour</a></h2>
+                            <p className="lead mb-0 m-sm-2 m-md-2 m-lg-3 eventsParagraph"><u>February 4th - 5th</u><br/>Houston, TX<br/><br></br>Explore the many hands-on activities and exhibits that have been curated for maximum family entertainment.<br/><br/><a className='clickHere' href='https://www.brickfestlive.com/bfl-2022-2023#section-2152410000-135-167-189'><strong>More Tour Dates</strong></a><br/></p>
                         </div>
                     </div>
                     <div className="row g-0 row-reverse">
-                    <a href="https://www.brickfestlive.com/bfl-2022-2023" className='col-lg-6'><div className="text-white order-lg-2 showcase-img brickFestPhoto"><span></span></div></a>
+                    <a href="https://brickcon.org/" className='col-lg-6'><div className="text-white order-lg-2 showcase-img brickFestPhoto"><span></span></div></a>
                         <div className="col-lg-6 my-auto order-lg-1 showcase-text py-4">
-                            <h2><a className='eventTitles' href='https://www.brickfestlive.com/bfl-2022-2023'>Brick Fest Tour</a></h2>
-                            <p className="lead mb-0 m-sm-2 m-md-2 m-lg-3 eventsParagraph">This year's BrickCon will be held in Bellevue, WA! lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
+                            <h2><a className='eventTitles' href='https://brickcon.org/'>BrickCon 2023</a></h2>
+                            <p className="lead mb-0 m-sm-2 m-md-2 m-lg-3 eventsParagraph"><u>September 7th -10th</u><br/>Bellevue, WA<br/><br></br>This year Lego hobbyists will convene at Meydenbauer Center.<br/><br/>Private Convention for Adult Fans of Lego (AFOL) also available by clicking <a className='clickHere' href='https://afol.brickcon.org/'><strong>here</strong></a>.</p>
                         </div>
                     </div>
                 </div>

@@ -54,7 +54,6 @@ font-family: 'Montserrat', sans-serif; */
   align-items: baseline !important;
 }
 
-/* TODO: use clamp to make brand text responsive */
 .navbar-brand {
   font-size: inherit;
 }
@@ -62,6 +61,7 @@ font-family: 'Montserrat', sans-serif; */
 .container-for-nav-links {
   color: rgb(230, 230, 230);
   align-items: baseline;
+  font-size: clamp(.9rem, 1.6vw, 1rem);
 }
 
 .nav-link-custom-css {
@@ -181,7 +181,9 @@ font-family: 'Montserrat', sans-serif; */
 /* ========== END HERO STYLES ========== */
 
 /* ========== START LANDING PAGE STYLES ========== */
-.legoCommunityMeetUpPhoto, .brickConPhoto, .brickFestPhoto {
+.legoCommunityMeetUpPhoto,
+.brickConPhoto,
+.brickFestPhoto {
   background-size: cover;
   background-position: bottom;
   min-height: 50vh;
@@ -199,13 +201,20 @@ font-family: 'Montserrat', sans-serif; */
   background-image: url('./assets/alphacolor-ipmwlGIXzcw-unsplash-min.jpg');
 }
 
-.eventTitles, .buySellConnectTitle {
+.eventTitles,
+.buySellConnectTitle {
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   color: inherit;
 }
 
-.buySellConnectParagraph, .eventsParagraph {
+.clickHere {
+  font-family: 'Montserrat', sans-serif;
+  color: inherit;
+}
+
+.buySellConnectParagraph,
+.eventsParagraph {
   font-family: 'Comfortaa', cursive;
 }
 
@@ -323,9 +332,7 @@ font-family: 'Montserrat', sans-serif; */
   border-color: #0e7c7b !important;
 }
 
-.name-msg-header {
-
-}
+.name-msg-header {}
 
 .msg-body {
   font-family: 'Comfortaa', cursive;
@@ -342,10 +349,29 @@ font-family: 'Montserrat', sans-serif; */
 /* ========== END FOOTER STYLES ========== */
 
 /* ========== START Media Queries STYLES ========== */
-
 @media (max-width: 992px) {
   .login-signup-mediaquery {
     display: none;
+  }
+
+  .login-signup-inlinenav-mediaquery {
+    display: contents;
+  }
+
+  .navbar-nav {
+    line-height: .7em;
+  }
+}
+
+@media (min-width: 993px) {
+  .login-signup-inlinenav-mediaquery {
+    display: none;
+  }
+}
+
+@media (min-width: 993px) {
+  .fix {
+    margin-left: auto;
   }
 }
 
