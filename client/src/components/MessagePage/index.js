@@ -16,25 +16,35 @@ function MessagePage() {
         messages: []
     })
 
-    const HandleMessage =(currentChatId, message) =>{
-        const [createMessage, { data, loading, error }] = useMutation(CreateMessage)
 
-        createMessage({variables: {userId: "63cb8380e8661ddfebf01133", chatId: currentChatId, textMessage: message}})
-
-        console.log(data)
-
-    }
-
-    const { loading, error, data } = useQuery(GetUserChats, {
+    const { loading, error, data, refetch } = useQuery(GetUserChats, {
         variables: {
-            getUserId: "63cb8380e8661ddfebf01133"
+            getUserId: "63cdcd19061e48c8544531cb"
+        }
+    })
+
+    const [createMessage, info] = useMutation(CreateMessage, {
+        onCompleted: (messageData) => {
+            console.log(messageData.createMessage)
+            setChatState({
+                currentChatId: chatState.currentChatId,
+                messages: [...chatState.messages, {
+                    __typename: messageData.createMessage.__typename,
+                    id: messageData.createMessage.id,
+                    textMessage: messageData.createMessage.textMessage,
+                }]
+            })
+            refetch()
         }
     })
 
     if (loading) return <p>Loading</p>
     if (error) return <p>{error.message}</p>
 
+
+
     const handleChatClick = e => {
+        console.log(chatState)
         const div = document.querySelector(".messaging")
         div.classList.remove("hide")
         const chatId = e.target.closest("ul").getAttribute("id")
@@ -49,8 +59,14 @@ function MessagePage() {
         e.preventDefault()
         const input = document.querySelector(".form-control")
         const inputText = input.value
-        HandleMessage(chatState.currentChatId, inputText)
-        console.log(inputText)
+        createMessage({
+            variables:
+            {
+                userId: "63cdcd19061e48c8544531cb",
+                chatId: chatState.currentChatId,
+                textMessage: inputText
+            }
+        })
         input.value = ""
 
     }
@@ -88,7 +104,6 @@ function MessagePage() {
                                     <div className='messageListContainer'>
                                         {
                                             chatState.messages.map(message => {
-                                                console.log(message)
                                                 return (
                                                     <div className='messageBubbleContainer' id={message.id} key={message.id}>
                                                         {message.textMessage}
