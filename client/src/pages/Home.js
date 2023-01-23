@@ -20,11 +20,11 @@ const Home = () => {
     const availPosts = availablePosts(posts);
 
     const filterPosts = (posts) => {
+        const filteredPosts = [];
+
         if (categoryName === 'all' || !categoryName) {
             return posts;
         }
-
-        const filteredPosts = []
 
         posts.forEach(post => post.categories.filter(category => {
             if (category.categoryName === categoryName) {
@@ -46,21 +46,25 @@ const Home = () => {
             <p>{error.message}</p>
         )
     }
+
     return (
         <main>
-            <h1>Welcome!</h1>
-            {!categoryName || categoryName === 'all' &&
-                <h3>All Posts</h3>
-            }
-            {categoryName != '' && categoryName != 'all' &&
-                <h3>All {categoryName} Posts</h3>
-            }
-            <div>
-                <Categories />
+            <div className='container'>
+                <h1>Welcome!</h1>
+                {!categoryName || categoryName === 'all' &&
+                    <h3>All Posts</h3>
+                }
+                {categoryName != '' && categoryName != 'all' &&
+                    <h3>All {categoryName} Posts</h3>
+                }
+                <div>
+                    <Categories />
+                </div>
+                <div>
+                    <AllPosts posts={filterPosts(availPosts)} />
+                </div>
             </div>
-            <div>
-                <AllPosts posts={filterPosts(availPosts)} />
-            </div>
+
 
         </main >
     )

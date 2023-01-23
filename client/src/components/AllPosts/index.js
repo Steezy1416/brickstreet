@@ -6,33 +6,35 @@ const AllPosts = ({ posts }) => {
 
     return (
         <div>
-            <CardGroup className='m-3'>
-                {posts && posts.map(post => (
-
-                    <div key={post.id}>
-                        <Card style={{ width: '14rem' }} className='m-2'>
-                            <Link to={`/post/${post.id}`} style={{ textDecoration: 'none', color: 'black' }}>
+            <div className='container'>
+                <div className="row">
+                    {posts && posts.map(post => (
+                        <div key={post.id} className='col-xs-8 col-sm-6 col-md-3 col-lg-2'>
+                            <Card  className='mb-4'>
+                                <Link to={`/post/${post.id}`} style={{ textDecoration: 'none', color: 'black' }}>
+                                    <CardBody>
+                                        <CardTitle tag='h6'>{post.title}</CardTitle>
+                                        <CardText>
+                                            Bid: ${post.bidPrice}
+                                            {' '}
+                                            <Badge color={post.availability === 'available' ? "success" : "secondary"} style={{ "opacity": "0.9" }} pill className="available-post">{post.availability.charAt(0).toUpperCase() + post.availability.substr(1).toLowerCase()}</Badge>
+                                        </CardText>
+                                    </CardBody>
+                                    <CardImg src={`${post.postImage}`} alt={`${post.title}`} />
+                                </Link>
                                 <CardBody>
-                                    <CardTitle tag='h6'>{post.title}</CardTitle>
-                                    <CardText>
-                                        Bid: ${post.bidPrice}
+                                    <CardText>Sold by
                                         {' '}
-                                        <Badge color={post.availability === 'available' ? "success" : "secondary"} style={{ "opacity": "0.9" }} pill className="available-post">{post.availability.charAt(0).toUpperCase() + post.availability.substr(1).toLowerCase()}</Badge>
+                                        <CardLink href={`/profile/${post.user.id}`}>{post.user.name}</CardLink>
                                     </CardText>
                                 </CardBody>
-                                <CardImg src={`${post.postImage}`} alt={`${post.title}`} />
-                            </Link>
-                            <CardBody>
-                                <CardText>Sold by
-                                    {' '}
-                                    <CardLink href={`/profile/${post.user.id}`}>{post.user.name}</CardLink>
-                                </CardText>
-                            </CardBody>
 
-                        </Card>
-                    </div>
-                ))}
-            </CardGroup>
+                            </Card>
+                        </div>
+                    ))}
+                </div>
+
+            </div>
         </div>
     )
 }

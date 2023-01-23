@@ -20,13 +20,14 @@ const Profile = () => {
     }
 
     return (
-        <div>
-            <h3>Viewing {user.name}'s posts</h3>
-            <img src={`${user.profilePicture}`} alt='profilephoto'/>
-            <div>
-                <AllPosts posts={user.posts}/>
+  
+            <div className='container'>
+                <h3>Viewing {user.name}'s posts</h3>
+                <img src={`${user.profilePicture}`} alt='profilephoto' />
+                <div>
+                    <AllPosts posts={user.posts} />
+                </div>
             </div>
-        </div>
     )
 }
 
