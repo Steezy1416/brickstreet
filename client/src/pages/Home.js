@@ -18,21 +18,21 @@ const Home = () => {
         return posts.filter(post => post.availability === 'available')
     }
     const availPosts = availablePosts(posts);
-    
+
     const filterPosts = (posts) => {
         if (categoryName === 'all' || !categoryName) {
             return posts;
         }
 
-        const res = []
+        const filteredPosts = []
 
-        posts.forEach(post => post.categories.filter(cat => {
-            if (cat.categoryName === categoryName) {
-                res.push(post)
+        posts.forEach(post => post.categories.filter(category => {
+            if (category.categoryName === categoryName) {
+                filteredPosts.push(post)
             };
         }));
 
-        return res;
+        return filteredPosts;
     }
 
     if (loading) {
