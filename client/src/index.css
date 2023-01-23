@@ -2,18 +2,10 @@
 /* font-family: 'Comfortaa', cursive;
 font-family: 'Montserrat', sans-serif; */
 
-* {
+/* * {
   border: blue dotted;
-}
+} */
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 /* ========== START NAV STYLES ========== */
 
@@ -170,7 +162,7 @@ body {
 
 /* TODO: add responsiveness to hero image */
 .hero-container-custom-css {
-  background-image: url('./assets/daniel-k-cheung-B7N0IjiIJYo-unsplash.jpg');
+  background-image: url('./assets/daniel-k-cheung-B7N0IjiIJYo-unsplash-min.jpg');
   background-size: cover;
   background-position: bottom;
   /* height: max-content; */
@@ -189,11 +181,36 @@ body {
 /* ========== END HERO STYLES ========== */
 
 /* ========== START LANDING PAGE STYLES ========== */
-.placehoderLandingPagePic {
-  background-image: url('./assets/alphacolor-ipmwlGIXzcw-unsplash.jpg');
+.legoCommunityMeetUpPhoto, .brickConPhoto, .brickFestPhoto {
   background-size: cover;
   background-position: bottom;
   min-height: 50vh;
+}
+
+.legoCommunityMeetUpPhoto {
+  background-image: url('./assets/vlad-hilitanu-1FI2QAYPa-Y-unsplash-min.jpg');
+}
+
+.brickConPhoto {
+  background-image: url('./assets/amelie-mourichon-hcLSA1MiU3A-unsplash-min.jpg');
+}
+
+.brickFestPhoto {
+  background-image: url('./assets/alphacolor-ipmwlGIXzcw-unsplash-min.jpg');
+}
+
+.eventTitles, .buySellConnectTitle {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: inherit;
+}
+
+.buySellConnectParagraph, .eventsParagraph {
+  font-family: 'Comfortaa', cursive;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
 }
 
 /* ========== END LANDING PAGE STYLES ========== */
@@ -304,6 +321,14 @@ body {
 .active {
   background-color: #0e7c7b !important;
   border-color: #0e7c7b !important;
+}
+
+.name-msg-header {
+
+}
+
+.msg-body {
+  font-family: 'Comfortaa', cursive;
 }
 
 /* ========== END MESSAGES PAGE STYLES ========== */

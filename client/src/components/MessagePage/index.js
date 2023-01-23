@@ -21,7 +21,7 @@ function MessagePage() {
                                     <ListGroupItemHeading>
                                         Alecia Maragh
                                     </ListGroupItemHeading>
-                                    <ListGroupItemText>
+                                    <ListGroupItemText className='msg-body'>
                                         Hi! I'm interested in purchasing the Star...
                                     </ListGroupItemText>
                                 </ListGroupItem>
@@ -29,7 +29,7 @@ function MessagePage() {
                                     <ListGroupItemHeading>
                                         Alexander Fortin
                                     </ListGroupItemHeading>
-                                    <ListGroupItemText>
+                                    <ListGroupItemText className='msg-body'>
                                         Hey, I have a question about the set...
                                     </ListGroupItemText>
                                 </ListGroupItem>
@@ -37,7 +37,7 @@ function MessagePage() {
                                     <ListGroupItemHeading>
                                         Pablo Ramirez
                                     </ListGroupItemHeading>
-                                    <ListGroupItemText>
+                                    <ListGroupItemText className='msg-body'>
                                         Is this set missing any pieces? Can you...
                                     </ListGroupItemText>
                                 </ListGroupItem>
@@ -45,7 +45,7 @@ function MessagePage() {
                                     <ListGroupItemHeading>
                                         Josh Thomas
                                     </ListGroupItemHeading>
-                                    <ListGroupItemText>
+                                    <ListGroupItemText className='msg-body'>
                                         Does your Black Panther Lego set have...
                                     </ListGroupItemText>
                                 </ListGroupItem>
@@ -61,26 +61,26 @@ function MessagePage() {
                                     </div>
                                     <div className='messageListContainer'>
                                         <div className='timestamp'>Wednesday, January 18, 2023 11:11 AM</div>
-                                        <div className='messageBubbleContainer mine'>
+                                        <div className='msg-body messageBubbleContainer mine'>
                                             lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
                                         </div>
-                                        <div className='messageBubbleContainer theirs'>
+                                        <div className='msg-body messageBubbleContainer theirs'>
                                             lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
                                         </div>
-                                        <div className='messageBubbleContainer theirs'>
+                                        <div className='msg-body messageBubbleContainer theirs'>
                                             lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
                                         </div>
-                                        <div className='messageBubbleContainer mine'>
+                                        <div className='msg-body messageBubbleContainer mine'>
                                             lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsumlorem lorem ipsum lorem ipsum lorem ipsum ipsum lorem lorem ipsum lorem ipsum lorem ipsum lorem ipsum ipsumlorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
                                         </div>
                                         <div className='timestamp'>Thursday, January 19, 2023 11:44 AM</div>
-                                        <div className='messageBubbleContainer mine'>
+                                        <div className='msg-body messageBubbleContainer mine'>
                                             lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
                                         </div>
-                                        <div className='messageBubbleContainer theirs'>
+                                        <div className='msg-body messageBubbleContainer theirs'>
                                             lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
                                         </div>
-                                        <div className='messageBubbleContainer theirs'>
+                                        <div className='msg-body messageBubbleContainer theirs'>
                                             lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
                                         </div>
                                     </div>

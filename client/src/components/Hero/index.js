@@ -36,8 +36,8 @@ function Hero() {
                                         <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
                                     </svg>
                                 </div>
-                                <h3>Buy</h3>
-                                <p className="lead mb-0">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
+                                <h3 className='buySellConnectTitle'>Buy</h3>
+                                <p className="lead mb-0 buySellConnectParagraph">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
                             </div>
                         </div>
                         <div className="col-lg-4">
@@ -48,8 +48,8 @@ function Hero() {
                                         <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z" />
                                     </svg>
                                 </div>
-                                <h3>Sell</h3>
-                                <p className="lead mb-0">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
+                                <h3 className='buySellConnectTitle'>Sell</h3>
+                                <p className="lead mb-0 buySellConnectParagraph">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
                             </div>
                         </div>
                         <div className="col-lg-4">
@@ -59,8 +59,8 @@ function Hero() {
                                         <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
                                     </svg>
                                 </div>
-                                <h3>Connect</h3>
-                                <p className="lead mb-0">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
+                                <h3 className='buySellConnectTitle'>Connect</h3>
+                                <p className="lead mb-0 buySellConnectParagraph">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
                             </div>
                         </div>
                     </div>
@@ -68,25 +68,26 @@ function Hero() {
             </section>
             <section className="text-center bg-secondary features-icons showcase border border-0">
                 <div className="container-fluid p-0">
+                    {/* TODO: If we decide to have an external link to this photo, add the class 'row-reverse' to the div below */}
                     <div className="row g-0">
-                        <div className="col-lg-6 text-white order-lg-2 showcase-img placehoderLandingPagePic"><span></span></div>
+                        <div className="col-lg-6 text-white order-lg-2 showcase-img legoCommunityMeetUpPhoto"><span></span></div>
                         <div className="col-lg-6 my-auto order-lg-1 showcase-text py-4">
-                            <h2>Lego Community Meet Up</h2>
-                            <p className="lead mb-0 m-sm-2 m-md-2 m-lg-3">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
+                            <h2 className='eventTitles'>Lego Community Meet Up</h2>
+                            <p className="lead mb-0 m-sm-2 m-md-2 m-lg-3 eventsParagraph">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
                         </div>
                     </div>
                     <div className="row g-0">
-                        <div className="col-lg-6 text-white showcase-img placehoderLandingPagePic"><span></span></div>
+                    <a href="https://brickcon.org/" className='col-lg-6'><div className="text-white order-lg-2 showcase-img brickConPhoto"><span></span></div></a>
                         <div className="col-lg-6 my-auto order-lg-1 showcase-text py-4">
-                            <h2>BrickCon 2023</h2>
-                            <p className="lead mb-0 m-sm-2 m-md-2 m-lg-3">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
+                            <h2><a className='eventTitles' href='https://brickcon.org/'>BrickCon 2023</a></h2>
+                            <p className="lead mb-0 m-sm-2 m-md-2 m-lg-3 eventsParagraph">lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsumlorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
                         </div>
                     </div>
-                    <div className="row g-0">
-                        <div className="col-lg-6 text-white order-lg-2 showcase-img placehoderLandingPagePic"><span></span></div>
+                    <div className="row g-0 row-reverse">
+                    <a href="https://www.brickfestlive.com/bfl-2022-2023" className='col-lg-6'><div className="text-white order-lg-2 showcase-img brickFestPhoto"><span></span></div></a>
                         <div className="col-lg-6 my-auto order-lg-1 showcase-text py-4">
-                            <h2>Brick Fest Tour</h2>
-                            <p className="lead mb-0 m-sm-2 m-md-2 m-lg-3">This year's BrickCon will be held in Bellevue, WA! lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
+                            <h2><a className='eventTitles' href='https://www.brickfestlive.com/bfl-2022-2023'>Brick Fest Tour</a></h2>
+                            <p className="lead mb-0 m-sm-2 m-md-2 m-lg-3 eventsParagraph">This year's BrickCon will be held in Bellevue, WA! lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum loremipsum</p>
                         </div>
                     </div>
                 </div>
