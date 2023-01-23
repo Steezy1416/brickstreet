@@ -14,7 +14,7 @@ function Nav(props) {
     return (
         <header>
             <nav className='navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button navbar-custom-css'>
-                <div className='container nav-container-custom-css'>
+                <div className='conatiner-fluid container nav-container-custom-css'>
                     <div>
                     <h1>
                             {/* THIS TAKES THE USER TO THE LANDING PAGE AND DISPLAYS THE HERO */}
@@ -33,6 +33,9 @@ function Nav(props) {
                             )}
                         </h1>
                     </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div className='row collapse navbar-collapse container-for-nav-links navMenu' id="navbarNav">
                         <ul className='col navbar-nav'>
                             <li className='nav-item nav-link-custom-css'>
@@ -118,14 +121,14 @@ function Nav(props) {
                             </li>
                         </ul>
                         <div className='col login-signup-mediaquery'>
-                            <p className='ms-auto navbar-text actions login-signup-nav-links'>
+                            <div className='ms-auto navbar-text actions login-signup-nav-links'>
                                 <Link className='login nav-login-custom-css' to='/login'>
                                     Log In
                                 </Link>
                                 <button className="btn btn-moving-gradient btn-moving-gradient--orange">
                                     <Link className='register' to='/register'>Sign Up</Link>
                                 </button>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -136,13 +139,6 @@ function Nav(props) {
                             <span class="text-muted">navbar brand-Toggleable.</span>
                         </div>
                     </div>
-                <nav class="navbar navbar-dark bg-dark">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                </nav>
             </nav>
         </header>
     )
