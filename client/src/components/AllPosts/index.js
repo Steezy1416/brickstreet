@@ -15,7 +15,7 @@ const AllPosts = ({ posts }) => {
                                 <CardBody>
                                     <CardTitle tag='h6'>{post.title}</CardTitle>
                                     <CardText>
-                                        Bid: {post.bidPrice}
+                                        Bid: ${post.bidPrice}
                                         {' '}
                                         <Badge color={post.availability === 'available' ? "success" : "secondary"} style={{ "opacity": "0.9" }} pill className="available-post">{post.availability.charAt(0).toUpperCase() + post.availability.substr(1).toLowerCase()}</Badge>
                                     </CardText>

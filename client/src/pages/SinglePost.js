@@ -20,29 +20,37 @@ const SinglePost = () => {
 
     return (
         <div className='container'>
-            <h2>{post.title}</h2>
-            <Badge color={post.availability === 'available' ? "success" : "secondary"} style={{ "opacity": "0.9" }} pill className="available-post">{post.availability.charAt(0).toUpperCase() + post.availability.substr(1).toLowerCase()}</Badge>
-
-            <div>
-
-                <Link to={`/profile/${post.user.id}`}>{post.user.name}</Link>
+            <Badge color={post.availability === 'available' ? "success" : "secondary"} style={{ "opacity": "0.9" }} pill className="available-post">
+                {post.availability.charAt(0).toUpperCase() + post.availability.substr(1).toLowerCase()}
+            </Badge>
+            <div className='row mt-2'>
+                <div className='col'>
+                    <img src={`${post.postImage}`} alt={`${post.title}`} />
+                </div>
+                <div className='col'>
+                    <h2>{post.title}</h2>
+                    <div>
+                        <Link to={`/profile/${post.user.id}`}>{post.user.name}</Link>
+                    </div>
+                    <p>Bid:
+                        {' '}
+                        ${post.bidPrice}
+                    </p>
+                    <div>
+                        <p>Description:{' '}</p>
+                        <p>{post.description}</p>
+                    </div>
+                    <List type="inline">
+                        <ListInlineItem>Categories:{' '}</ListInlineItem>
+                        {post.categories.map(category => (
+                            <ListInlineItem key={category.id}>
+                                {category.categoryName}
+                            </ListInlineItem>))}
+                    </List>
+                </div>
             </div>
-            <img src={`${post.postImage}`} alt={`${post.title}`} />
-            <p>Bid:
-                {' '}
-                {post.bidPrice}
-            </p>
-            <div>
-                <p>Description:{' '}</p>
-                <p>{post.description}</p>
-            </div>
-            <List type="inline">
-                <ListInlineItem>Categories:{' '}</ListInlineItem>
-                {post.categories.map(category => (
-                    <ListInlineItem key={category.id}>
-                        {category.categoryName}
-                    </ListInlineItem>))}
-            </List>
+
+
         </div>
     )
 }
