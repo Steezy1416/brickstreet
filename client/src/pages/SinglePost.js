@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { List, ListInlineItem, Badge } from 'reactstrap';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_POST } from '../utils/queries';
@@ -14,17 +14,35 @@ const SinglePost = () => {
 
     const post = data?.getPost || [];
 
-    return (
-        <div>
+    if (loading) {
+        return <div>Loading...</div>
+    }
 
-            {post.title}
+    return (
+        <div className='container'>
+            <h2>{post.title}</h2>
+            <Badge color={post.availability === 'available' ? "success" : "secondary"} style={{ "opacity": "0.9" }} pill className="available-post">{post.availability.charAt(0).toUpperCase() + post.availability.substr(1).toLowerCase()}</Badge>
+
             <div>
 
-                POST TITLE
+                <Link to={`/profile/${post.user.id}`}>{post.user.name}</Link>
             </div>
-            <div>USERNAME</div>
-
-
+            <img src={`${post.postImage}`} alt={`${post.title}`} />
+            <p>Bid:
+                {' '}
+                {post.bidPrice}
+            </p>
+            <div>
+                <p>Description:{' '}</p>
+                <p>{post.description}</p>
+            </div>
+            <List type="inline">
+                <ListInlineItem>Categories:{' '}</ListInlineItem>
+                {post.categories.map(category => (
+                    <ListInlineItem key={category.id}>
+                        {category.categoryName}
+                    </ListInlineItem>))}
+            </List>
         </div>
     )
 }
