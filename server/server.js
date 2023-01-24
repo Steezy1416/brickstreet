@@ -23,6 +23,9 @@ io.on("connection", (socket) => {
     socket.on("sendMessage", (data) => {
         socket.broadcast.emit("displayMessage", data)
     })
+    socket.on("deleteMessage", (data) => {
+        socket.broadcast.emit("displayMessageAfterDelete", data)
+    })
 })
 
 const startServer = async () => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ListGroup, ListGroupItem, ListGroupItemHeading } from 'reactstrap';
 import { useQuery, useMutation } from "@apollo/client"
-import { GetUserChats, CreateMessage } from "./queries/queries"
+import { GetUserChats, CreateMessage, DeleteMessage } from "./queries/queries"
 
 const { io } = require("socket.io-client")
 const socket = io("http://localhost:3000")
@@ -22,7 +22,6 @@ function MessagePage() {
     })
 
     socket.on("displayMessage", (data) => {
-        console.log(`The data id is ${data.currentChatId}, the chat state id is ${chatState.currentChatId}`)
         if (data.currentChatId === chatState.currentChatId) {
             setChatState({
                 currentChatId: chatState.currentChatId,
@@ -31,6 +30,16 @@ function MessagePage() {
                     textMessage: data.textMessage,
                     id: data.id
                 }]
+            })
+        }
+        refetch()
+    })
+
+    socket.on("displayMessageAfterDelete", (data) => {
+        if (data.currentChatId === chatState.currentChatId) {
+            setChatState({
+                currentChatId: chatState.currentChatId,
+                messages: data.messages
             })
         }
         refetch()
@@ -53,6 +62,22 @@ function MessagePage() {
                 __typename: messageData.createMessage.__typename,
                 id: messageData.createMessage.id,
                 textMessage: messageData.createMessage.textMessage,
+            })
+        }
+    })
+
+    const [deleteMessage, messageInfo] = useMutation(DeleteMessage, {
+        onCompleted: (messageData) => {
+            const updatedMessages = chatState.messages.filter(message => message.id !== messageData.deleteMessage.id)
+
+            setChatState({
+                currentChatId: chatState.currentChatId,
+                messages: updatedMessages
+            })
+            refetch()
+            socket.emit("deleteMessage", {
+                currentChatId: chatState.currentChatId,
+                messages: updatedMessages
             })
         }
     })
@@ -90,6 +115,15 @@ function MessagePage() {
 
     }
 
+    const handleMessageDelete = e => {
+        const messageId = e.target.closest("div").getAttribute("id")
+        deleteMessage({
+            variables: {
+                messageId
+            }
+        })
+    }
+
     return (
         <section className="py-4 py-xl-5">
             <div>
@@ -123,11 +157,21 @@ function MessagePage() {
                                     <div className='messageListContainer'>
                                         {
                                             chatState.messages.map(message => {
-                                                return (
-                                                    <div className='messageBubbleContainer' id={message.id} key={message.id}>
-                                                        {message.textMessage}
-                                                    </div>
-                                                )
+                                                if ("63cdcd19061e48c8544531cb" === message.user.id) {
+                                                    return (
+                                                        <div className='messageBubbleContainer mine' id={message.id} key={message.id}>
+                                                            <p>{message.textMessage}</p>
+                                                            <button onClick={handleMessageDelete}>Delete</button>
+                                                        </div>
+                                                    )
+                                                }
+                                                else {
+                                                    return (
+                                                        <div className='messageBubbleContainer theirs' id={message.id} key={message.id}>
+                                                            <p>{message.textMessage}</p>
+                                                        </div>
+                                                    )
+                                                }
                                             })
                                         }
                                     </div>

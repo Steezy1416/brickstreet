@@ -11,6 +11,9 @@ export const GetUserChats = gql`
             messages {
                 id
                 textMessage
+                user {
+                  id
+                }
             }
         }
     }
@@ -26,6 +29,15 @@ export const CreateMessage = gql`
       id
       name
     }
+  }
+}
+`
+
+export const DeleteMessage = gql`
+  mutation Mutation($messageId: ID!) {
+  deleteMessage(messageId: $messageId) {
+    id
+    textMessage
   }
 }
 `
