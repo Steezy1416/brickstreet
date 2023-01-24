@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_POSTS } from "../utils/queries";
@@ -9,6 +9,9 @@ import Categories from '../components/Categories';
 import { Link, useParams } from 'react-router-dom';
 
 const Home = () => {
+    const [currentCategory, setCurrentCategory] = useState('All');
+
+
     const { loading, error, data } = useQuery(QUERY_POSTS);
     const posts = data?.getPosts || [];
 
@@ -49,6 +52,8 @@ const Home = () => {
         )
     }
 
+    const handleSelectCategory = (category) => setCurrentCategory(category);
+
     return (
         <main>
             <div className='container'>
@@ -60,8 +65,11 @@ const Home = () => {
                     <h3>All {categoryName} Posts</h3>
                 }
                 <div>
-                    <Categories currentCategory={categoryName}/>
+                    <Categories currentCategory={categoryName} handleSelectCategory={handleSelectCategory} />
+
+                    {/* <Categories currentCategory={currentCategory} handleSelectCategory={handleSelectCategory} /> */}
                 </div>
+
                 <div>
                     <AllPosts posts={filterPosts(availPosts)} />
                 </div>
