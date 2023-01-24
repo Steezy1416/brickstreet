@@ -20,6 +20,9 @@ const io = new Server(httpServer)
 
 io.on("connection", (socket) => {
     console.log(socket.id)
+    socket.on("sendMessage", (data) => {
+        socket.broadcast.emit("displayMessage", data)
+    })
 })
 
 const startServer = async () => {
