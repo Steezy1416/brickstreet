@@ -15,23 +15,17 @@ import SinglePost from './pages/SinglePost';
 
 function App() {
   return (
-
     <Router>
       <div>
         <Nav></Nav>
-
         <main>
           <Routes>
             <Route path='/' element={<Landing />} />
-
             <Route path='/home' element={<Home />}>
               <Route path=':categoryName' element={<Home />} />
             </Route>
-
             <Route path='/profile/:id' element={<Profile />} />
-            {/* <Route path='/user/:userId/post/:postId' element={<SinglePost />} /> */}
             <Route path='/post/:id' element={<SinglePost />} />
-
           </Routes>
         </main>
         <Footer></Footer>

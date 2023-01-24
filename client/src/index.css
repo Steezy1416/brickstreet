@@ -193,5 +193,10 @@ body {
 
 /* ========== START POST STYLES ========== */
 
-
+.cat-active{
+  color: red;
+}
+.cat-inactive{
+  color: black;
+}
 /* ========== END POST STYLES ========== */

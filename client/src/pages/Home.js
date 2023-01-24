@@ -14,15 +14,17 @@ const Home = () => {
 
     let { categoryName } = useParams();
 
+    // filter all posts to only show available posts on home page
     const availablePosts = (posts) => {
         return posts.filter(post => post.availability === 'available')
     }
     const availPosts = availablePosts(posts);
 
+    // further filter available posts by category
     const filterPosts = (posts) => {
         const filteredPosts = [];
 
-        if (categoryName === 'all' || !categoryName) {
+        if (categoryName === 'All' || !categoryName) {
             return posts;
         }
 
@@ -51,14 +53,14 @@ const Home = () => {
         <main>
             <div className='container'>
                 <h1>Welcome!</h1>
-                {!categoryName || categoryName === 'all' &&
+                {!categoryName || categoryName === 'All' &&
                     <h3>All Posts</h3>
                 }
-                {categoryName != '' && categoryName != 'all' &&
+                {categoryName != '' && categoryName != 'All' &&
                     <h3>All {categoryName} Posts</h3>
                 }
                 <div>
-                    <Categories />
+                    <Categories currentCategory={categoryName}/>
                 </div>
                 <div>
                     <AllPosts posts={filterPosts(availPosts)} />
