@@ -5,9 +5,7 @@ import { GetUserChats, CreateMessage } from "./queries/queries"
 
 const { io } = require("socket.io-client")
 const socket = io("http://localhost:3000")
-socket.on("connect", () => {
-    console.log(socket.id)
-})
+
 
 function MessagePage() {
 
@@ -23,6 +21,21 @@ function MessagePage() {
         }
     })
 
+    socket.on("displayMessage", (data) => {
+        console.log(`The data id is ${data.currentChatId}, the chat state id is ${chatState.currentChatId}`)
+        if (data.currentChatId === chatState.currentChatId) {
+            setChatState({
+                currentChatId: chatState.currentChatId,
+                messages: [...chatState.messages, {
+                    __typename: data.__typename,
+                    textMessage: data.textMessage,
+                    id: data.id
+                }]
+            })
+        }
+        refetch()
+    })
+
     const [createMessage, info] = useMutation(CreateMessage, {
         onCompleted: (messageData) => {
             console.log(messageData.createMessage)
@@ -35,6 +48,12 @@ function MessagePage() {
                 }]
             })
             refetch()
+            socket.emit("sendMessage", {
+                currentChatId: chatState.currentChatId,
+                __typename: messageData.createMessage.__typename,
+                id: messageData.createMessage.id,
+                textMessage: messageData.createMessage.textMessage,
+            })
         }
     })
 
