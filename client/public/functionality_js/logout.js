@@ -11,7 +11,7 @@ const Logout = () => {
            
             <div className='logout-form'>
             <div className=''>
-                <h1>Login</h1>
+                <h1>Logout</h1>
             </div>
         <form>
             <button type="submit">Logout</button>
