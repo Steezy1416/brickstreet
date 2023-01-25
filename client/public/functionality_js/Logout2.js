@@ -1,8 +1,6 @@
 
-//ALTERNATE 'Login' CODE
-
-
-/* async function logout() {
+// Logout ALT Code
+  async function logout() {
     const response = await fetch('/api/user/logout', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' }
@@ -15,5 +13,5 @@
     }
   }
   
-  document.querySelector('#logout').addEventListener('click', logout); */
+  document.querySelector('#logout').addEventListener('click', logout); 
   
