@@ -1,5 +1,5 @@
 // JT
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   ApolloProvider,
   ApolloClient,
@@ -24,6 +24,8 @@ import Hero from "./components/Hero";
 import Login from "./components/Login";
 import MessagePage from "./components/MessagePage";
 import Footer from "./components/Footer";
+import Profile from './pages/Profile';
+import SinglePost from './pages/SinglePost';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -43,6 +45,7 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState('MessagePage');
@@ -72,6 +75,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Hero />} />
               <Route path="/home" element={<Home />} />
+              <Route path='/home/:categoryName' element={<Home />} />
+
+              <Route path='/profile/:id' element={<Profile />} />
+              <Route path='/post/:id' element={<SinglePost />} />
               <Route path="/about" element={<About />} />
               <Route path="/messages" element={<MessagePage />} />
               <Route path="/post" element={<Post />} />

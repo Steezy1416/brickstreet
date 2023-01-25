@@ -406,3 +406,42 @@ body {
 }
 
 /* ========== END Media Queries STYLES ========== */
+
+/* ========== START POST STYLES ========== */
+.cat-list > li {
+  display: inline-block;
+}
+
+.cat-list-item {
+  list-style: none;
+}
+.category {
+  text-decoration: none;
+  font-weight: 450;
+  padding: 0 7px
+}
+
+.cat-active {
+  height: auto;
+  width: auto;
+  border: none;
+  border-radius: 30px;
+  background: #005c78;
+  color: #fff8e1;
+}
+
+.cat-inactive {
+  color: black;
+}
+
+.category:hover {
+  font-weight: 500;
+}
+.cat-active:hover {
+  color: #fff8e1;
+}
+.cat-inactive:hover {
+  color: black;
+}
+
+/* ========== END POST STYLES ========== */
