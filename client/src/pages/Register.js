@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+// import {View, Image, StyleSheet} from 'react-native';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
@@ -61,6 +62,15 @@ const Signup = () => {
                 type="password"
                 id="password"
                 value={formState.password}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
+                placeholder="Image"
+                name="image"
+                type="image"
+                id="image"
+                value={formState.image}
                 onChange={handleChange}
               />
               <button className="btn d-block w-100" type="submit">
