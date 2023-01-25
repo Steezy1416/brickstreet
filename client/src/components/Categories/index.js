@@ -26,20 +26,20 @@ const Categories = ({ currentCategory, setCurrentCategory }) => {
         <div>
             <h4>Categories</h4>
             {currentCategory === 'All' ? (
-                <Link className='cat-active' to={`/home/All`}>All</Link>
+                <Link className='category cat-active' to={`/home/All`}>All</Link>
             ) : (
-                <Link className='cat-inactive' to={`/home/All`}>All</Link>
+                <Link className='category cat-inactive' to={`/home/All`}>All</Link>
             )}
             {categories.map(category => {
                 return (<div key={category.id}>
                     {currentCategory === category.categoryName ? (
 
                         <Link
-                            className='cat-active'
+                            className='category cat-active'
                             to={`/home/${category.categoryName}`}>{category.categoryName}</Link>
                     ) : (
                         <Link
-                            className='cat-inactive'
+                            className='category cat-inactive'
                             onClick={() => { setCurrentCategory(category.categoryName) }}
                             to={`/home/${category.categoryName}`}>{category.categoryName}</Link>
                     )
