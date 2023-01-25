@@ -8,7 +8,7 @@ function Login() {
                 <div className="row mb-5">
                     <div className="col-md-8 col-xl-6 text-center mx-auto">
                         <h2>Log in</h2>
-                        <p className="w-lg-50">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc. Vestibulum dui eget ultrices.</p>
+                        <p className="w-lg-50">Hello there! Please sign in to get started.</p>
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center">

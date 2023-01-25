@@ -44,7 +44,7 @@ function Footer() {
                         </svg>
                     </li>
                 </ul>
-                <p class="mb-0">Copyright © 2023 Brick Street</p>
+                <p className="mb-0">Copyright © 2023 Brick Street</p>
             </div>
         </footer>
     )
