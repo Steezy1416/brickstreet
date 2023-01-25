@@ -1,5 +1,5 @@
 
-import React from 'react';
+ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
 import { useQuery, useMutation } from '@apollo/client';
@@ -44,14 +44,14 @@ const UserDashboard = (props) => {
       console.error(e);
     }
   };
-    // DASHBOARD DESIGN CODE 
+    /* DASHBOARD DESIGN CODE 
   return (
     <div>
       <div className="flex-row mb-3">
         <h2 className="bg-dark text-secondary p-3 display-inline-block">
           Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
-
+        
         {userParam && (
           // TO ADD A NEW MESSAGE FROM USER DASHBOARD
           <button className="btn ml-auto" onClick={handleClick}>
@@ -76,9 +76,9 @@ const UserDashboard = (props) => {
           />
         </div>
       </div>
-      <div className="mb-3">{!userParam && <MessageForm />}</div>
+      <div className="mb-3">{!userParam && <MessageForm />}</div> 
     </div>
-  );
+  ); */
 };
 
 export default UserDashboard;
