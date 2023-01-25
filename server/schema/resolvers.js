@@ -11,7 +11,6 @@ module.exports = resolvers = {
             return await User.find({})
         },
         getPost: async (_, args) => {
-            console.log(args)
             return await Post.findById(args.postId)
         },
         getPostByAvailability: async (_, args) => {
@@ -47,7 +46,6 @@ module.exports = resolvers = {
             return await Post.find({ userId: parent.id })
         },
         async chats(parent) {
-            console.log(parent)
             return await Chat.find({ userIds: {$all: [parent.id]} })
         },
         async messages(parent) {
@@ -124,8 +122,6 @@ module.exports = resolvers = {
             const date = new Date()
 
             const createdAt = format_date(date)
-
-            console.log(args)
 
             const post = new Post({
                 userId: args.userId,
@@ -216,7 +212,6 @@ module.exports = resolvers = {
             const date = new Date()
 
             const createdAt = format_date(date)
-            console.log(createdAt)
 
             const message = new Message({
                 userId: args.userId,

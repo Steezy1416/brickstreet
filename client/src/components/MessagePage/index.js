@@ -28,7 +28,11 @@ function MessagePage() {
                 messages: [...chatState.messages, {
                     __typename: data.__typename,
                     textMessage: data.textMessage,
-                    id: data.id
+                    id: data.id,
+                    user: {
+                        id: "63cdcd19061e48c8544531cb",
+                        textMessage: data.textMessage
+                    }
                 }]
             })
         }
@@ -54,6 +58,10 @@ function MessagePage() {
                     __typename: messageData.createMessage.__typename,
                     id: messageData.createMessage.id,
                     textMessage: messageData.createMessage.textMessage,
+                    user: {
+                        id: "63cdcd19061e48c8544531cb",
+                        textMessage: messageData.createMessage.textMessage
+                    }
                 }]
             })
             refetch()
@@ -62,6 +70,10 @@ function MessagePage() {
                 __typename: messageData.createMessage.__typename,
                 id: messageData.createMessage.id,
                 textMessage: messageData.createMessage.textMessage,
+                user: {
+                    id: "63cdcd19061e48c8544531cb",
+                    textMessage: messageData.createMessage.textMessage
+                }
             })
         }
     })
@@ -88,7 +100,6 @@ function MessagePage() {
 
 
     const handleChatClick = e => {
-        console.log(chatState)
         const div = document.querySelector(".messaging")
         div.classList.remove("hide")
         const chatId = e.target.closest("ul").getAttribute("id")
