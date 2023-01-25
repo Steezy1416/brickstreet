@@ -27,6 +27,7 @@ import Footer from "./components/Footer";
 import Profile from './pages/Profile';
 import SinglePost from './pages/SinglePost';
 
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -80,7 +81,7 @@ function App() {
               <Route path='/post/:id' element={<SinglePost />} />
               <Route path="/about" element={<About />} />
               <Route path="/messages" element={<MessagePage />} />
-              <Route path="/post" element={<Post />} />
+              <Route path="/post" element={<AddPost />} />
               <Route path="/dashboard" element={<UserDashboard />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Signup />} />
