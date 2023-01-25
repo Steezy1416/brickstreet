@@ -22,8 +22,10 @@ function App() {
           <Routes>
             <Route path='/' element={<Landing />} />
             <Route path='/home' element={<Home />}>
-              <Route path=':categoryName' element={<Home />} />
+              {/* <Route path=':categoryName' element={<Home />} /> */}
             </Route>
+            <Route path='/home/:categoryName' element={<Home />} />
+
             <Route path='/profile/:id' element={<Profile />} />
             <Route path='/post/:id' element={<SinglePost />} />
           </Routes>

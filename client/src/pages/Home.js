@@ -52,7 +52,7 @@ const Home = () => {
         )
     }
 
-    const handleSelectCategory = (category) => setCurrentCategory(category);
+    // const handleSelectCategory = (category) => setCurrentCategory(category);
 
     return (
         <main>
@@ -65,7 +65,7 @@ const Home = () => {
                     <h3>All {categoryName} Posts</h3>
                 }
                 <div>
-                    <Categories currentCategory={categoryName} handleSelectCategory={handleSelectCategory} />
+                    <Categories currentCategory={categoryName} setCurrentCategory={setCurrentCategory} />
 
                     {/* <Categories currentCategory={currentCategory} handleSelectCategory={handleSelectCategory} /> */}
                 </div>
