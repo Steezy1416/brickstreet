@@ -192,7 +192,13 @@ body {
 
 
 /* ========== START POST STYLES ========== */
+.cat-list > li {
+  display: inline-block;
+}
 
+.cat-list-item {
+  list-style: none;
+}
 .category {
   text-decoration: none;
   font-weight: 450;

@@ -25,28 +25,33 @@ const Categories = ({ currentCategory, setCurrentCategory }) => {
     return (
         <div>
             <h4>Categories</h4>
-            {currentCategory === 'All' ? (
-                <Link className='category cat-active' to={`/home/All`}>All</Link>
-            ) : (
-                <Link className='category cat-inactive' to={`/home/All`}>All</Link>
-            )}
-            {categories.map(category => {
-                return (<div key={category.id}>
-                    {currentCategory === category.categoryName ? (
-
-                        <Link
-                            className='category cat-active'
-                            to={`/home/${category.categoryName}`}>{category.categoryName}</Link>
+            <ul className='cat-list'>
+                <li className='cat-list-item'>
+                    {currentCategory === 'All' ? (
+                        <Link className='category cat-active' to={`/home/All`}>All</Link>
                     ) : (
-                        <Link
-                            className='category cat-inactive'
-                            onClick={() => { setCurrentCategory(category.categoryName) }}
-                            to={`/home/${category.categoryName}`}>{category.categoryName}</Link>
+                        <Link className='category cat-inactive' to={`/home/All`}>All</Link>
+                    )}
+                </li>
+                {categories.map(category => {
+                    return (<li key={category.id} className='cat-list-item'>
+                        {currentCategory === category.categoryName ? (
+                            <Link
+                                className='category cat-active'
+                                to={`/home/${category.categoryName}`}>{category.categoryName}</Link>
+
+                        ) : (
+                            <Link
+                                className='category cat-inactive'
+                                onClick={() => { setCurrentCategory(category.categoryName) }}
+                                to={`/home/${category.categoryName}`}>{category.categoryName}</Link>
+                        )
+                        }
+                    </li>
                     )
-                    }
-                </div>
-                )
-            })}
+                })}
+            </ul>
+
         </div>
     )
 }
