@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
+// import {View, Image, StyleSheet} from 'react-native';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
-import Auth from '../utils/auth';
+import auth from '../utils/Auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -32,7 +33,7 @@ const Signup = () => {
         variables: { ...formState },
       });
 
-      Auth.login(data.addUser.token);
+      auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
@@ -56,20 +57,20 @@ const Signup = () => {
               />
               <input
                 className="form-input"
-                placeholder="Email"
-                name="email"
-                type="email"
-                id="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
                 placeholder="Password"
                 name="password"
                 type="password"
                 id="password"
                 value={formState.password}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
+                placeholder="Image"
+                name="image"
+                type="image"
+                id="image"
+                value={formState.image}
                 onChange={handleChange}
               />
               <button className="btn d-block w-100" type="submit">

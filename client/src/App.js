@@ -21,7 +21,6 @@ import AddPost from "./pages/AddPost.js";
 import UserDashboard from "./pages/UserDashboard";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import Login from "./pages/Login";
 import Login from "./components/Login";
 import MessagePage from "./components/MessagePage";
 import Footer from "./components/Footer";

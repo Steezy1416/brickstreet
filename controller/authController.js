@@ -83,9 +83,9 @@ loginUser = async (req, res) =>{
    
 }
 
-// Logout functionality demo code
+/* Logout functionality demo code
 
-/* logoutUser = async (req, res) =>{
+ logoutUser = async (req, res) =>{
 
     try {
         const {username, password} = req.body;
@@ -98,7 +98,7 @@ loginUser = async (req, res) =>{
         const user = await User.findOne({username:username}).exec()
 
         if(!user) res.status(400).json({error:"User not Found."})
-        } */
+        }
 
         router.post('/logout', (req, res) => {
             if (req.session.loggedIn) {
@@ -109,7 +109,7 @@ loginUser = async (req, res) =>{
             else {
               res.status(404).end();
             }
-          });
+          }); */
 
 const handleRefreshToken = async (req, res)=>{
 
@@ -144,4 +144,4 @@ const handleRefreshToken = async (req, res)=>{
 }
 
 
-module.exports = {registerUser, loginUser, logoutUser, handleRefreshToken}
+module.exports = {registerUser, loginUser, handleRefreshToken}
