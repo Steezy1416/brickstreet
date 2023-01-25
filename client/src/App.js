@@ -76,7 +76,6 @@ function App() {
               <Route path="/" element={<Hero />} />
               <Route path="/home" element={<Home />} />
               <Route path='/home/:categoryName' element={<Home />} />
-
               <Route path='/profile/:id' element={<Profile />} />
               <Route path='/post/:id' element={<SinglePost />} />
               <Route path="/about" element={<About />} />

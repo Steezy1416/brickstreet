@@ -11,6 +11,7 @@ import { Link, useParams } from 'react-router-dom';
 const Home = () => {
     const [currentCategory, setCurrentCategory] = useState('All');
 
+
     const { loading, error, data } = useQuery(QUERY_POSTS);
     const posts = data?.getPosts || [];
 
@@ -22,61 +23,59 @@ const Home = () => {
     }
     const availPosts = availablePosts(posts);
 
+    // further filter available posts by category
     const filterPosts = (posts) => {
         const filteredPosts = [];
 
-        if (categoryName === 'all' || !categoryName) {
-            // further filter available posts by category
-            const filterPosts = (posts) => {
-                const filteredPosts = [];
-
-                if (categoryName === 'All' || !categoryName) {
-                    return posts;
-                }
-
-                posts.forEach(post => post.categories.filter(category => {
-                    if (category.categoryName === categoryName) {
-                        filteredPosts.push(post)
-                    };
-                }));
-
-                return filteredPosts;
-            }
-
-            if (loading) {
-                return (
-                    <div>Loading ...</div>
-                )
-            }
-
-            if (error) {
-                return (
-                    <p>{error.message}</p>
-                )
-            }
-
-            return (
-                <main>
-                    <div className='container'>
-                        <h1>Welcome!</h1>
-                        {!categoryName || categoryName === 'All' &&
-                            <h3>All Posts</h3>
-                        }
-                        {categoryName != '' && categoryName != 'All' &&
-                            <h3>All {categoryName} Posts</h3>
-                        }
-                        <div>
-                            <Categories currentCategory={categoryName} setCurrentCategory={setCurrentCategory} />
-                        </div>
-
-                        <div>
-                            <AllPosts posts={filterPosts(availPosts)} />
-                        </div>
-                    </div>
-                </main >
-            )
+        if (categoryName === 'All' || !categoryName) {
+            return posts;
         }
+
+        posts.forEach(post => post.categories.filter(category => {
+            if (category.categoryName === categoryName) {
+                filteredPosts.push(post)
+            };
+        }));
+
+        return filteredPosts;
     }
+
+    if (loading) {
+        return (
+            <div>Loading ...</div>
+        )
+    }
+
+    if (error) {
+        return (
+            <p>{error.message}</p>
+        )
+    }
+
+
+    return (
+        <main>
+            <div className='container'>
+                <h1>Welcome!</h1>
+                {!categoryName || categoryName === 'All' &&
+                    <h3>All Posts</h3>
+                }
+                {categoryName != '' && categoryName != 'All' &&
+                    <h3>All {categoryName} Posts</h3>
+                }
+                <div>
+                    <Categories currentCategory={categoryName} setCurrentCategory={setCurrentCategory} />
+
+                </div>
+
+                <div>
+                    <AllPosts posts={filterPosts(availPosts)} />
+                </div>
+            </div>
+
+
+        </main >
+    )
 }
 
 export default Home;
