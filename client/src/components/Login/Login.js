@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import useAuth from '../components/contexts/AuthHook'
+import React, {useState} from 'react';
+import useAuth from '../contexts/AuthHook'
 //import './style.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
@@ -82,4 +82,4 @@ const navigate = useNavigate();
   )
 }
 
-export default Login
+export default Login;

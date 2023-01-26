@@ -6,10 +6,12 @@ import {
   InMemoryCache,
   createHttpLink,
 } from "@apollo/client";
+
+
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Signup from "./pages/Register";
+import Register from "./pages/Register";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact.js";
@@ -84,7 +86,7 @@ function App() {
               <Route path="/post" element={<AddPost />} />
               <Route path="/dashboard" element={<UserDashboard />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Signup />} />
+              <Route path="/register" element={<Register />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
 
