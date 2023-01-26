@@ -8,7 +8,7 @@ import { QUERY_CATEGORIES } from '../../utils/queries';
 const Categories = ({ currentCategory, setCurrentCategory }) => {
     const { loading, error, data } = useQuery(QUERY_CATEGORIES);
     const categories = data?.getCategories || [];
-    
+
     if (loading) {
         return (
             <div>Loading ...</div>
@@ -22,8 +22,8 @@ const Categories = ({ currentCategory, setCurrentCategory }) => {
     }
 
     return (
-        <div>
-            <h4>Categories</h4>
+        <div className='categories'>
+            {/* <h4>Categories</h4> */}
             <ul className='cat-list'>
                 <li className='cat-list-item'>
                     {currentCategory === 'All' ? (

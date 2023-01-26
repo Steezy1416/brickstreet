@@ -408,6 +408,11 @@ body {
 /* ========== END Media Queries STYLES ========== */
 
 /* ========== START POST STYLES ========== */
+.cat-list{
+  padding: 10px 0 10px 0 ;
+  margin: 10px 0 10px 0 ;
+  background: rgb(255, 179, 0,0.7);
+}
 .cat-list > li {
   display: inline-block;
 }
