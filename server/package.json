@@ -12,6 +12,7 @@
   },
   "scripts": {
     "astra": "nodemon server.js",
+    "start": "node server.js",
     "watch": "nodemon"
   },
   "devDependencies": {
