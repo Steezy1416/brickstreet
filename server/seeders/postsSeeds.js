@@ -1,4 +1,5 @@
 const Post = require('../models/Post');
+const {eiffelTowerPhoto}= require('./images')
 
 const postData = [
     {
@@ -6,28 +7,29 @@ const postData = [
         description: 'lorem ipsum lorem ipsum',
         bidPrice: 100,
         availability: 'available',
-        categoryIndex: 7
+        categoryIndex: 6
     },
     {
         title: 'Eiffel Tower',
         description: 'lorem ipsum lorem ipsum',
         bidPrice: 500,
         availability: 'available',
-        categoryIndex: 5
-    },
+        categoryIndex: 4,
+        postImage: eiffelTowerPhoto
+        },
     {
         title: "Ariel's Underwater Palace",
         description: 'lorem ipsum lorem ipsum',
         bidPrice: 300,
         availability: 'available',
-        categoryIndex: 8
+        categoryIndex: 7
     },
     {
         title: 'Millennium Falcon',
         description: 'lorem ipsum lorem ipsum',
         bidPrice: 100,
         availability: 'available',
-        categoryIndex: 9
+        categoryIndex: 8
     },
     {
         title: 'Republic Gunship',
@@ -41,7 +43,7 @@ const postData = [
         description: 'lorem ipsum lorem ipsum',
         bidPrice: 100,
         availability: 'available',
-        categoryIndex: 5
+        categoryIndex: [5,]
     }
 ]
 
@@ -54,7 +56,8 @@ const seedPosts = (userIds, categoryIds) => {
             availability: post.availability,
             userId: userIds[Math.floor(Math.random()*userIds.length)],
             categoryIds: [categoryIds[post.categoryIndex]],
-            create
+            createdAt: new Date(),
+            postImage: post.postImage
         }
     })
     return Post.insertMany(newPostData)
