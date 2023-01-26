@@ -13,7 +13,8 @@
   "scripts": {
     "astra": "nodemon server.js",
     "start": "node server.js",
-    "watch": "nodemon"
+    "watch": "nodemon",
+    "seed": "node seeders/seed.js"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
