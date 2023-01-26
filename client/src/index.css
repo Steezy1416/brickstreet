@@ -536,12 +536,12 @@ body {
 
 /* ========== START Media Queries STYLES ========== */
 
-/* Small devices (landscape phones, 576px and up) */
-/* @media (min-width: 576px) {
-  .cardHeight {
-    min-height: 60vh;
-  }
-} */
+@media (max-width: 400px) {
+.cardHeightForTeam {
+  min-height: 290px;
+}
+}
+
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
