@@ -11,16 +11,28 @@ function Register() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = async (e) =>{
       e.preventDefault();
       
-      try{
-          const response = axios.post("http://localhost:4000/api/register", {username, password})
+      const response = await fetch('http://localhost:5000/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        })
+      });
+      const data = await response.json()
+      console.log(data);
+      /* try{
+          const response = await axios.post("http://localhost:5000/api/register", {username, password})
           console.log(response)
       }catch(error){
           console.log(error)
       }
-     
+      */
 
   }
 

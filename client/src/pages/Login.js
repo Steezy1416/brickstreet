@@ -11,12 +11,29 @@ const navigate = useNavigate();
  const [username, setUsername] = useState("")
  const [password, setPassword] = useState("")
 
-
+const formhandler= async () =>{
+    const response = await fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        })
+      });
+      const data = await response.json()
+      setAuth(data)
+      navigate('/home')
+      console.log(data);
+} 
 
     const submit = async (e) =>{
         e.preventDefault();
         
-        try{
+   
+
+       /* try{
               await axios.post("http://localhost:4000/api/login",{username:username, password:password},{
                 headers: {"content-type": "application/json" },
                 withCredentials: true,
@@ -37,7 +54,7 @@ const navigate = useNavigate();
         }catch(error){
             console.log("Error Found", error)
         }
-        
+        */
     }
 
   return (
@@ -48,7 +65,7 @@ const navigate = useNavigate();
                     <h1>Login</h1>
                 </div>
                 <div className='box-body px-3'>
-                    <form onSubmit={submit}>
+                    <form>
                         <div className='group'>
                             <input type="text"
                             name="username"
@@ -67,7 +84,7 @@ const navigate = useNavigate();
                         </div>
                         <div className='group text-center'>
                             <input type="submit"
-                            value="Login" 
+                            value="Login" onClick={formhandler} 
                             className="btn p-2 btn-primary col-md-6 text-center"
                             />
                         </div>

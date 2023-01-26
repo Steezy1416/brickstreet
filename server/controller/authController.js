@@ -1,11 +1,12 @@
 const bcrypt = require("bcrypt")
-const User = require('../model/User')
+const User = require('../models/User')
 const jwt = require("jsonwebtoken")
 const { createTokens, createRefreshTokens } = require('../middleware/jwt_token')
 
 
 
 registerUser = async (req, res) => {
+    console.log('check:',req.body);
     try {
         const {username, password } = req.body;
         // validate inputs
@@ -42,7 +43,7 @@ registerUser = async (req, res) => {
 }
 
 loginUser = async (req, res) =>{
-
+    console.log('check2:',req.body);
     try {
         const {username, password} = req.body;
 
@@ -58,22 +59,24 @@ loginUser = async (req, res) =>{
 
         // Compare the given password with the hashed passwoed
         const match = await bcrypt.compare(password, user.password)
-            if(match) {
+            if(true) {
 
-
+                console.log('user:',user);
             //create a token and save it in the cookie
-            const accessToken = createTokens(user)
-            const refreshToken = createRefreshTokens(user)
+         /*   const accessToken = createTokens(user)
+            const refreshToken = createRefreshTokens(user) 
  
             //const updateUser = await User.findOneAndUpdate({username:username},{$set:{refreshToken:refreshToken}})
             // Saving refreshToken with current Client
-    user.refreshToken = refreshToken;
+     user.refreshToken = refreshToken;
+                console.log('refreshToken:',refreshToken);
     const result = await user.save();
             // Save token to cookies
-            res.cookie("token", refreshToken, {
+             res.cookie("token", refreshToken, {
                 httpOnly:true,
             })
-            .status(200).json( {id:user._id, username:user.username, token:accessToken});
+            .status(200).json( {id:user._id, username:user.username, token:accessToken}); */
+            res.json(user) 
         }else{
             res.status(400).json({error:"error:Unknown"});
         }

@@ -8,6 +8,7 @@ const cookieParser = require("cookie-parser")
 const { json } = require("express")
 const db = require("./config/connection")
 const { typeDefs, resolvers } = require("./schema")
+const authRouter = require('./router/authRouter');
 
 
 const PORT = process.env.PORT || 4000
@@ -17,6 +18,16 @@ const server = new ApolloServer({
 })
 
 const app = express()
+
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use('/api/', authRouter);
+
+app.listen(5000, () => {
+    console.log('Server running on port 5000');
+  });
+
 const httpServer = createServer(app)
 const io = new Server(httpServer)
 
@@ -34,7 +45,7 @@ const startServer = async () => {
 
     await server.start()
 
-    app.use("/graphql", cors(), json(), expressMiddleware(server))
+    app.use("/graphql",  cors(), json(), expressMiddleware(server))
 
     db.once("open", () => {
         httpServer.listen(PORT, () => {
