@@ -6,14 +6,14 @@ const jwt = require("jsonwebtoken");
 const createUser = async (args) => { 
     try {
         
-        const user = await User.findOne({email:args.userInput.email});
+        const user = await User.findOne({username:args.userInput.username});
         if(user){
             throw new Error("User already Exist")
         }
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(args.userInput.password, salt);
         const newuser = new User({
-            email:args.userInput.email,
+            username:args.userInput.username,
             name:args.userInput.name,
             password:hash
         })
@@ -49,8 +49,8 @@ const createUser = async (args) => {
 //     .catch()
 // }
 
-const login = async ({email, password}) => {
-    const user = await User.findOne({email:email})
+const login = async ({username, password}) => {
+    const user = await User.findOne({username:username})
 
     if(!user){
         throw new Error("User Does not Exist")
@@ -61,7 +61,7 @@ const login = async ({email, password}) => {
         throw new Error("Incorrect Login Details")
     }
 
-    const token = jwt.sign({userId:user.id, email: user.email},"secretkey4000",
+    const token = jwt.sign({userId:user.id, username: user.username},"secretkey4000",
         { expiresIn: '1h' })
 
     return { userId:user._id, token:token, tokenExpiration: 1}
