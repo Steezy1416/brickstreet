@@ -9,7 +9,8 @@ const { json } = require("express")
 const db = require("./config/connection")
 const { typeDefs, resolvers } = require("./schema")
 
-const PORT = process.env.PORT || 4000
+
+const PORT = process.env.PORT || 4100
 const server = new ApolloServer({
     typeDefs,
     resolvers
@@ -37,7 +38,7 @@ const startServer = async () => {
 
     db.once("open", () => {
         httpServer.listen(PORT, () => {
-            console.log(`🚀 Server ready at http://localhost:4000/graphql`);
+            console.log(`🚀 Server ready at http://localhost:4100/graphql`);
         })
     })
 }
