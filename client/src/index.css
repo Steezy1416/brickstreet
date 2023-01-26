@@ -354,27 +354,31 @@ body {
 /* ========== START FOOTER STYLES ========== */
 
 .footer {
-    bottom: 1;
-    color: #707070;
-    height: 2em;
-    left: 0;
-    position: relative; /*/changed to relative from fixed also works if position is not there*/
-    width:100%;
+  bottom: 1;
+  color: #707070;
+  height: 2em;
+  left: 0;
+  position: relative;
+  /*/changed to relative from fixed also works if position is not there*/
+  width: 100%;
 }
 
 .containerForPrivacy {
-    color: white;
-    margin-bottom: 2em;
-    min-height: 100%;
-    overflow: auto;
-    padding: 0 2em;
-    text-align: justify;
+  color: white;
+  margin-bottom: 2em;
+  min-height: 100%;
+  overflow: auto;
+  padding: 0 2em;
+  text-align: justify;
 }
 
 .footer-text-styles {
   font-family: 'Comfortaa', cursive;
 }
-.tab { margin-left: 40px; }
+
+.tab {
+  margin-left: 40px;
+}
 
 /* ========== END FOOTER STYLES ========== */
 
@@ -407,14 +411,21 @@ body {
 
 /* ========== END Media Queries STYLES ========== */
 
-/* ========== START POST STYLES ========== */
-.cat-list > li {
+/* ========== START CATEGORY STYLES ========== */
+.cat-list {
+  padding: 10px 0 10px 0;
+  margin: 10px 0 10px 0;
+  background: rgb(255, 179, 0, 0.7);
+}
+
+.cat-list>li {
   display: inline-block;
 }
 
 .cat-list-item {
   list-style: none;
 }
+
 .category {
   text-decoration: none;
   font-weight: 450;
@@ -437,11 +448,41 @@ body {
 .category:hover {
   font-weight: 500;
 }
+
 .cat-active:hover {
   color: #fff8e1;
 }
+
 .cat-inactive:hover {
   color: black;
 }
 
-/* ========== END POST STYLES ========== */
+/* ========== END CATEGORY STYLES ========== */
+
+/* ========== START SINGLE POST STYLES ========== */
+.single-post {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.single-post-img {
+  max-width: 40vmax;
+}
+
+.single-post-seller {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.single-post-text {
+  font-size: 20px;
+}
+
+.single-post-bold {
+  font-weight: 500;
+}
+
+.single-post-desc {
+  margin-bottom: 20px;
+}
+
+/* ========== END SINGLE POST STYLES== ========== */

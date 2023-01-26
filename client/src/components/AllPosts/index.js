@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { CardGroup, Card, CardBody, CardTitle, CardSubtitle, CardText, CardImg, CardLink, Badge } from 'reactstrap'
+import { Card, CardBody, CardTitle, CardText, CardImg, CardLink, Badge } from 'reactstrap'
 
 const AllPosts = ({ posts }) => {
 
@@ -9,8 +9,8 @@ const AllPosts = ({ posts }) => {
             <div className='container'>
                 <div className="row">
                     {posts && posts.map(post => (
-                        <div key={post.id} className='col-xs-8 col-sm-6 col-md-3 col-lg-2'>
-                            <Card  className='mb-4'>
+                        <div key={post.id} className='col-xs-8 col-sm-6 col-md-4 col-lg-3'>
+                            <Card className='mb-4'>
                                 <Link to={`/post/${post.id}`} style={{ textDecoration: 'none', color: 'black' }}>
                                     <CardBody>
                                         <CardTitle tag='h6'>{post.title}</CardTitle>

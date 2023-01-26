@@ -19,34 +19,40 @@ const SinglePost = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='single-post container'>
             <Badge color={post.availability === 'available' ? "success" : "secondary"} style={{ "opacity": "0.9" }} pill className="available-post">
                 {post.availability.charAt(0).toUpperCase() + post.availability.substr(1).toLowerCase()}
             </Badge>
             <div className='row mt-2'>
                 <div className='col'>
-                    <img src={`${post.postImage}`} alt={`${post.title}`} />
+                    <img src={`${post.postImage}`} alt={`${post.title}`} className='single-post-img' />
                 </div>
-                <div className='col'>
+                <div className='col single-post-text'>
                     <h2>{post.title}</h2>
-                    <div>
+                    <div className='single-post-seller'>
+                        <span>
+                            Sold by{' '}
+                        </span>
                         <Link to={`/profile/${post.user.id}`}>{post.user.name}</Link>
                     </div>
-                    <p>Bid:
-                        {' '}
+                    <p>
+                        <span className='single-post-bold'>
+                            Bid:{' '}
+                        </span>
                         ${post.bidPrice}
                     </p>
-                    <div>
-                        <p>Description:{' '}</p>
-                        <p>{post.description}</p>
+                    <div className='single-post-desc'>
+                        <div className='single-post-bold'>Description:{' '}</div>
+                        <div>{post.description}</div>
                     </div>
                     <List type="inline">
-                        <ListInlineItem>Categories:{' '}</ListInlineItem>
+                        <ListInlineItem className='single-post-bold'>Categories:{' '}</ListInlineItem>
                         {post.categories.map(category => (
                             <ListInlineItem key={category.id}>
                                 {category.categoryName}
                             </ListInlineItem>))}
                     </List>
+                    <Link to={'#'}>Message Seller</Link>
                 </div>
             </div>
 

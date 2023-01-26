@@ -22,8 +22,8 @@ const Categories = ({ currentCategory, setCurrentCategory }) => {
     }
 
     return (
-        <div>
-            <h4>Categories</h4>
+        <div className='categories'>
+            {/* <h4>Categories</h4> */}
             <ul className='cat-list'>
                 <li className='cat-list-item'>
                     {currentCategory === 'All' ? (
