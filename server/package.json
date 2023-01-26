@@ -11,7 +11,8 @@
     "socket.io": "^4.5.4"
   },
   "scripts": {
-    "astra": "nodemon server.js"
+    "astra": "nodemon server.js",
+    "watch": "nodemon"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0"
