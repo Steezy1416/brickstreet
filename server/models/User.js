@@ -5,6 +5,7 @@ const UserSchema = new Schema({
     name: String,
     password: String,
     profilePicture: String,
+    socketId: String
 
 })
 

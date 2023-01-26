@@ -46,7 +46,7 @@ module.exports = resolvers = {
             return await Post.find({ userId: parent.id })
         },
         async chats(parent) {
-            return await Chat.find({ userIds: {$all: [parent.id]} })
+            return await Chat.find({ userIds: { $all: [parent.id] } })
         },
         async messages(parent) {
             return await Message.find({ userId: parent.id })
@@ -115,6 +115,13 @@ module.exports = resolvers = {
                 { new: true }
             )
 
+        },
+        updateUserSocketId: async (_, args) => {
+            return await User.findByIdAndUpdate(
+                args.userId,
+                { socketId: args.socketId },
+                { new: true }
+            )
         },
 
 

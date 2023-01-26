@@ -9,6 +9,7 @@ module.exports = typeDefs = gql`
         chats: [Chat]
         messages: [Message]
         profilePicture: String
+        socketId: String
     }
 
     type Post {
@@ -69,6 +70,7 @@ module.exports = typeDefs = gql`
         ## User Mutations
         createUser(name: String!, password: String!): User
         updateProfilePicture(userId: ID!, profilePicture: String!): User
+        updateUserSocketId(userId: ID!, socketId: String!): User
 
         ## Post Mutations
         createPost(userId: ID!, postImage: String!, title: String!, description: String!, bidPrice: Int!, categoryIds: [ID], availability: PostAvailable!): Post
