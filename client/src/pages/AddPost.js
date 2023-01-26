@@ -61,7 +61,7 @@ const AddPost = () => {
                   </div>
                   <textarea id="itemDescription" class="mb-3 form-control" name="itemDescription" rows="6" placeholder="Item Description"></textarea>
                   <label className="mb-3">
-                    Choose a product category
+                    Choose an item category
                   </label>
                   <Select
                     // defaultValue={[options[2]]}
@@ -71,6 +71,9 @@ const AddPost = () => {
                     className="basic-multi-select col-12 mb-3"
                     classNamePrefix="select"
                   />
+                  <label className="mb-3">
+                    Choose and upload a photo for your item
+                  </label>
                   <div class="input-group mb-3">
                     <input
                       type="file"
@@ -87,7 +90,7 @@ const AddPost = () => {
 
                   <div className="mb-3">
                     <button className="btn btn-moving-gradient btn-dark d-block w-100" type="submit">
-                      List Product
+                      List Item
                     </button>
                   </div>
                 </form>
