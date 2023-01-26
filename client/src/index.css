@@ -486,16 +486,25 @@ body {
 
 .clickHere-Portfolio {
   font-family: 'Montserrat', sans-serif;
-  color: inherit;
+  color: rgba(255, 179, 0, 0.8);
+  text-decoration: none;
+}
+.clickHere-Portfolio:hover {
+  color: black;
   text-decoration: none;
 }
 
 .developerName {
   font-family: 'Montserrat', sans-serif!important;
+  color: #ffc107;
 }
 
 .madeWithLove {
   font-family: 'Comfortaa', cursive;
+}
+
+.meetTheTeamSection {
+  background-color: #6c757d;
 }
 
 /* ========== END CONTACT PAGE POLICY STYLES== ========== */
