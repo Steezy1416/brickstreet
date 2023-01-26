@@ -54,7 +54,7 @@ const Contact = () => (
       </div>
       <div className="row gy-4 row-cols-2 row-cols-md-3 justify-content-center">
         <div className="col">
-          <div className="card border-0 shadow-none bg-secondary">
+          <div className="card border-0 shadow-none bg-secondary cardHeightForTeam">
             <div className="card-body py-3 text-center d-flex flex-column align-items-center p-0"><img className="rounded-circle mb-3 fit-cover minifigurePhoto" width="130" height="130" alt='' />
               <h5 className="fw-bold card-title mb-0 developerName"><strong>Alecia Maragh</strong></h5>
               <a className='clickHere-Portfolio' href='#placeholder'><p className="card-text mb-2">Portfolio</p></a>
@@ -71,7 +71,7 @@ const Contact = () => (
           </div>
         </div>
         <div className="col">
-          <div className="card border-0 shadow-none bg-secondary">
+          <div className="card border-0 shadow-none bg-secondary cardHeightForTeam">
             <div className="card-body py-3 text-center d-flex flex-column align-items-center p-0"><img className="rounded-circle mb-3 fit-cover minifigurePhoto" width="130" height="130" alt='' />
               <h5 className="fw-bold card-title mb-0 developerName"><strong>Alex Fortin</strong></h5>
               <a className='clickHere-Portfolio' href='#placeholder'><p className="card-text mb-2">Portfolio</p></a>
@@ -88,7 +88,7 @@ const Contact = () => (
           </div>
         </div>
         <div className="col">
-          <div className="card border-0 shadow-none bg-secondary">
+          <div className="card border-0 shadow-none bg-secondary cardHeightForTeam">
             <div className="card-body py-3 text-center d-flex flex-column align-items-center p-0"><img className="rounded-circle mb-3 fit-cover minifigurePhoto" width="130" height="130" alt='' />
               <h5 className="fw-bold card-title mb-0 developerName"><strong>Fidel Deaquino</strong></h5>
               <a className='clickHere-Portfolio' href='https://fdeaquino.github.io/react-portfolio/'><p className="card-text mb-2">Portfolio</p></a>
@@ -106,7 +106,7 @@ const Contact = () => (
           </div>
         </div>
         <div className="col">
-          <div className="card border-0 shadow-none bg-secondary">
+          <div className="card border-0 shadow-none bg-secondary cardHeightForTeam">
             <div className="card-body py-3 text-center d-flex flex-column align-items-center p-0"><img className="rounded-circle mb-3 fit-cover minifigurePhoto" width="130" height="130" alt='' />
               <h5 className="fw-bold card-title mb-0 developerName"><strong>Pablo Ramirez</strong></h5>
               <a className='clickHere-Portfolio' href='#placeholder'><p className="card-text mb-2">Portfolio</p></a>
@@ -123,7 +123,7 @@ const Contact = () => (
           </div>
         </div>
         <div className="col">
-          <div className="card border-0 shadow-none bg-secondary">
+          <div className="card border-0 shadow-none bg-secondary cardHeightForTeam">
             <div className="card-body py-3 text-center d-flex flex-column align-items-center p-0"><img className="rounded-circle mb-3 fit-cover minifigurePhoto" width="130" height="130" alt='' />
               <h5 className="fw-bold card-title mb-0 developerName"><strong>Josh Thomas</strong></h5>
               <a className='clickHere-Portfolio' href='#placeholder'><p className="card-text mb-2">Portfolio</p></a>
