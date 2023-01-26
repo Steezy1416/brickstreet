@@ -164,6 +164,10 @@ body {
   font-size: inherit;
 }
 
+.delete-msg-btn {
+  height: 2.5rem!important;
+}
+
 /* ========== END BUTTON STYLES ========== */
 
 /* ========== START HERO STYLES ========== */
@@ -325,6 +329,10 @@ body {
   padding: .5em;
   margin-right: 3em;
   margin-bottom: 1em;
+}
+
+.wrapTheMsg {
+  overflow-wrap: anywhere;
 }
 
 .writeMessage {

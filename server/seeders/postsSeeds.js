@@ -67,3 +67,4 @@ const seedPosts = (userIds, categoryIds) => {
 }
 
 module.exports = seedPosts;
+
