@@ -5,10 +5,18 @@
 The moment is HERE: Welcome all! At Brickstreet, Buyers, Sellers, and Spectators alike can enjoy a fully MERN Development 
 experience with one of the World's most favorite hobby's: LEGOS! We have an amazing team of Web Developers that have created an ecstatic application, 
 utilizing some of the most popular Web Development tools and packages in the industry today including: The MERN Stack (Mongo, Express, REACT, Node), Mongoose
-GraphQL, and the list continues)! At Brickstreet, the developers envisioned a website where LEGO beginners and enthusiast of all kinds
+GraphQL API, and the list continues)! At Brickstreet, the developers envisioned a website where LEGO beginners and enthusiast of all kinds
 can share their passions, and at the same, enjoy a seamless bid and sell LEGO experience, all in one place. Connect with other LEGO
 LOVERs & have fun at the same time: WELCOME TO BRICKSTREET!!!
 
+## USER STORY
+
+As a USER, I want to have be able to upload my LEGO sets for bid (as a Seller), and be able to bid on LEGO sets 
+(as a Buyer), across different Category Themes.
+
+As a USER, I want to be able to Create a Post to send to BUYERS and/or SELLERS using my UserID across the application.
+
+As a USER, I want to be able to View Posts from other SELLERS using my UserID across the application.
 
 
 ## ACCEPTANCE CRITERIA
