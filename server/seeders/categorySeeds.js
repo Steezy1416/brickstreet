@@ -42,6 +42,12 @@ const categoryData = [
     },
     {
         categoryName: 'Ideas'
+    },
+    {
+        categoryName: 'Chinese New Year'
+    },
+    {
+        categoryName: 'TV Show'
     }
 ]
 

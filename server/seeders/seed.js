@@ -7,23 +7,6 @@ const Post = require('../models/Post')
 
 const db = require("../config/connection")
 
-// db.once('open', async () => {
-//     await db.sync({ force: true });
-//     const users = await seedUsers();
-//     const categories = await seedCategories();
-//     const userIds = users.map(user => {
-//         return user.id
-//     });
-//     const categoryIds = categories.map(category => {
-//         return category.id
-//     });
-//     const posts = await seedPosts(userIds, categoryIds);
-//     console.log(users);
-//     console.log(categories);
-//     console.log(posts);
-//     process.exit(0);
-// })
-
 db.once('open', async () => {
     await Post.deleteMany({});
     await User.deleteMany({});
@@ -37,8 +20,8 @@ db.once('open', async () => {
         return category.id
     });
     const posts = await seedPosts(userIds, categoryIds);
-    console.log(users);
-    console.log(categories);
-    console.log(posts);
+    // console.log(users);
+    // console.log(categories);
+    // console.log(posts);
     process.exit(0);
 })
