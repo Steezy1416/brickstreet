@@ -5,7 +5,7 @@ const categoryData = [
         categoryName: 'Classic'
     },
     {
-        categoryName: 'Brickheads'
+        categoryName: 'BrickHeadz'
     },
     {
         categoryName: 'Minifigures'
