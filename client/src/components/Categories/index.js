@@ -8,7 +8,7 @@ import { QUERY_CATEGORIES } from '../../utils/queries';
 const Categories = ({ currentCategory, setCurrentCategory }) => {
     const { loading, error, data } = useQuery(QUERY_CATEGORIES);
     const categories = data?.getCategories || [];
-
+    
     if (loading) {
         return (
             <div>Loading ...</div>
