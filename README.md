@@ -107,3 +107,8 @@ When timer runs out
     If there have been no bids
     
 Back end flag changes to unavailable
+
+## Screenshot
+
+![image](https://user-images.githubusercontent.com/71394743/214976771-60d1a829-a7e2-4dde-b000-c737fb1d12ed.png)
+
