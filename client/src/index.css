@@ -390,35 +390,6 @@ body {
 
 /* ========== END FOOTER STYLES ========== */
 
-/* ========== START Media Queries STYLES ========== */
-@media (max-width: 992px) {
-  .login-signup-mediaquery {
-    display: none;
-  }
-
-  .login-signup-inlinenav-mediaquery {
-    display: contents;
-  }
-
-  .navbar-nav {
-    line-height: .7em;
-  }
-}
-
-@media (min-width: 993px) {
-  .login-signup-inlinenav-mediaquery {
-    display: none;
-  }
-}
-
-@media (min-width: 993px) {
-  .fix {
-    margin-left: auto;
-  }
-}
-
-/* ========== END Media Queries STYLES ========== */
-
 /* ========== START CATEGORY STYLES ========== */
 .cat-list {
   padding: 10px 0 10px 0;
@@ -494,3 +465,136 @@ body {
 }
 
 /* ========== END SINGLE POST STYLES== ========== */
+
+/* ========== START PRIVACY POLICY STYLES ========== */
+.privacyTitles {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.paragraphText {
+  font-family: 'Comfortaa', cursive;
+}
+
+/* ========== END PRIVACY POLICY STYLES== ========== */
+
+/* ========== START CONTACT PAGE POLICY STYLES ========== */
+.minifigurePhoto {
+  background-image: url('./assets/lego-head-2-min.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.clickHere-Portfolio {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 179, 0, 0.8);
+  text-decoration: none;
+}
+.clickHere-Portfolio:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.developerName {
+  font-family: 'Montserrat', sans-serif!important;
+  color: #ffc107;
+}
+
+.madeWithLove {
+  font-family: 'Comfortaa', cursive;
+}
+
+.meetTheTeamSection {
+  background-color: #6c757d;
+}
+
+/* ========== END CONTACT PAGE POLICY STYLES== ========== */
+
+/* ========== START PRIVACY POLICY STYLES ========== */
+.accordion-button:focus {
+  z-index: 3;
+  border-color: #ffc107;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+.accordion-button:not(.collapsed) {
+  color: rgb(255, 179, 0);
+  font-weight: bolder;
+  background-color: #e7f1ff;
+  box-shadow: inset 0 -1px 0 #ffc107;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url(data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>);
+  transform: rotate(-180deg);
+}
+
+
+/* ========== END PRIVACY POLICY STYLES== ========== */
+
+
+
+/* ========== START Media Queries STYLES ========== */
+
+/* Small devices (landscape phones, 576px and up) */
+/* @media (min-width: 576px) {
+  .cardHeight {
+    min-height: 60vh;
+  }
+} */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .cardHeight {
+    min-height: 565px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .cardHeight {
+    min-height: 415px;
+  }
+}
+
+@media (max-width: 992px) {
+  .login-signup-mediaquery {
+    display: none;
+  }
+
+  .login-signup-inlinenav-mediaquery {
+    display: contents;
+  }
+
+  .navbar-nav {
+    line-height: .7em;
+  }
+}
+
+@media (min-width: 993px) {
+  .login-signup-inlinenav-mediaquery {
+    display: none;
+  }
+}
+
+@media (min-width: 993px) {
+  .fix {
+    margin-left: auto;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .cardHeight {
+    min-height: 510px;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .cardHeight {
+    min-height: 450px;
+  }
+}
+
+/* ========== END Media Queries STYLES ========== */
