@@ -9,6 +9,7 @@ const { json } = require("express")
 const db = require("./config/connection")
 const { typeDefs, resolvers } = require("./schema")
 const authRouter = require('./router/authRouter');
+const path = require('path');
 
 
 const PORT = process.env.PORT || 4000
