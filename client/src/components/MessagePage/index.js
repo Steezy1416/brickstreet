@@ -17,7 +17,7 @@ function MessagePage() {
 
     const { loading, error, data, refetch } = useQuery(GetUserChats, {
         variables: {
-            getUserId: "63d1ea50e98261f2bf754fed"
+            getUserId: "63cdcd19061e48c8544531cb"
         }
     })
 
@@ -30,7 +30,7 @@ function MessagePage() {
                     textMessage: data.textMessage,
                     id: data.id,
                     user: {
-                        id: "63d1ea50e98261f2bf754fed",
+                        id: "63cdcd19061e48c8544531cb",
                         textMessage: data.textMessage
                     }
                 }]
@@ -59,7 +59,7 @@ function MessagePage() {
                     id: messageData.createMessage.id,
                     textMessage: messageData.createMessage.textMessage,
                     user: {
-                        id: "63d1ea50e98261f2bf754fed",
+                        id: "63cdcd19061e48c8544531cb",
                         textMessage: messageData.createMessage.textMessage
                     }
                 }]
@@ -71,7 +71,7 @@ function MessagePage() {
                 id: messageData.createMessage.id,
                 textMessage: messageData.createMessage.textMessage,
                 user: {
-                    id: "63d1ea50e98261f2bf754fed",
+                    id: "63cdcd19061e48c8544531cb",
                     textMessage: messageData.createMessage.textMessage
                 }
             })
@@ -117,7 +117,7 @@ function MessagePage() {
         createMessage({
             variables:
             {
-                userId: "63d1ea50e98261f2bf754fed",
+                userId: "63cdcd19061e48c8544531cb",
                 chatId: chatState.currentChatId,
                 textMessage: inputText
             }
@@ -168,7 +168,7 @@ function MessagePage() {
                                     <div className='messageListContainer'>
                                         {
                                             chatState.messages.map(message => {
-                                                if ("63d1ea50e98261f2bf754fed" === message.user.id) {
+                                                if ("63cdcd19061e48c8544531cb" === message.user.id) {
                                                     return (
                                                         <div className='msg-body messageBubbleContainer mine' id={message.id} key={message.id}>
                                                             {/* TODO: add margin right to p tag or margin left to button */}

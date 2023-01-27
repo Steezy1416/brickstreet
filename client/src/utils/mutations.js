@@ -80,3 +80,12 @@ export const REMOVE_FRIEND = gql`
     }
   }
 `;
+
+export const CreatePost = gql`
+mutation Mutation($userId: ID!, $postImage: String!, $title: String!, $description: String!, $bidPrice: Int!, $availability: PostAvailable!, $categoryIds: [ID]) {
+  createPost(userId: $userId, postImage: $postImage, title: $title, description: $description, bidPrice: $bidPrice, availability: $availability, categoryIds: $categoryIds) {
+    id
+    title
+  }
+}
+`

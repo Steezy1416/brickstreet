@@ -1,23 +1,62 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client"
 import Select from "react-select";
+import { CreatePost } from "../utils/mutations"
 
 const AddPost = () => {
-  const [values, setValues] = useState({
-    name: "",
-    //userId: _id,
-    description: "",
-    price: "",
-    category: "",
-    formData: new FormData(),
-  });
 
-  const { name, description, price, category, formData, type } = values;
+  const [createPost, postInfo] = useMutation(CreatePost, {
+    onCompleted: data => {
+      console.log(data)
+    }
+  })
 
-  const handleChange = (name) => (event) => {
-    const value = event.target.value;
-    formData.set(name, value);
-    setValues({ ...values, [name]: value });
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const itemName = document.querySelector("#itemName").value
+    const itemDescription = document.querySelector("#itemDescription").value
+    const categoriesArr = []
+    let image = ""
+
+    const categories = document.querySelector("#categories").childNodes[3].children
+    for (let i = 0; i < categories.length; i++) {
+      categoriesArr.push(categories[i].value)
+
+    }
+    const bidPrice = parseInt(document.querySelector("#bidprice").value)
+    console.log(bidPrice)
+
+    const file = document.querySelector("input[type=file]").files[0]
+    const reader = new FileReader()
+
+    reader.addEventListener("load", async () => {
+
+      const result = await reader.result
+      handleResult(result)
+        .then(() => {
+          createPost({
+            variables: {
+              userId: "63cdcd19061e48c8544531cb",
+              postImage: image,
+              title: itemName,
+              description: itemDescription,
+              bidPrice: bidPrice,
+              availability: "available",
+              categoryIds: categoriesArr
+            }
+          })
+        })
+    }, false)
+
+
+
+    if (file) { reader.readAsDataURL(file) }
+
+    const handleResult = async (result) => {
+      image = result
+    }
+
+  }
 
   const options = [
     { value: "Classic", label: "Classic" },
@@ -51,15 +90,15 @@ const AddPost = () => {
           <div className="col-md-6 col-xl-4">
             <div className="card mb-5">
               <div className="card-body d-flex flex-column align-items-center">
-                <div className="bs-icon-xl bs-icon-circle bs-icon my-3"><svg xmlns="http://www.w3.org/2000/svg" width="5em" height="5em" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                </svg></div>
-                <form className="text-center" method="post">
+
+                <form className="text-center" method="post" onSubmit={handleSubmit}>
                   <div className="mb-3">
-                    <input className="form-control" type="text" name="itemName" placeholder="Item name" />
+                    <input className="form-control" type="text" name="itemName" id="itemName" placeholder="Item name" />
                   </div>
-                  <textarea id="itemDescription" class="mb-3 form-control" name="itemDescription" rows="6" placeholder="Item Description"></textarea>
+
+                  <textarea id="itemDescription" class="mb-3 form-control" name="itemDescription" rows="6" placeholder="Item Description">
+                  </textarea>
+
                   <label className="mb-3">
                     Choose an item category
                   </label>
@@ -70,10 +109,21 @@ const AddPost = () => {
                     options={options}
                     className="basic-multi-select col-12 mb-3"
                     classNamePrefix="select"
+                    id="categories"
                   />
+
+                  <label className="mb-3">
+                    What is the bid price for your item?
+                  </label>
+                  <div className="mb-3">
+                    <input className="form-control" type="number" id="bidprice" name="bidprice"
+                      placeholder="Choose a price" min="1" max="999" />
+                  </div>
+
                   <label className="mb-3">
                     Choose and upload a photo for your item
                   </label>
+
                   <div class="input-group mb-3">
                     <input
                       type="file"
@@ -94,6 +144,8 @@ const AddPost = () => {
                     </button>
                   </div>
                 </form>
+
+
               </div>
             </div>
           </div>
