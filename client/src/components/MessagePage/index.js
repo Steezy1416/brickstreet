@@ -97,8 +97,6 @@ function MessagePage() {
     if (loading) return <p>Loading</p>
     if (error) return <p>{error.message}</p>
 
-
-
     const handleChatClick = e => {
         const div = document.querySelector(".messaging")
         div.classList.remove("hide")

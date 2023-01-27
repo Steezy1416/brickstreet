@@ -9,6 +9,7 @@ const { json } = require("express")
 const db = require("./config/connection")
 const { typeDefs, resolvers } = require("./schema")
 const authRouter = require('./router/authRouter');
+const path = require('path');
 
 
 const PORT = process.env.PORT || 4000
@@ -26,7 +27,7 @@ app.use('/api/', authRouter);
 
 app.listen(5000, () => {
     console.log('Server running on port 5000');
-  });
+});
 
 const httpServer = createServer(app)
 const io = new Server(httpServer)
@@ -41,11 +42,15 @@ io.on("connection", (socket) => {
     })
 })
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+}
+
 const startServer = async () => {
 
     await server.start()
 
-    app.use("/graphql",  cors(), json(), expressMiddleware(server))
+    app.use("/graphql", cors(), json(), expressMiddleware(server))
 
     db.once("open", () => {
         httpServer.listen(PORT, () => {
