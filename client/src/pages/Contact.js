@@ -57,7 +57,7 @@ const Contact = () => (
           <div className="card border-0 shadow-none bg-secondary cardHeightForTeam">
             <div className="card-body py-3 text-center d-flex flex-column align-items-center p-0"><img className="rounded-circle mb-3 fit-cover minifigurePhoto" width="130" height="130" alt='' />
               <h5 className="fw-bold card-title mb-0 developerName"><strong>Alecia Maragh</strong></h5>
-              <a className='clickHere-Portfolio' href='#placeholder'><p className="card-text mb-2">Portfolio</p></a>
+              <a className='clickHere-Portfolio' href='https://amaragh.github.io/react-my-portfolio/'><p className="card-text mb-2">Portfolio</p></a>
               <ul className="list-inline fs-6 text-muted w-100 mb-0">
                 <li className="list-inline-item text-center">
                   <a href="https://github.com/amaragh">
@@ -74,7 +74,7 @@ const Contact = () => (
           <div className="card border-0 shadow-none bg-secondary cardHeightForTeam">
             <div className="card-body py-3 text-center d-flex flex-column align-items-center p-0"><img className="rounded-circle mb-3 fit-cover minifigurePhoto" width="130" height="130" alt='' />
               <h5 className="fw-bold card-title mb-0 developerName"><strong>Alex Fortin</strong></h5>
-              <a className='clickHere-Portfolio' href='#placeholder'><p className="card-text mb-2">Portfolio</p></a>
+              <a className='clickHere-Portfolio' href='https://steezy1416.github.io/personal-portfolio/'><p className="card-text mb-2">Portfolio</p></a>
               <ul className="list-inline fs-6 text-muted w-100 mb-0">
                 <li className="list-inline-item text-center">
                   <a href="https://github.com/Steezy1416">
@@ -109,7 +109,7 @@ const Contact = () => (
           <div className="card border-0 shadow-none bg-secondary cardHeightForTeam">
             <div className="card-body py-3 text-center d-flex flex-column align-items-center p-0"><img className="rounded-circle mb-3 fit-cover minifigurePhoto" width="130" height="130" alt='' />
               <h5 className="fw-bold card-title mb-0 developerName"><strong>Pablo Ramirez</strong></h5>
-              <a className='clickHere-Portfolio' href='#placeholder'><p className="card-text mb-2">Portfolio</p></a>
+              <a className='clickHere-Portfolio' href='https://graslowsnail.github.io/react-portfolio/'><p className="card-text mb-2">Portfolio</p></a>
               <ul className="list-inline fs-6 text-muted w-100 mb-0">
                 <li className="list-inline-item text-center">
                   <a href="https://github.com/graslowsnail">
@@ -126,7 +126,7 @@ const Contact = () => (
           <div className="card border-0 shadow-none bg-secondary cardHeightForTeam">
             <div className="card-body py-3 text-center d-flex flex-column align-items-center p-0"><img className="rounded-circle mb-3 fit-cover minifigurePhoto" width="130" height="130" alt='' />
               <h5 className="fw-bold card-title mb-0 developerName"><strong>Josh Thomas</strong></h5>
-              <a className='clickHere-Portfolio' href='#placeholder'><p className="card-text mb-2">Portfolio</p></a>
+              <a className='clickHere-Portfolio' href='https://josh236061.github.io/'><p className="card-text mb-2">Portfolio</p></a>
               <ul className="list-inline fs-6 text-muted w-100 mb-0">
                 <li className="list-inline-item text-center">
                   <a href="https://github.com/Josh236061">
