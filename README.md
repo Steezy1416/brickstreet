@@ -116,4 +116,4 @@ Back end flag changes to unavailable
 
 Github Repo: https://github.com/Steezy1416/brickstreet
 
-Heroku URL: 
+Heroku URL: https://brickstreet.herokuapp.com/
